@@ -36,8 +36,11 @@
     };
   </script>
 </head>
-<body class="bg-white text-black font-sans antialiased selection:bg-brandLime selection:text-black overflow-x-hidden min-h-screen flex flex-col"
-  style="background-image: url('https://placehold.co/1920*10080/FFFFFF/FFFFFF?text=+'); background-size: cover; background-position: center; background-repeat: no-repeat; background-attachment: fixed;">
+<!-- لینک عکس پس‌زمینه سایت: برای تغییر پس‌زمینه، آدرس تصویر خود را داخل url('...') قرار دهید -->
+<body
+  class="bg-white text-black font-sans antialiased selection:bg-brandLime selection:text-black overflow-x-hidden min-h-screen flex flex-col"
+  style="background-image: url('https://placehold.co/1920x1080/FFFFFF/FFFFFF?text=+'); background-size: cover; background-position: center; background-repeat: no-repeat; background-attachment: fixed;"
+>
 
   <!-- ==================== هدر ثابت و بخش پروفایل / ناوبری اصلی (وسط‌چین و مینیمال) ==================== -->
   <header class="w-full bg-white border-b border-neutral-100">
@@ -463,16 +466,15 @@
               </div>
 
               <!-- ساعت تولد -->
-              <div id="bf-birthtime-wrapper" class="bg-white rounded-2xl border border-neutral-200 p-3.5 focus-within:border-brandActive transition-colors">
+              <div class="bg-white rounded-2xl border border-neutral-200 p-3.5 focus-within:border-brandActive transition-colors">
                 <label for="bf-birthtime" class="block text-xs font-bold text-neutral-700 mb-1.5">
                   ساعت تولد:
                 </label>
                 <input
                   id="bf-birthtime"
                   type="text"
-                  dir="ltr"
-                  placeholder="HH:MM (مثلاً 14:30)"
-                  class="w-full bg-transparent text-sm text-black text-right font-latin outline-none placeholder:text-neutral-400"
+                  placeholder="مثلاً ۱۴:۳۰ یا ۲:۳۰ بعدازظهر"
+                  class="w-full bg-transparent text-sm text-black outline-none placeholder:text-neutral-400"
                 />
               </div>
 
@@ -507,7 +509,7 @@
               </div>
             </div>
 
-            <!-- باکس گزینه «تاریخ تولد اصلا نمی‌دانم» -->
+            <!-- باکس گزینه «ساعت تولد اصلا نمی‌دانم» -->
             <div class="bg-white rounded-2xl border border-neutral-200 p-4 space-y-2">
               <label class="flex items-center gap-3 cursor-pointer select-none">
                 <input
@@ -517,12 +519,61 @@
                   class="w-5 h-5 rounded accent-brandActive cursor-pointer"
                 />
                 <span class="text-sm font-bold text-black">
-                  تاریخ تولد اصلا نمی‌دانم.
+                  ساعت تولد اصلا نمی‌دانم.
                 </span>
               </label>
               <p class="text-xs text-neutral-600 leading-relaxed pr-8">
-                اگر تاریخ تولد خودتان را نمی‌دانید از طریق پرسشنامه چارت شما استخراج خواهد شد و ۲ روز به زمان انتظار شما اضافه می‌شود.
+                اگر ساعت تولد خودتان را نمی‌دانید از طریق پرسشنامه چارت شما استخراج خواهد شد و ۲ روز به زمان انتظار شما اضافه می‌شود.
               </p>
+            </div>
+
+            <!-- چک‌باکس قوانین و ضوابط تفسیر (بدون باکس، منتقل‌شده از سبد خرید با لینک ثابت) -->
+            <div class="relative pt-1 space-y-3">
+              <div class="flex items-start gap-3">
+                <input
+                  id="birth-terms-checkbox"
+                  type="checkbox"
+                  class="w-4 h-4 mt-0.5 rounded accent-brandActive cursor-pointer shrink-0"
+                />
+                <div class="text-xs leading-relaxed text-black">
+                  <button
+                    type="button"
+                    onclick="toggleTermsBox()"
+                    class="underline underline-offset-4 font-semibold text-black hover:text-brandActive transition-colors text-right cursor-pointer"
+                  >
+                    قوانین و ضوابط تفسیر را می‌پذیرم
+                  </button>
+                  <span class="text-neutral-500 mr-1">(برای مطالعه قوانین کلیک کنید)</span>
+                </div>
+              </div>
+
+              <!-- باکس منعطف و رلتیو نمایش متن قوانین (چینش صفحه را به هم نمی‌ریزد) -->
+              <div
+                id="terms-accordion-box"
+                class="hidden relative w-full rounded-2xl bg-white border border-neutral-200 p-4 sm:p-5 text-xs sm:text-sm text-black font-normal leading-7 space-y-2.5 transition-all"
+              >
+                <p>
+                  «خدمات ما در زمینه تحلیل چارت‌ها و الگوهای فردی بر اساس چارت تولد (نه نشان تولد) است؛ برای ارتقا آگاهی و شناخت بیشتر، پتانسیل، فرصت و چالش‌های احتمالی در زمینه‌های عاطفی، اجتماعی، شخصیت و پیش‌بینی الگوهای تکرارپذیر و احتمالی می‌باشد.
+                </p>
+                <p>
+                  هدف این بررسی پیشگویی و طالع‌بینی سرنوشت از پیش تعیین شده نیست.
+                </p>
+                <p>
+                  ما معتقدیم شرایط بیرونی؛ مانند تاثیرات محیطی می‌توانند از طریق تفسیر چارت‌ها بررسی شوند، الگوهای تکرارپذیر شفاف‌تر شوند و در نتیجه اتفاقات تکرارپذیر و قابل پیش‌بینی مشخص شوند؛ اما در نهایت عاملیت فردی همچنان پابرجاست و شما مسئول تصمیم‌گیری‌های خود هستید.
+                </p>
+                <p>
+                  زمان پادکست‌ها در چارت طلائی، برلیان و الماس حداقل ۳۰ دقیقه می‌باشد و امکان طرح پرسش تا ۴۸ ساعت وجود دارد.
+                </p>
+                <p>
+                  زمان انتظار بدون احتساب روز جمعه می‌باشد.
+                </p>
+                <p>
+                  دریافت پادکست‌ها و چارت‌ها تنها از طریق ایمیل ممکن است.
+                </p>
+                <p>
+                  مورد انتخابی بعد از پرداخت قابل تغییر نیست و هزینه پرداخت شده قابل استرداد نمی‌باشد؛ لذا در انتخاب خود دقت فرمایید.»
+                </p>
+              </div>
             </div>
 
             <!-- باکس خطای اعتبارسنجی -->
@@ -607,55 +658,6 @@
             <p class="text-sm font-bold text-black pt-1">
               نام صاحب کارت: <span class="text-brandActive">تیموری</span>
             </p>
-          </div>
-
-          <!-- چک‌باکس قوانین و ضوابط تفسیر (زیر مستطیل شماره کارت با فونت کوچک‌تر + باکس بازشونده منعطف و رلتیو) -->
-          <div class="relative bg-white rounded-2xl border border-neutral-200 p-4 space-y-3">
-            <div class="flex items-start gap-3">
-              <input
-                id="cart-terms-checkbox"
-                type="checkbox"
-                class="w-4 h-4 mt-0.5 rounded accent-brandActive cursor-pointer shrink-0"
-              />
-              <div class="text-xs leading-relaxed text-black">
-                <button
-                  type="button"
-                  onclick="toggleTermsBox()"
-                  class="underline underline-offset-4 font-semibold text-black hover:text-brandActive transition-colors text-right cursor-pointer"
-                >
-                  قوانین و ضوابط تفسیر را می‌پذیرم
-                </button>
-                <span class="text-neutral-500 mr-1">(برای مطالعه قوانین کلیک کنید)</span>
-              </div>
-            </div>
-
-            <!-- باکس منعطف و رلتیو نمایش متن قوانین (چینش صفحه را به هم نمی‌ریزد) -->
-            <div
-              id="terms-accordion-box"
-              class="hidden relative w-full rounded-2xl bg-cardBg border border-neutral-200 p-4 sm:p-5 text-xs sm:text-sm text-black font-normal leading-7 space-y-2.5 transition-all"
-            >
-              <p>
-                «خدمات ما در زمینه تحلیل چارت‌ها و الگوهای فردی بر اساس چارت تولد (نه نشان تولد) است؛ برای ارتقا آگاهی و شناخت بیشتر، پتانسیل، فرصت و چالش‌های احتمالی در زمینه‌های عاطفی، اجتماعی، شخصیت و پیش‌بینی الگوهای تکرارپذیر و احتمالی می‌باشد.
-              </p>
-              <p>
-                هدف این بررسی پیشگویی و طالع‌بینی سرنوشت از پیش تعیین شده نیست.
-              </p>
-              <p>
-                ما معتقدیم شرایط بیرونی؛ مانند تاثیرات محیطی می‌توانند از طریق تفسیر چارت‌ها بررسی شوند، الگوهای تکرارپذیر شفاف‌تر شوند و در نتیجه اتفاقات تکرارپذیر و قابل پیش‌بینی مشخص شوند؛ اما در نهایت عاملیت فردی همچنان پابرجاست و شما مسئول تصمیم‌گیری‌های خود هستید.
-              </p>
-              <p>
-                زمان پادکست‌ها در چارت طلائی، برلیان و الماس حداقل ۳۰ دقیقه می‌باشد و امکان طرح پرسش تا ۴۸ ساعت وجود دارد.
-              </p>
-              <p>
-                زمان انتظار بدون احتساب روز جمعه می‌باشد.
-              </p>
-              <p>
-                دریافت پادکست‌ها و چارت‌ها تنها از طریق ایمیل ممکن است.
-              </p>
-              <p>
-                مورد انتخابی بعد از پرداخت قابل تغییر نیست و هزینه پرداخت شده قابل استرداد نمی‌باشد؛ لذا در انتخاب خود دقت فرمایید.»
-              </p>
-            </div>
           </div>
 
           <!-- فرم شماره پیگیری و تاریخ پرداخت -->
@@ -988,24 +990,15 @@
   <!-- ==================== اسکریپت کامل منطق برنامه ==================== -->
   <script>
     /**
-     * تبدیل اعداد انگلیسی به اعداد فارسی برای نمایش یکدست
+     * تبدیل اعداد انگلیسی به اعداد فارسی
      */
-    function toPersianDigits(input) {
+    function toPersianDigits(value) {
       const persianDigits = ['۰', '۱', '۲', '۳', '۴', '۵', '۶', '۷', '۸', '۹'];
-      return String(input).replace(/\d/g, (d) => persianDigits[Number(d)]);
+      return String(value).replace(/\d/g, (digit) => persianDigits[Number(digit)]);
     }
 
     /**
-     * تبدیل اعداد فارسی و عربی به انگلیسی جهت پردازش دقیق تاریخ و فرم‌ها
-     */
-    function toEnglishDigits(input) {
-      return String(input)
-        .replace(/[۰-۹]/g, (d) => '۰۱۲۳۴۵۶۷۸۹'.indexOf(d))
-        .replace(/[٠-٩]/g, (d) => '٠١٢٣٤٥٦٧٨٩'.indexOf(d));
-    }
-
-    /**
-     * فرمت‌دهی قیمت با جداکننده هزارگان و اعداد فارسی
+     * قالب‌بندی قیمت با جداکننده هزارگان و اعداد فارسی
      */
     function formatPricePersian(amount) {
       const formatted = Number(amount).toLocaleString('en-US');
@@ -1013,30 +1006,28 @@
     }
 
     /**
-     * داده‌های کامل ۶ چارت بخش «خرید پادکست»
+     * داده‌های کامل هر ۶ چارت در بخش خرید پادکست
      */
     const CHARTS_DATA = [
       {
-        id: 'base',
+        id: 'basic',
         title: 'چارت پایه (تولد)',
         waitTime: 'یک هفته',
         format: 'کتابچه',
         badges: ['چارت تولد'],
-        prices: [
-          { id: 'base-single', label: 'قیمت', amount: 1112000 }
-        ],
         items: [
           'تحلیل ویژگی شخصیت و ویژگی‌های فردی که کدام استعداد و کدام عادت دردسرساز شماست',
           'تحلیل روابط، یادگیری، ارتباط با خواهر و برادر، تصمیم‌گیری برای بررسی مشکلات و روش‌های حل',
           'تحلیل الگوی احساسات، نحوه بروز احساسات و عواطف، واکنش‌های عاطفی، رابطه با مادر برای شناخت بیشتر جهت حل تعارض‌ها',
-          'پیدا کردن زیبایی‌های فردی، ارزش و اعتماد به نفس شخصی، روابط عاطفی',
+          'پیدا کردن زیبایی‌های فردی، ارزش و اعتماد بنفس شخصی، روابط عاطفی',
           'بررسی خشم، انگیزه، رقابت و کشمکش شما برای ابراز خشم بهتر و دسترسی به انگیزه درونی صحیح',
           'بررسی شانس، مهاجرت، عقاید فردی، تحصیلات عالیه و تخصصی برای رشد فرصت‌ها',
           'تحلیل چگونگی مسئولیت و محدودیت‌ها، نظم فردی، رابطه با پدر، محدودیت‌های تجربه شده تا مسئولیت‌ها و محدودیت‌های درست، شناخته شوند',
           'تحلیل الگوی ارتباطات، رفت و آمدهای کوتاه، لوازم ارتباطی و نحوه ارتباطات شما، اسناد قراردادها، تحصیل و مهاجرت و ارتباط شما با مسائل قانونی و حقوقی که چطور می‌توانند در این زمینه به حل مشکلات شما کمک کنند'
         ],
-        forecastTitle: null,
-        forecastItems: []
+        prices: [
+          { id: 'single', label: '', amount: 1112000 }
+        ]
       },
       {
         id: 'bronze',
@@ -1044,10 +1035,6 @@
         waitTime: 'یک هفته',
         format: 'پادکست',
         badges: ['چارت Lunar Return'],
-        prices: [
-          { id: 'bronze-30d', label: 'اشتراک ۳۰ روزه', amount: 769000 },
-          { id: 'bronze-3m', label: 'اشتراک ۳ ماهه', amount: 1757000 }
-        ],
         items: [
           'بررسی دغدغه و تمرکز اصلی ۳۰ روز آینده',
           'تجربیات عاطفی و چالش و فرصت‌های عاطفی و فشارهای عاطفی ۳۰ روز آینده',
@@ -1055,8 +1042,10 @@
           'روتین و کارهای روزمره، عادات سالم و چالش‌برانگیز که در ۳۰ روز آینده مهم هستند، موضوعات مربوط به خانواده و تغییرات در خانه',
           'فرصت‌ها و چالش‌های ۳۰ روز آینده'
         ],
-        forecastTitle: null,
-        forecastItems: []
+        prices: [
+          { id: '30d', label: 'اشتراک ۳۰ روزه', amount: 769000 },
+          { id: '3m', label: 'اشتراک ۳ ماهه', amount: 1757000 }
+        ]
       },
       {
         id: 'silver',
@@ -1064,9 +1053,6 @@
         waitTime: '۵ روز',
         format: 'کتابچه',
         badges: ['چارت تولد', 'ژوپیتر ترانزیتی', 'سترن ترانزیتی'],
-        prices: [
-          { id: 'silver-single', label: 'قیمت', amount: 1239000 }
-        ],
         items: [
           'تحلیل ویژگی شخصیت و ویژگی‌های فردی که کدام استعداد و کدام عادت دردسرساز است',
           'تحلیل روابط، یادگیری، ارتباط با خواهر و برادر، تصمیم‌گیری برای بررسی رشد بهتر',
@@ -1076,6 +1062,9 @@
         forecastItems: [
           'بستر شانس و فرصت‌ها تا یک سال آینده در کدام بخش از زندگی شماست؟',
           'محدودیت‌ها و مسئولیت‌های شما و قسمت سخت‌گیرانه تا یک سال آینده در کدام بعد از زندگی شماست؟'
+        ],
+        prices: [
+          { id: 'single', label: '', amount: 1239000 }
         ]
       },
       {
@@ -1084,9 +1073,6 @@
         waitTime: '۵ روز',
         format: 'پادکست',
         badges: ['چارت سیناستری', 'چارت Secondary Progressed', 'چارت Composite', 'سترن ترانزیتی'],
-        prices: [
-          { id: 'gold-single', label: 'قیمت', amount: 2699000 }
-        ],
         items: [
           'چارت تولد پارتنر + چارت تولد شما',
           'الگوهای عاطفی، نیاز عاطفی شما',
@@ -1102,6 +1088,9 @@
           'بررسی تغییرات تا یک سال آینده از بعد مسئولیت و محدودیت‌ها',
           'آیا تغییرات سترن ترانزیتی در رابطه شما به تعهد و تداوم رابطه کمک می‌کند یا جدایی رابطه؟',
           'این محدودیت‌ها منجر به چه تجربیاتی خواهند شد؟'
+        ],
+        prices: [
+          { id: 'single', label: '', amount: 2699000 }
         ]
       },
       {
@@ -1110,9 +1099,6 @@
         waitTime: '۳ روز',
         format: 'پادکست',
         badges: ['چارت Profection Annual', 'چارت Solar Return', 'چارت Secondary Progressed', 'چارت Solar Arc'],
-        prices: [
-          { id: 'brilliant-single', label: 'قیمت', amount: 3224000 }
-        ],
         items: [
           'تمرکز و اهمیت بعد مهم زندگی شما در یک سال',
           'روابط عاطفی، ازدواج، فرزند و تعهد',
@@ -1122,11 +1108,12 @@
           'ارتباطات، رفت و آمدهای کوتاه، لوازم ارتباطی و نحوه ارتباطات شما، اسناد قراردادها، تحصیل و مهاجرت و ارتباط شما با مسائل قانونی و حقوقی در یک سال',
           'منابع مشترک مالی، مالیات، بیمه، وام، شراکت‌های بزرگ سرمایه‌گذاری در یک سال',
           'تفریح، روتین، ارزش و اهمیت‌های فردی، تغییرات فردی و شخصیتی در یک سال',
-          'الگوی درآمد-مخارج مستقیم و نقدینگی، پس‌انداز و سرمایه‌گذاری در یک سال',
-          'به‌صورت کلی تمام ابعاد زندگی که زیرشاخه این موضوعات قرار می‌گیرند در یک سال کامل بررسی خواهد شد.'
+          'الگوی درآمد-مخارج مستقیم و نقدینگی، پس‌انداز و سرمایه‌گذاری در یک سال'
         ],
-        forecastTitle: null,
-        forecastItems: []
+        note: 'بصورت کلی تمام ابعاد زندگی که زیر شاخه این موضوعات قرار می‌گیرند در یک سال کامل بررسی خواهد شد.',
+        prices: [
+          { id: 'single', label: '', amount: 3224000 }
+        ]
       },
       {
         id: 'diamond',
@@ -1134,30 +1121,21 @@
         waitTime: '۳ روز',
         format: 'پادکست',
         badges: ['چارت Profection Annual', 'چارت Solar Return', 'چارت Secondary Progressed', 'چارت Solar Arc', 'چارت تولد'],
-        prices: [
-          { id: 'diamond-single', label: 'قیمت', amount: 4799000 }
-        ],
         items: [
           'چارت پایه (چارت تولد) + چارت سالانه (چارت برلیان)'
         ],
-        forecastTitle: null,
-        forecastItems: []
+        prices: [
+          { id: 'single', label: '', amount: 4799000 }
+        ]
       }
     ];
 
     /**
-     * وضعیت فعلی اپلیکیشن و سبد خرید
+     * وضعیت مرکزی برنامه برای نگهداری صفحه فعال و اطلاعات سفارش
      */
     const appState = {
       currentView: 'home',
-      selectedPriceByChart: {
-        base: null,
-        bronze: null,
-        silver: null,
-        gold: null,
-        brilliant: null,
-        diamond: null
-      },
+      selectedPriceByChart: {},
       order: {
         chartId: null,
         chartTitle: '',
@@ -1181,28 +1159,12 @@
     };
 
     /**
-     * به‌روزرسانی وضعیت ظاهری دکمه‌های منوی اصلی (حالت اکتیو با رنگ #160297)
-     */
-    function updateActiveNavButton(activeKey) {
-      const navButtons = document.querySelectorAll('.nav-btn');
-      navButtons.forEach((btn) => {
-        const key = btn.getAttribute('data-nav');
-        if (key === activeKey) {
-          btn.classList.remove('border-neutral-200', 'bg-cardBg', 'text-black', 'hover:border-brandActive');
-          btn.classList.add('border-brandActive', 'bg-brandActive', 'text-white');
-        } else {
-          btn.classList.remove('border-brandActive', 'bg-brandActive', 'text-white');
-          btn.classList.add('border-neutral-200', 'bg-cardBg', 'text-black', 'hover:border-brandActive');
-        }
-      });
-    }
-
-    /**
-     * جابه‌جایی بین صفحات سایت و به‌روزرسانی دکمه فعال در هدر
+     * جابه‌جایی بین صفحات مختلف برنامه و بروزرسانی وضعیت فعال دکمه‌های منو
      */
     function navigateTo(viewName) {
-      const views = document.querySelectorAll('.page-view');
-      views.forEach((section) => {
+      appState.currentView = viewName;
+
+      document.querySelectorAll('.page-view').forEach((section) => {
         section.classList.add('hidden');
       });
 
@@ -1211,95 +1173,64 @@
         targetSection.classList.remove('hidden');
       }
 
-      appState.currentView = viewName;
+      const navKey = (viewName === 'birth-form' || viewName === 'cart' || viewName === 'order-success')
+        ? 'podcasts'
+        : viewName;
 
-      // نگاشت صفحات داخلی خرید به تب «خرید پادکست» در منوی اصلی
-      let navKey = viewName;
-      if (viewName === 'birth-form' || viewName === 'cart' || viewName === 'order-success') {
-        navKey = 'podcasts';
-      }
-      updateActiveNavButton(navKey);
+      document.querySelectorAll('.nav-btn').forEach((btn) => {
+        const isCurrent = btn.dataset.nav === navKey;
+        if (isCurrent) {
+          btn.classList.remove('bg-cardBg', 'text-black', 'border-neutral-200');
+          btn.classList.add('bg-brandActive', 'text-white', 'border-brandActive');
+        } else {
+          btn.classList.remove('bg-brandActive', 'text-white', 'border-brandActive');
+          btn.classList.add('bg-cardBg', 'text-black', 'border-neutral-200');
+        }
+      });
 
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
     /**
-     * باز کردن پنجره «مشاوره خرید» (به‌جای alert)
+     * باز کردن پنجره مودال مشاوره خرید
      */
-    function openConsultationModal() {
+    function openConsultationModal(triggerBtn) {
       const modal = document.getElementById('consultation-modal');
-      if (!modal) return;
-      updateActiveNavButton('consultation');
-      modal.classList.remove('hidden');
-      modal.classList.add('flex');
+      if (modal) {
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+      }
+      if (triggerBtn) {
+        triggerBtn.classList.add('bg-brandActive', 'text-white', 'border-brandActive');
+        triggerBtn.classList.remove('bg-cardBg', 'text-black', 'border-neutral-200');
+      }
     }
 
     /**
-     * بستن پنجره «مشاوره خرید» و بازگرداندن وضعیت دکمه فعال صفحه فعلی
+     * بستن پنجره مودال مشاوره خرید و بازگرداندن وضعیت دکمه فعال
      */
     function closeConsultationModal(event) {
       if (event && event.target !== event.currentTarget) return;
       const modal = document.getElementById('consultation-modal');
-      if (!modal) return;
-      modal.classList.add('hidden');
-      modal.classList.remove('flex');
-
-      let navKey = appState.currentView;
-      if (navKey === 'birth-form' || navKey === 'cart' || navKey === 'order-success') {
-        navKey = 'podcasts';
+      if (modal) {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
       }
-      updateActiveNavButton(navKey);
+      navigateTo(appState.currentView);
     }
 
     /**
-     * رندر کامل ۶ چارت در صفحه خرید پادکست دقیقاً مطابق طراحی مرجع
+     * رندر داینامیک کارت‌های چارت در صفحه خرید پادکست دقیقاً مطابق طراحی مرجع
      */
     function renderCharts() {
       const container = document.getElementById('charts-list');
       if (!container) return;
 
       container.innerHTML = CHARTS_DATA.map((chart) => {
-        const activePriceId = appState.selectedPriceByChart[chart.id];
+        const selectedPriceId = appState.selectedPriceByChart[chart.id];
 
-        // لیست آیتم‌های توضیحات (کاملاً یکدست با بولت آبی بدون شماره برای تمام ۶ چارت)
-        const itemsHtml = chart.items.map((item) => {
-          const cleanItem = item.replace(/^[\d۰-۹]+\s*[-–ـ.]\s*/, '');
-          return `
-            <li class="flex items-start text-xs sm:text-sm text-black leading-7">
-              <span class="inline-block w-1.5 h-1.5 rounded-full bg-brandActive ml-2.5 mt-2.5 shrink-0"></span>
-              <span>${cleanItem}</span>
-            </li>
-          `;
-        }).join('');
-
-        // بخش پیش‌بینی الگوهای زمانی (در صورت وجود، با تیتر بولد به رنگ #5477FF)
-        let forecastHtml = '';
-        if (chart.forecastTitle && chart.forecastItems.length > 0) {
-          const forecastList = chart.forecastItems.map((fItem) => `
-            <li class="flex items-start text-xs sm:text-sm text-black leading-7">
-              <span class="inline-block w-1.5 h-1.5 rounded-full bg-forecastBlue ml-2.5 mt-2.5 shrink-0"></span>
-              <span>${fItem}</span>
-            </li>
-          `).join('');
-
-          forecastHtml = `
-            <div class="pt-4 mt-4 border-t border-neutral-200/70 space-y-2">
-              <h4 class="text-sm sm:text-base font-bold text-forecastBlue">
-                ${chart.forecastTitle}
-              </h4>
-              <ul class="space-y-1.5">
-                ${forecastList}
-              </ul>
-            </div>
-          `;
-        }
-
-        // تگ‌های گرد غیرقابل انتخاب دارای تیک کنار نام هر چارت
         const badgesHtml = chart.badges.map((badge) => `
-          <span
-            aria-disabled="true"
-            class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white border border-neutral-200 text-xs font-bold text-black select-none cursor-default"
-          >
+          <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white border border-neutral-200 text-xs font-semibold text-black select-none cursor-default">
             <svg class="w-3.5 h-3.5 text-brandActive shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
             </svg>
@@ -1307,46 +1238,65 @@
           </span>
         `).join('');
 
-        // دکمه‌های قیمت تمام‌عرض (عمودی بالای دکمه ثبت خرید؛ پیش‌فرض #DDECFB و #1800AD و هنگام انتخاب معکوس)
-        const priceButtonsHtml = chart.prices.map((priceOpt) => {
-          const isSelected = activePriceId === priceOpt.id;
-          const activeClasses = isSelected
-            ? 'bg-priceText text-white border-priceText shadow-sm'
-            : 'bg-priceBg text-priceText border-priceBg hover:border-priceText/30';
+        const itemsHtml = chart.items.map((item) => `
+          <li class="flex items-start gap-2.5 text-xs sm:text-sm text-black leading-7">
+            <span class="mt-2.5 w-1.5 h-1.5 rounded-full bg-brandActive shrink-0"></span>
+            <span>${item}</span>
+          </li>
+        `).join('');
 
-          const priceDisplay = chart.prices.length > 1
-            ? `<span>${priceOpt.label}</span><span class="mx-1.5 opacity-60">|</span><span>${formatPricePersian(priceOpt.amount)} تومان</span>`
-            : `<span>${formatPricePersian(priceOpt.amount)} تومان</span>`;
+        const forecastHtml = chart.forecastTitle ? `
+          <div class="pt-3 space-y-2">
+            <h4 class="text-sm sm:text-base font-bold text-forecastBlue">${chart.forecastTitle}</h4>
+            <ul class="space-y-1.5">
+              ${chart.forecastItems.map((fItem) => `
+                <li class="flex items-start gap-2.5 text-xs sm:text-sm text-black leading-7">
+                  <span class="mt-2.5 w-1.5 h-1.5 rounded-full bg-brandActive shrink-0"></span>
+                  <span>${fItem}</span>
+                </li>
+              `).join('')}
+            </ul>
+          </div>
+        ` : '';
+
+        const noteHtml = chart.note ? `
+          <p class="pt-2 text-xs sm:text-sm font-medium text-neutral-700 leading-7">${chart.note}</p>
+        ` : '';
+
+        const pricesHtml = chart.prices.map((price) => {
+          const isActive = selectedPriceId === price.id;
+          const colorClasses = isActive
+            ? 'bg-priceText text-white shadow-sm'
+            : 'bg-priceBg text-priceText hover:opacity-90';
+          const priceLabelText = price.label
+            ? `${price.label}: ${formatPricePersian(price.amount)} تومان`
+            : `${formatPricePersian(price.amount)} تومان`;
 
           return `
             <button
               type="button"
-              onclick="selectChartPrice('${chart.id}', '${priceOpt.id}')"
-              class="w-full h-12 sm:h-[3.25rem] px-5 rounded-2xl border font-extrabold text-sm sm:text-base transition-all duration-200 flex items-center justify-center cursor-pointer active:scale-[0.99] ${activeClasses}"
+              onclick="selectPriceOption('${chart.id}', '${price.id}')"
+              class="w-full py-3.5 px-4 rounded-2xl font-extrabold text-sm sm:text-base transition-all duration-200 cursor-pointer active:scale-[0.99] ${colorClasses}"
             >
-              ${priceDisplay}
+              ${priceLabelText}
             </button>
           `;
         }).join('');
 
         return `
-          <article class="bg-cardBg border border-neutral-200/90 rounded-3xl p-4 sm:p-6 shadow-xs transition-all">
-
-            <!-- باکس سفید بالایی: عنوان چارت، ردیف‌های مدت انتظار و فرمت دریافت، و تگ‌های تیک‌دار -->
-            <div class="bg-white border border-neutral-200/80 rounded-2xl p-4 sm:p-5 space-y-3">
-              <h3 class="text-base sm:text-lg font-extrabold text-black text-right">
-                ${chart.title}
-              </h3>
+          <article class="bg-cardBg border border-neutral-200 rounded-3xl p-4 sm:p-6 shadow-xs space-y-5">
+            <!-- باکس سفید بالایی شامل نام چارت، مدت انتظار، فرمت دریافت و تگ‌های تیک‌دار -->
+            <div class="bg-white border border-neutral-200/90 rounded-2xl p-4 sm:p-5 space-y-3">
+              <h3 class="text-lg sm:text-xl font-extrabold text-black">${chart.title}</h3>
 
               <div class="space-y-2">
-                <div class="w-full rounded-xl bg-[#F8F8F8] px-4 py-2.5 flex items-center justify-between text-xs sm:text-sm">
-                  <span class="text-neutral-500 font-medium">مدت انتظار:</span>
-                  <strong class="text-black font-bold">${chart.waitTime}</strong>
+                <div class="flex items-center justify-between bg-cardBg rounded-full px-4 py-2 text-xs sm:text-sm">
+                  <span class="text-neutral-500">مدت انتظار:</span>
+                  <span class="font-bold text-black">${chart.waitTime}</span>
                 </div>
-
-                <div class="w-full rounded-xl bg-[#F8F8F8] px-4 py-2.5 flex items-center justify-between text-xs sm:text-sm">
-                  <span class="text-neutral-500 font-medium">فرمت دریافت:</span>
-                  <strong class="text-black font-bold">${chart.format}</strong>
+                <div class="flex items-center justify-between bg-cardBg rounded-full px-4 py-2 text-xs sm:text-sm">
+                  <span class="text-neutral-500">فرمت دریافت:</span>
+                  <span class="font-bold text-black">${chart.format}</span>
                 </div>
               </div>
 
@@ -1355,109 +1305,90 @@
               </div>
             </div>
 
-            <!-- بخش میانی: لیست جزئیات با بولت آبی و بخش پیش‌بینی در صورت وجود -->
-            <div class="mt-5 px-1 sm:px-2">
-              <ul class="space-y-2">
+            <!-- لیست جزئیات چارت با بولت آبی یکدست -->
+            <div class="px-1 sm:px-2 space-y-2">
+              <ul class="space-y-1.5">
                 ${itemsHtml}
               </ul>
               ${forecastHtml}
+              ${noteHtml}
             </div>
 
-            <!-- بخش پایینی: باکس‌های قیمت تمام‌عرض در بالا و دکمه تمام‌عرض «ثبت خرید» در پایین -->
-            <div class="mt-6 pt-5 border-t border-neutral-200/70 space-y-3">
-              <div class="flex flex-col gap-2.5 w-full">
-                ${priceButtonsHtml}
+            <!-- بخش دکمه‌های قیمت و ثبت خرید تمام‌عرض -->
+            <div class="pt-4 border-t border-neutral-200/80 flex flex-col gap-3">
+              <div class="flex flex-col gap-2.5">
+                ${pricesHtml}
               </div>
-
-              <p id="chart-err-${chart.id}" class="hidden text-center text-xs font-bold text-red-600"></p>
-
               <button
                 type="button"
-                onclick="startChartPurchase('${chart.id}')"
-                class="w-full h-12 sm:h-[3.25rem] rounded-2xl bg-brandLime text-black font-extrabold text-sm sm:text-base hover:bg-brandActive hover:text-white active:bg-brandActive active:text-white transition-all duration-200 shadow-xs cursor-pointer active:scale-[0.99]"
+                onclick="startOrder('${chart.id}')"
+                class="w-full py-3.5 px-4 rounded-2xl bg-brandLime text-black hover:bg-brandActive hover:text-white active:bg-brandActive active:text-white font-extrabold text-sm sm:text-base transition-all duration-200 shadow-xs cursor-pointer active:scale-[0.99]"
               >
                 ثبت خرید
               </button>
             </div>
-
           </article>
         `;
       }).join('');
     }
 
     /**
-     * انتخاب گزینه قیمت در هر چارت (تغییر حالت اکتیو رنگ باکس و متن قیمت)
+     * انتخاب و فعال‌سازی باکس قیمت هر چارت
      */
-    function selectChartPrice(chartId, priceId) {
+    function selectPriceOption(chartId, priceId) {
       appState.selectedPriceByChart[chartId] = priceId;
       renderCharts();
     }
 
     /**
-     * شروع فرآیند خرید چارت انتخاب‌شده و انتقال به مرحله ثبت تاریخ تولد
+     * شروع فرآیند خرید چارت انتخابی و انتقال به مرحله ثبت تاریخ تولد
      */
-    function startChartPurchase(chartId) {
+    function startOrder(chartId) {
       const chart = CHARTS_DATA.find((c) => c.id === chartId);
       if (!chart) return;
 
       let selectedPriceId = appState.selectedPriceByChart[chartId];
-      let priceOption = null;
-
-      if (chart.prices.length === 1) {
-        priceOption = chart.prices[0];
-        appState.selectedPriceByChart[chartId] = priceOption.id;
-      } else {
-        priceOption = chart.prices.find((p) => p.id === selectedPriceId) || null;
-        if (!priceOption) {
-          const errEl = document.getElementById(`chart-err-${chartId}`);
-          if (errEl) {
-            errEl.textContent = 'لطفاً ابتدا یکی از گزینه‌های اشتراک بالا را انتخاب کنید.';
-            errEl.classList.remove('hidden');
-          }
-          return;
-        }
+      if (!selectedPriceId) {
+        selectedPriceId = chart.prices[0].id;
+        appState.selectedPriceByChart[chartId] = selectedPriceId;
+        renderCharts();
       }
+
+      const priceObj = chart.prices.find((p) => p.id === selectedPriceId) || chart.prices[0];
 
       appState.order.chartId = chart.id;
       appState.order.chartTitle = chart.title;
-      appState.order.priceId = priceOption.id;
-      appState.order.priceLabel = chart.prices.length > 1 ? priceOption.label : '';
-      appState.order.priceAmount = priceOption.amount;
+      appState.order.priceId = priceObj.id;
+      appState.order.priceLabel = priceObj.label;
+      appState.order.priceAmount = priceObj.amount;
       appState.order.waitTime = chart.waitTime;
       appState.order.format = chart.format;
 
-      renderCharts();
+      const unknownCheckbox = document.getElementById('bf-unknown-birth');
+      appState.order.unknownBirthDate = Boolean(unknownCheckbox && unknownCheckbox.checked);
+
+      const bfError = document.getElementById('bf-error');
+      if (bfError) bfError.classList.add('hidden');
+
       renderBirthFormSummary();
       navigateTo('birth-form');
     }
 
     /**
-     * نمایش خلاصه چارت انتخاب‌شده در بالای فرم مرحله ثبت تاریخ تولد
+     * رندر خلاصه چارت انتخاب‌شده در بالای فرم مرحله ثبت تاریخ تولد
      */
     function renderBirthFormSummary() {
-      const box = document.getElementById('birth-form-summary');
-      if (!box) return;
+      const summaryBox = document.getElementById('birth-form-summary');
+      if (!summaryBox) return;
 
-      const planBadge = appState.order.priceLabel
-        ? `<span class="px-2.5 py-1 rounded-full bg-priceBg text-priceText text-xs font-bold">${appState.order.priceLabel}</span>`
-        : '';
+      const planText = appState.order.priceLabel ? ` (${appState.order.priceLabel})` : '';
+      const waitExtra = appState.order.unknownBirthDate ? ' + ۲ روز بابت پرسشنامه' : '';
 
-      const waitExtra = appState.order.unknownBirthDate
-        ? ' (+ ۲ روز بابت استخراج با پرسشنامه)'
-        : '';
-
-      box.innerHTML = `
+      summaryBox.innerHTML = `
         <div class="space-y-1">
-          <div class="flex flex-wrap items-center gap-2">
-            <span class="text-xs text-neutral-500 font-medium">مورد انتخابی:</span>
-            <strong class="text-sm sm:text-base font-extrabold text-black">${appState.order.chartTitle}</strong>
-            ${planBadge}
-          </div>
-          <p class="text-xs text-neutral-600">
-            فرمت دریافت: <strong>${appState.order.format}</strong>
-            <span class="mx-1.5 text-neutral-300">|</span>
-            مدت انتظار: <strong>${appState.order.waitTime}${waitExtra}</strong>
-          </p>
+          <span class="text-xs text-neutral-500 block">چارت انتخاب‌شده:</span>
+          <strong class="text-base sm:text-lg font-extrabold text-black">${appState.order.chartTitle}${planText}</strong>
+          <p class="text-xs text-neutral-600">فرمت دریافت: ${appState.order.format} | مدت انتظار: ${appState.order.waitTime}${waitExtra}</p>
         </div>
         <div class="px-4 py-2 rounded-2xl bg-priceText text-white font-extrabold text-sm sm:text-base">
           ${formatPricePersian(appState.order.priceAmount)} تومان
@@ -1466,30 +1397,10 @@
     }
 
     /**
-     * فعال یا غیرفعال کردن فیلدهای تاریخ و ساعت تولد در صورت تیک زدن «تاریخ تولد اصلا نمی‌دانم»
+     * ثبت وضعیت گزینه «ساعت تولد اصلا نمی‌دانم» بدون غیرفعال کردن هیچ فیلد یا دکمه‌ای
      */
     function toggleUnknownBirthDate(isChecked) {
       appState.order.unknownBirthDate = Boolean(isChecked);
-
-      const dateInput = document.getElementById('bf-birthdate');
-      const timeInput = document.getElementById('bf-birthtime');
-      const dateWrap = document.getElementById('bf-birthdate-wrapper');
-      const timeWrap = document.getElementById('bf-birthtime-wrapper');
-
-      if (dateInput && timeInput && dateWrap && timeWrap) {
-        dateInput.disabled = isChecked;
-        timeInput.disabled = isChecked;
-
-        if (isChecked) {
-          dateInput.value = '';
-          timeInput.value = '';
-          dateWrap.classList.add('opacity-50', 'bg-neutral-100');
-          timeWrap.classList.add('opacity-50', 'bg-neutral-100');
-        } else {
-          dateWrap.classList.remove('opacity-50', 'bg-neutral-100');
-          timeWrap.classList.remove('opacity-50', 'bg-neutral-100');
-        }
-      }
 
       if (appState.order.chartId) {
         renderBirthFormSummary();
@@ -1497,7 +1408,7 @@
     }
 
     /**
-     * اعتبارسنجی و ثبت فرم مرحله ثبت تاریخ تولد و انتقال به صفحه سبد خرید
+     * اعتبارسنجی و ثبت فرم مرحله ثبت تاریخ تولد (شامل تایید قوانین) و انتقال به صفحه سبد خرید
      */
     function handleBirthFormSubmit(event) {
       event.preventDefault();
@@ -1509,16 +1420,11 @@
       const email = document.getElementById('bf-email').value.trim();
       const phone = document.getElementById('bf-phone').value.trim();
       const unknownBirth = document.getElementById('bf-unknown-birth').checked;
+      const termsChecked = document.getElementById('birth-terms-checkbox').checked;
       const errorBox = document.getElementById('bf-error');
 
-      if (!fullName || !birthPlace || !email || !phone) {
-        errorBox.textContent = 'لطفاً نام کامل، مکان تولد، ایمیل و شماره تماس را تکمیل نمایید.';
-        errorBox.classList.remove('hidden');
-        return;
-      }
-
-      if (!unknownBirth && !birthDate) {
-        errorBox.textContent = 'لطفاً تاریخ تولد (میلادی) را وارد کنید یا گزینه «تاریخ تولد اصلا نمی‌دانم» را انتخاب نمایید.';
+      if (!fullName || !birthDate || !birthPlace || !email || !phone) {
+        errorBox.textContent = 'لطفاً نام کامل، تاریخ تولد (میلادی)، مکان تولد، ایمیل و شماره تماس را تکمیل نمایید.';
         errorBox.classList.remove('hidden');
         return;
       }
@@ -1529,14 +1435,20 @@
         return;
       }
 
+      if (!termsChecked) {
+        errorBox.textContent = 'لطفاً ابتدا چک‌باکس «قوانین و ضوابط تفسیر را می‌پذیرم» را تایید نمایید.';
+        errorBox.classList.remove('hidden');
+        return;
+      }
+
       errorBox.classList.add('hidden');
 
       appState.order.unknownBirthDate = unknownBirth;
       appState.order.customer = {
         fullName,
-        birthDate: unknownBirth ? 'نامشخص (استخراج از طریق پرسشنامه)' : birthDate,
+        birthDate,
         birthPlace,
-        birthTime: unknownBirth ? 'نامشخص' : (birthTime || 'ثبت نشده'),
+        birthTime: unknownBirth ? (birthTime || 'نامشخص (استخراج از طریق پرسشنامه)') : (birthTime || 'ثبت نشده'),
         email,
         phone
       };
@@ -1622,16 +1534,9 @@
     function handleFinalOrderSubmit(event) {
       event.preventDefault();
 
-      const termsChecked = document.getElementById('cart-terms-checkbox').checked;
       const trackingCode = document.getElementById('cart-tracking-code').value.trim();
       const paymentDate = document.getElementById('cart-payment-date').value.trim();
       const errorBox = document.getElementById('cart-error');
-
-      if (!termsChecked) {
-        errorBox.textContent = 'لطفاً ابتدا چک‌باکس «قوانین و ضوابط تفسیر را می‌پذیرم» را تایید نمایید.';
-        errorBox.classList.remove('hidden');
-        return;
-      }
 
       if (!trackingCode || !paymentDate) {
         errorBox.textContent = 'لطفاً شماره پیگیری بانکی و تاریخ پرداخت را وارد نمایید.';
@@ -1664,7 +1569,7 @@
     function resetAndGoHome() {
       const birthForm = document.getElementById('birth-details-form');
       const paymentForm = document.getElementById('payment-confirm-form');
-      const termsCheckbox = document.getElementById('cart-terms-checkbox');
+      const termsCheckbox = document.getElementById('birth-terms-checkbox');
       const termsBox = document.getElementById('terms-accordion-box');
 
       if (birthForm) birthForm.reset();
