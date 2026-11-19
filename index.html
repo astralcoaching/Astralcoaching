@@ -799,23 +799,72 @@
               />
             </div>
 
-            <!-- تاریخ تولد به شمسی -->
+            <!-- تاریخ تولد به شمسی (تقویم کشویی روز، ماه، سال) -->
             <div class="bg-white rounded-2xl border border-neutral-200 p-4 focus-within:border-brandActive transition-colors">
-              <label for="z-jalali-date" class="flex items-center gap-1 text-xs sm:text-sm font-bold text-black mb-1.5">
-                <span>تاریخ تولد به شمسی (فرمت yy/mm/dd یا dd-mm-yyyy)</span>
+              <label class="flex items-center gap-1 text-xs sm:text-sm font-bold text-black mb-2.5">
+                <span>تاریخ تولد به شمسی</span>
                 <span class="text-red-600 text-[10px] leading-none" title="تکمیل این بخش الزامی است">*</span>
               </label>
-              <input
-                id="z-jalali-date"
-                type="text"
-                dir="ltr"
-                required
-                placeholder="مثلاً ۰۸-۰۳-۱۳۷۸ یا ۱۳۷۸/۰۳/۰۸"
-                class="w-full bg-transparent text-sm text-black text-right outline-none placeholder:text-neutral-400"
-              />
-              <p class="text-[11px] text-neutral-500 mt-1.5">
-                می‌توانید تاریخ شمسی را با اعداد فارسی یا انگلیسی (مانند ۰۸-۰۳-۱۳۷۸ یا ۷۸/۰۳/۰۸) وارد کنید.
-              </p>
+
+              <div class="grid grid-cols-3 gap-2.5 sm:gap-3">
+                <!-- انتخاب روز -->
+                <div class="relative">
+                  <select
+                    id="z-jalali-day"
+                    required
+                    aria-label="روز تولد شمسی"
+                    class="w-full appearance-none rounded-xl bg-zodiacBg/70 border border-neutral-200 px-3 py-2.5 text-xs sm:text-sm font-semibold text-black outline-none focus:border-brandActive focus:bg-white transition-colors cursor-pointer"
+                  >
+                    <option value="">روز</option>
+                  </select>
+                  <svg class="pointer-events-none absolute left-2.5 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-neutral-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </div>
+
+                <!-- انتخاب ماه -->
+                <div class="relative">
+                  <select
+                    id="z-jalali-month"
+                    required
+                    aria-label="ماه تولد شمسی"
+                    onchange="updateJalaliDayOptions()"
+                    class="w-full appearance-none rounded-xl bg-zodiacBg/70 border border-neutral-200 px-3 py-2.5 text-xs sm:text-sm font-semibold text-black outline-none focus:border-brandActive focus:bg-white transition-colors cursor-pointer"
+                  >
+                    <option value="">ماه</option>
+                    <option value="1">فروردین</option>
+                    <option value="2">اردیبهشت</option>
+                    <option value="3">خرداد</option>
+                    <option value="4">تیر</option>
+                    <option value="5">مرداد</option>
+                    <option value="6">شهریور</option>
+                    <option value="7">مهر</option>
+                    <option value="8">آبان</option>
+                    <option value="9">آذر</option>
+                    <option value="10">دی</option>
+                    <option value="11">بهمن</option>
+                    <option value="12">اسفند</option>
+                  </select>
+                  <svg class="pointer-events-none absolute left-2.5 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-neutral-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </div>
+
+                <!-- انتخاب سال -->
+                <div class="relative">
+                  <select
+                    id="z-jalali-year"
+                    required
+                    aria-label="سال تولد شمسی"
+                    class="w-full appearance-none rounded-xl bg-zodiacBg/70 border border-neutral-200 px-3 py-2.5 text-xs sm:text-sm font-semibold text-black outline-none focus:border-brandActive focus:bg-white transition-colors cursor-pointer"
+                  >
+                    <option value="">سال</option>
+                  </select>
+                  <svg class="pointer-events-none absolute left-2.5 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-neutral-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </div>
+              </div>
             </div>
 
             <!-- باکس نمایش خطا -->
@@ -1101,105 +1150,108 @@
     const appState = {
       currentView: 'home',
       selectedPriceByChart: {
-        base: 'base-single',
-        bronze: 'bronze-30d',
-        silver: 'silver-single',
-        gold: 'gold-single',
-        brilliant: 'brilliant-single',
-        diamond: 'diamond-single'
+        base: null,
+        bronze: null,
+        silver: null,
+        gold: null,
+        brilliant: null,
+        diamond: null
       },
       order: {
-        chart: null,
-        priceOption: null,
-        fullName: '',
-        birthDate: '',
-        birthPlace: '',
-        birthTime: '',
-        email: '',
-        phone: '',
+        chartId: null,
+        chartTitle: '',
+        priceId: null,
+        priceLabel: '',
+        priceAmount: 0,
+        waitTime: '',
+        format: '',
         unknownBirthDate: false,
+        customer: {
+          fullName: '',
+          birthDate: '',
+          birthPlace: '',
+          birthTime: '',
+          email: '',
+          phone: ''
+        },
         trackingCode: '',
         paymentDate: ''
       }
     };
 
     /**
-     * جابه‌جایی بین صفحات مختلف سایت و بروزرسانی وضعیت اکتیو دکمه‌های منو
+     * به‌روزرسانی وضعیت ظاهری دکمه‌های منوی اصلی (حالت اکتیو با رنگ #160297)
      */
-    function navigateTo(viewName) {
-      try {
-        const views = document.querySelectorAll('.page-view');
-        views.forEach((v) => v.classList.add('hidden'));
-
-        const targetView = document.getElementById(`view-${viewName}`);
-        if (targetView) {
-          targetView.classList.remove('hidden');
-          appState.currentView = viewName;
-        }
-
-        // تعیین دکمه فعال در منوی بالا
-        const activeNavKey = (viewName === 'birth-form' || viewName === 'cart' || viewName === 'order-success')
-          ? 'podcasts'
-          : viewName;
-
-        updateNavButtons(activeNavKey);
-
-        // اسکرول نرم به بالای صفحه
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      } catch (err) {
-        console.error('Navigation error:', err);
-      }
-    }
-
-    /**
-     * اعمال رنگ اکتیو (#160297) روی دکمه فعال منو
-     */
-    function updateNavButtons(activeKey) {
+    function updateActiveNavButton(activeKey) {
       const navButtons = document.querySelectorAll('.nav-btn');
       navButtons.forEach((btn) => {
         const key = btn.getAttribute('data-nav');
         if (key === activeKey) {
-          btn.classList.remove('bg-cardBg', 'text-black', 'border-neutral-200');
-          btn.classList.add('bg-brandActive', 'text-white', 'border-brandActive');
+          btn.classList.remove('border-neutral-200', 'bg-cardBg', 'text-black', 'hover:border-brandActive');
+          btn.classList.add('border-brandActive', 'bg-brandActive', 'text-white');
         } else {
-          btn.classList.remove('bg-brandActive', 'text-white', 'border-brandActive');
-          btn.classList.add('bg-cardBg', 'text-black', 'border-neutral-200');
+          btn.classList.remove('border-brandActive', 'bg-brandActive', 'text-white');
+          btn.classList.add('border-neutral-200', 'bg-cardBg', 'text-black', 'hover:border-brandActive');
         }
       });
     }
 
     /**
-     * باز کردن پنجره اختصاصی «مشاوره خرید»
+     * جابه‌جایی بین صفحات سایت و به‌روزرسانی دکمه فعال در هدر
      */
-    function openConsultationModal(btnElement) {
-      if (btnElement) {
-        updateNavButtons('consultation');
+    function navigateTo(viewName) {
+      const views = document.querySelectorAll('.page-view');
+      views.forEach((section) => {
+        section.classList.add('hidden');
+      });
+
+      const targetSection = document.getElementById(`view-${viewName}`);
+      if (targetSection) {
+        targetSection.classList.remove('hidden');
       }
-      const modal = document.getElementById('consultation-modal');
-      if (modal) {
-        modal.classList.remove('hidden');
-        modal.classList.add('flex');
+
+      appState.currentView = viewName;
+
+      // نگاشت صفحات داخلی خرید به تب «خرید پادکست» در منوی اصلی
+      let navKey = viewName;
+      if (viewName === 'birth-form' || viewName === 'cart' || viewName === 'order-success') {
+        navKey = 'podcasts';
       }
+      updateActiveNavButton(navKey);
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
     /**
-     * بستن پنجره «مشاوره خرید» و بازگرداندن وضعیت دکمه منو به صفحه فعلی
+     * باز کردن پنجره «مشاوره خرید» (به‌جای alert)
+     */
+    function openConsultationModal() {
+      const modal = document.getElementById('consultation-modal');
+      if (!modal) return;
+      updateActiveNavButton('consultation');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    /**
+     * بستن پنجره «مشاوره خرید» و بازگرداندن وضعیت دکمه فعال صفحه فعلی
      */
     function closeConsultationModal(event) {
       if (event && event.target !== event.currentTarget) return;
       const modal = document.getElementById('consultation-modal');
-      if (modal) {
-        modal.classList.add('hidden');
-        modal.classList.remove('flex');
+      if (!modal) return;
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+
+      let navKey = appState.currentView;
+      if (navKey === 'birth-form' || navKey === 'cart' || navKey === 'order-success') {
+        navKey = 'podcasts';
       }
-      const activeNavKey = (appState.currentView === 'birth-form' || appState.currentView === 'cart' || appState.currentView === 'order-success')
-        ? 'podcasts'
-        : appState.currentView;
-      updateNavButtons(activeNavKey);
+      updateActiveNavButton(navKey);
     }
 
     /**
-     * رندر کامل ۶ چارت افقی در صفحه خرید پادکست
+     * رندر کامل ۶ چارت در صفحه خرید پادکست دقیقاً مطابق طراحی مرجع
      */
     function renderCharts() {
       const container = document.getElementById('charts-list');
@@ -1212,8 +1264,8 @@
         const itemsHtml = chart.items.map((item) => {
           const cleanItem = item.replace(/^[\d۰-۹]+\s*[-–ـ.]\s*/, '');
           return `
-            <li class="flex items-start text-xs sm:text-sm text-black leading-relaxed">
-              <span class="inline-block w-1.5 h-1.5 rounded-full bg-brandActive ml-2 mt-2 shrink-0"></span>
+            <li class="flex items-start text-xs sm:text-sm text-black leading-7">
+              <span class="inline-block w-1.5 h-1.5 rounded-full bg-brandActive ml-2.5 mt-2.5 shrink-0"></span>
               <span>${cleanItem}</span>
             </li>
           `;
@@ -1223,14 +1275,14 @@
         let forecastHtml = '';
         if (chart.forecastTitle && chart.forecastItems.length > 0) {
           const forecastList = chart.forecastItems.map((fItem) => `
-            <li class="flex items-start text-xs sm:text-sm text-black leading-relaxed">
-              <span class="inline-block w-1.5 h-1.5 rounded-full bg-forecastBlue ml-2 mt-2 shrink-0"></span>
+            <li class="flex items-start text-xs sm:text-sm text-black leading-7">
+              <span class="inline-block w-1.5 h-1.5 rounded-full bg-forecastBlue ml-2.5 mt-2.5 shrink-0"></span>
               <span>${fItem}</span>
             </li>
           `).join('');
 
           forecastHtml = `
-            <div class="pt-3 mt-3 border-t border-neutral-200/70 space-y-2">
+            <div class="pt-4 mt-4 border-t border-neutral-200/70 space-y-2">
               <h4 class="text-sm sm:text-base font-bold text-forecastBlue">
                 ${chart.forecastTitle}
               </h4>
@@ -1245,7 +1297,7 @@
         const badgesHtml = chart.badges.map((badge) => `
           <span
             aria-disabled="true"
-            class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white border border-neutral-200 text-xs font-semibold text-black select-none cursor-default"
+            class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white border border-neutral-200 text-xs font-bold text-black select-none cursor-default"
           >
             <svg class="w-3.5 h-3.5 text-brandActive shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
@@ -1254,81 +1306,79 @@
           </span>
         `).join('');
 
-        // دکمه‌های قیمت (عمودی بالای دکمه ثبت خرید؛ پیش‌فرض #DDECFB و #1800AD و اکتیو معکوس)
+        // دکمه‌های قیمت تمام‌عرض (عمودی بالای دکمه ثبت خرید؛ پیش‌فرض #DDECFB و #1800AD و هنگام انتخاب معکوس)
         const priceButtonsHtml = chart.prices.map((priceOpt) => {
           const isSelected = activePriceId === priceOpt.id;
           const activeClasses = isSelected
             ? 'bg-priceText text-white border-priceText shadow-sm'
-            : 'bg-priceBg text-priceText border-priceBg hover:border-priceText/40';
+            : 'bg-priceBg text-priceText border-priceBg hover:border-priceText/30';
+
+          const priceDisplay = chart.prices.length > 1
+            ? `<span>${priceOpt.label}</span><span class="mx-1.5 opacity-60">|</span><span>${formatPricePersian(priceOpt.amount)} تومان</span>`
+            : `<span>${formatPricePersian(priceOpt.amount)} تومان</span>`;
 
           return `
             <button
               type="button"
               onclick="selectChartPrice('${chart.id}', '${priceOpt.id}')"
-              class="w-full min-h-[3.25rem] px-4 py-2.5 rounded-2xl border font-bold text-xs sm:text-sm transition-all duration-200 flex flex-col items-center justify-center gap-0.5 cursor-pointer active:scale-95 ${activeClasses}"
+              class="w-full h-12 sm:h-[3.25rem] px-5 rounded-2xl border font-extrabold text-sm sm:text-base transition-all duration-200 flex items-center justify-center cursor-pointer active:scale-[0.99] ${activeClasses}"
             >
-              <span class="text-[11px] opacity-90">${priceOpt.label}</span>
-              <span class="text-sm sm:text-base font-extrabold">${formatPricePersian(priceOpt.amount)} تومان</span>
+              ${priceDisplay}
             </button>
           `;
         }).join('');
 
         return `
-          <article class="bg-cardBg border border-neutral-200/90 rounded-3xl p-5 sm:p-7 shadow-xs transition-all">
-            <div class="flex flex-col lg:flex-row items-stretch justify-between gap-6">
+          <article class="bg-cardBg border border-neutral-200/90 rounded-3xl p-4 sm:p-6 shadow-xs transition-all">
 
-              <!-- قسمت راست: مستطیل کوچک‌تر عنوان چارت + توضیحات + متادیتا + تگ‌های تیک‌دار -->
-              <div class="flex-1 space-y-4">
+            <!-- باکس سفید بالایی: عنوان چارت، ردیف‌های مدت انتظار و فرمت دریافت، و تگ‌های تیک‌دار -->
+            <div class="bg-white border border-neutral-200/80 rounded-2xl p-4 sm:p-5 space-y-3">
+              <h3 class="text-base sm:text-lg font-extrabold text-black text-right">
+                ${chart.title}
+              </h3>
 
-                <!-- مستطیل کوچک‌تر داخل کارت برای نام چارت -->
-                <div class="inline-flex items-center px-4 py-2 rounded-2xl bg-white border border-neutral-200 shadow-2xs">
-                  <h3 class="text-base sm:text-lg font-extrabold text-black">
-                    ${chart.title}
-                  </h3>
+              <div class="space-y-2">
+                <div class="w-full rounded-xl bg-[#F8F8F8] px-4 py-2.5 flex items-center justify-between text-xs sm:text-sm">
+                  <span class="text-neutral-500 font-medium">مدت انتظار:</span>
+                  <strong class="text-black font-bold">${chart.waitTime}</strong>
                 </div>
 
-                <!-- لیست جزئیات چارت -->
-                <ul class="space-y-2">
-                  ${itemsHtml}
-                </ul>
-
-                <!-- پیش‌بینی الگوهای زمانی (در صورت وجود) -->
-                ${forecastHtml}
-
-                <!-- مدت انتظار و فرمت دریافت -->
-                <div class="flex flex-wrap items-center gap-4 pt-2 text-xs sm:text-sm font-semibold text-neutral-800">
-                  <span class="inline-flex items-center gap-1.5">
-                    <span class="w-2 h-2 rounded-full bg-brandLime border border-black/20"></span>
-                    مدت انتظار: <strong class="text-black">${chart.waitTime}</strong>
-                  </span>
-                  <span class="inline-flex items-center gap-1.5">
-                    <span class="w-2 h-2 rounded-full bg-brandActive"></span>
-                    فرمت دریافت: <strong class="text-black">${chart.format}</strong>
-                  </span>
-                </div>
-
-                <!-- دکمه‌های غیرقابل انتخاب و تیک‌دار -->
-                <div class="flex flex-wrap items-center gap-2 pt-1">
-                  ${badgesHtml}
+                <div class="w-full rounded-xl bg-[#F8F8F8] px-4 py-2.5 flex items-center justify-between text-xs sm:text-sm">
+                  <span class="text-neutral-500 font-medium">فرمت دریافت:</span>
+                  <strong class="text-black font-bold">${chart.format}</strong>
                 </div>
               </div>
 
-              <!-- قسمت چپ: باکس‌های قیمت (عمودی) در بالا و دکمه هم‌اندازه «ثبت خرید» در پایین -->
-              <div class="w-full lg:w-60 shrink-0 flex flex-col justify-end gap-3 pt-4 lg:pt-0 border-t lg:border-t-0 lg:border-r border-neutral-200/80 lg:pr-6">
-                <div class="flex flex-col gap-2.5 w-full">
-                  ${priceButtonsHtml}
-                </div>
-
-                <button
-                  type="button"
-                  onclick="startChartPurchase('${chart.id}', this)"
-                  class="w-full h-12 rounded-2xl bg-brandLime text-black font-extrabold text-sm hover:bg-brandActive hover:text-white active:bg-brandActive active:text-white transition-all duration-200 shadow-sm cursor-pointer active:scale-95"
-                >
-                  ثبت خرید
-                </button>
+              <div class="pt-3 border-t border-neutral-100 flex flex-wrap items-center gap-2">
+                ${badgesHtml}
               </div>
-
             </div>
+
+            <!-- بخش میانی: لیست جزئیات با بولت آبی و بخش پیش‌بینی در صورت وجود -->
+            <div class="mt-5 px-1 sm:px-2">
+              <ul class="space-y-2">
+                ${itemsHtml}
+              </ul>
+              ${forecastHtml}
+            </div>
+
+            <!-- بخش پایینی: باکس‌های قیمت تمام‌عرض در بالا و دکمه تمام‌عرض «ثبت خرید» در پایین -->
+            <div class="mt-6 pt-5 border-t border-neutral-200/70 space-y-3">
+              <div class="flex flex-col gap-2.5 w-full">
+                ${priceButtonsHtml}
+              </div>
+
+              <p id="chart-err-${chart.id}" class="hidden text-center text-xs font-bold text-red-600"></p>
+
+              <button
+                type="button"
+                onclick="startChartPurchase('${chart.id}')"
+                class="w-full h-12 sm:h-[3.25rem] rounded-2xl bg-brandLime text-black font-extrabold text-sm sm:text-base hover:bg-brandActive hover:text-white active:bg-brandActive active:text-white transition-all duration-200 shadow-xs cursor-pointer active:scale-[0.99]"
+              >
+                ثبت خرید
+              </button>
+            </div>
+
           </article>
         `;
       }).join('');
@@ -1343,196 +1393,230 @@
     }
 
     /**
-     * شروع فرآیند خرید چارت انتخاب‌شده و رفتن به مرحله ثبت تاریخ تولد
+     * شروع فرآیند خرید چارت انتخاب‌شده و انتقال به مرحله ثبت تاریخ تولد
      */
-    function startChartPurchase(chartId, btnEl) {
+    function startChartPurchase(chartId) {
       const chart = CHARTS_DATA.find((c) => c.id === chartId);
       if (!chart) return;
 
-      const selectedPriceId = appState.selectedPriceByChart[chartId] || chart.prices[0].id;
-      const priceOption = chart.prices.find((p) => p.id === selectedPriceId) || chart.prices[0];
+      let selectedPriceId = appState.selectedPriceByChart[chartId];
+      let priceOption = null;
 
-      appState.order.chart = chart;
-      appState.order.priceOption = priceOption;
-
-      // نمایش کوتاه حالت اکتیو (#160297) روی دکمه خرید پیش از انتقال
-      if (btnEl) {
-        btnEl.classList.remove('bg-brandLime', 'text-black');
-        btnEl.classList.add('bg-brandActive', 'text-white');
+      if (chart.prices.length === 1) {
+        priceOption = chart.prices[0];
+        appState.selectedPriceByChart[chartId] = priceOption.id;
+      } else {
+        priceOption = chart.prices.find((p) => p.id === selectedPriceId) || null;
+        if (!priceOption) {
+          const errEl = document.getElementById(`chart-err-${chartId}`);
+          if (errEl) {
+            errEl.textContent = 'لطفاً ابتدا یکی از گزینه‌های اشتراک بالا را انتخاب کنید.';
+            errEl.classList.remove('hidden');
+          }
+          return;
+        }
       }
 
-      renderBirthFormSummary();
+      appState.order.chartId = chart.id;
+      appState.order.chartTitle = chart.title;
+      appState.order.priceId = priceOption.id;
+      appState.order.priceLabel = chart.prices.length > 1 ? priceOption.label : '';
+      appState.order.priceAmount = priceOption.amount;
+      appState.order.waitTime = chart.waitTime;
+      appState.order.format = chart.format;
 
-      setTimeout(() => {
-        navigateTo('birth-form');
-        if (btnEl) {
-          btnEl.classList.remove('bg-brandActive', 'text-white');
-          btnEl.classList.add('bg-brandLime', 'text-black');
-        }
-      }, 140);
+      renderCharts();
+      renderBirthFormSummary();
+      navigateTo('birth-form');
     }
 
     /**
-     * رندر خلاصه سفارش انتخاب‌شده در بالای فرم ثبت تاریخ تولد
+     * نمایش خلاصه چارت انتخاب‌شده در بالای فرم مرحله ثبت تاریخ تولد
      */
     function renderBirthFormSummary() {
       const box = document.getElementById('birth-form-summary');
-      if (!box || !appState.order.chart || !appState.order.priceOption) return;
+      if (!box) return;
 
-      const { chart, priceOption } = appState.order;
-      const extraLabel = chart.prices.length > 1 ? ` (${priceOption.label})` : '';
+      const planBadge = appState.order.priceLabel
+        ? `<span class="px-2.5 py-1 rounded-full bg-priceBg text-priceText text-xs font-bold">${appState.order.priceLabel}</span>`
+        : '';
+
+      const waitExtra = appState.order.unknownBirthDate
+        ? ' (+ ۲ روز بابت استخراج با پرسشنامه)'
+        : '';
 
       box.innerHTML = `
-        <div class="space-y-0.5">
-          <span class="text-xs text-neutral-500 font-semibold">چارت انتخاب‌شده:</span>
-          <div class="text-sm sm:text-base font-extrabold text-black">${chart.title}${extraLabel}</div>
+        <div class="space-y-1">
+          <div class="flex flex-wrap items-center gap-2">
+            <span class="text-xs text-neutral-500 font-medium">مورد انتخابی:</span>
+            <strong class="text-sm sm:text-base font-extrabold text-black">${appState.order.chartTitle}</strong>
+            ${planBadge}
+          </div>
+          <p class="text-xs text-neutral-600">
+            فرمت دریافت: <strong>${appState.order.format}</strong>
+            <span class="mx-1.5 text-neutral-300">|</span>
+            مدت انتظار: <strong>${appState.order.waitTime}${waitExtra}</strong>
+          </p>
         </div>
-        <div class="px-4 py-2 rounded-2xl bg-priceBg text-priceText font-extrabold text-sm">
-          ${formatPricePersian(priceOption.amount)} تومان
+        <div class="px-4 py-2 rounded-2xl bg-priceText text-white font-extrabold text-sm sm:text-base">
+          ${formatPricePersian(appState.order.priceAmount)} تومان
         </div>
       `;
     }
 
     /**
-     * مدیریت وضعیت چک‌باکس «تاریخ تولد اصلا نمی‌دانم»
+     * فعال یا غیرفعال کردن فیلدهای تاریخ و ساعت تولد در صورت تیک زدن «تاریخ تولد اصلا نمی‌دانم»
      */
-    function toggleUnknownBirthDate(isUnknown) {
-      const birthDateInput = document.getElementById('bf-birthdate');
-      const birthTimeInput = document.getElementById('bf-birthtime');
-      const birthDateWrap = document.getElementById('bf-birthdate-wrapper');
-      const birthTimeWrap = document.getElementById('bf-birthtime-wrapper');
+    function toggleUnknownBirthDate(isChecked) {
+      appState.order.unknownBirthDate = Boolean(isChecked);
 
-      if (!birthDateInput || !birthTimeInput) return;
+      const dateInput = document.getElementById('bf-birthdate');
+      const timeInput = document.getElementById('bf-birthtime');
+      const dateWrap = document.getElementById('bf-birthdate-wrapper');
+      const timeWrap = document.getElementById('bf-birthtime-wrapper');
 
-      birthDateInput.disabled = isUnknown;
-      birthTimeInput.disabled = isUnknown;
+      if (dateInput && timeInput && dateWrap && timeWrap) {
+        dateInput.disabled = isChecked;
+        timeInput.disabled = isChecked;
 
-      if (isUnknown) {
-        birthDateInput.value = '';
-        birthTimeInput.value = '';
-        birthDateWrap.classList.add('opacity-50', 'bg-neutral-100');
-        birthTimeWrap.classList.add('opacity-50', 'bg-neutral-100');
-      } else {
-        birthDateWrap.classList.remove('opacity-50', 'bg-neutral-100');
-        birthTimeWrap.classList.remove('opacity-50', 'bg-neutral-100');
+        if (isChecked) {
+          dateInput.value = '';
+          timeInput.value = '';
+          dateWrap.classList.add('opacity-50', 'bg-neutral-100');
+          timeWrap.classList.add('opacity-50', 'bg-neutral-100');
+        } else {
+          dateWrap.classList.remove('opacity-50', 'bg-neutral-100');
+          timeWrap.classList.remove('opacity-50', 'bg-neutral-100');
+        }
+      }
+
+      if (appState.order.chartId) {
+        renderBirthFormSummary();
       }
     }
 
     /**
-     * ثبت فرم مرحله تاریخ تولد و انتقال به صفحه سبد خرید
+     * اعتبارسنجی و ثبت فرم مرحله ثبت تاریخ تولد و انتقال به صفحه سبد خرید
      */
     function handleBirthFormSubmit(event) {
       event.preventDefault();
 
-      const errorBox = document.getElementById('bf-error');
       const fullName = document.getElementById('bf-fullname').value.trim();
       const birthDate = document.getElementById('bf-birthdate').value.trim();
       const birthPlace = document.getElementById('bf-birthplace').value.trim();
       const birthTime = document.getElementById('bf-birthtime').value.trim();
       const email = document.getElementById('bf-email').value.trim();
       const phone = document.getElementById('bf-phone').value.trim();
-      const unknownBirthDate = document.getElementById('bf-unknown-birth').checked;
+      const unknownBirth = document.getElementById('bf-unknown-birth').checked;
+      const errorBox = document.getElementById('bf-error');
 
-      // اعتبارسنجی فیلدهای ضروری
       if (!fullName || !birthPlace || !email || !phone) {
-        errorBox.textContent = 'لطفاً فیلدهای ستاره‌دار (نام کامل، مکان تولد، ایمیل و شماره تماس) را تکمیل نمایید.';
+        errorBox.textContent = 'لطفاً نام کامل، مکان تولد، ایمیل و شماره تماس را تکمیل نمایید.';
         errorBox.classList.remove('hidden');
         return;
       }
 
-      if (!unknownBirthDate && !birthDate) {
-        errorBox.textContent = 'لطفاً تاریخ تولد (میلادی) را وارد کنید یا گزینه «تاریخ تولد اصلا نمی‌دانم» را فعال نمایید.';
+      if (!unknownBirth && !birthDate) {
+        errorBox.textContent = 'لطفاً تاریخ تولد (میلادی) را وارد کنید یا گزینه «تاریخ تولد اصلا نمی‌دانم» را انتخاب نمایید.';
+        errorBox.classList.remove('hidden');
+        return;
+      }
+
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        errorBox.textContent = 'لطفاً یک آدرس ایمیل معتبر وارد نمایید (ارسال فایل‌ها فقط از طریق ایمیل انجام می‌شود).';
         errorBox.classList.remove('hidden');
         return;
       }
 
       errorBox.classList.add('hidden');
 
-      appState.order.fullName = fullName;
-      appState.order.birthDate = unknownBirthDate ? 'نامشخص (استخراج از طریق پرسشنامه)' : birthDate;
-      appState.order.birthPlace = birthPlace;
-      appState.order.birthTime = unknownBirthDate ? 'نامشخص' : (birthTime || 'ثبت نشده');
-      appState.order.email = email;
-      appState.order.phone = phone;
-      appState.order.unknownBirthDate = unknownBirthDate;
+      appState.order.unknownBirthDate = unknownBirth;
+      appState.order.customer = {
+        fullName,
+        birthDate: unknownBirth ? 'نامشخص (استخراج از طریق پرسشنامه)' : birthDate,
+        birthPlace,
+        birthTime: unknownBirth ? 'نامشخص' : (birthTime || 'ثبت نشده'),
+        email,
+        phone
+      };
 
-      renderCartDetails();
+      renderCartPage();
       navigateTo('cart');
     }
 
     /**
-     * نمایش جزئیات چارت و قیمت انتخابی در صفحه سبد خرید
+     * رندر اطلاعات سفارش در صفحه سبد خرید
      */
-    function renderCartDetails() {
-      const container = document.getElementById('cart-order-details');
-      if (!container || !appState.order.chart || !appState.order.priceOption) return;
+    function renderCartPage() {
+      const box = document.getElementById('cart-order-details');
+      if (!box) return;
 
-      const { chart, priceOption, fullName, unknownBirthDate } = appState.order;
-      const planText = chart.prices.length > 1 ? ` - ${priceOption.label}` : '';
-      const waitNote = unknownBirthDate ? `${chart.waitTime} + ۲ روز (پرسشنامه)` : chart.waitTime;
+      const planText = appState.order.priceLabel ? ` (${appState.order.priceLabel})` : '';
+      const waitExtra = appState.order.unknownBirthDate ? ' + ۲ روز بابت پرسشنامه' : '';
 
-      container.innerHTML = `
+      box.innerHTML = `
         <div class="flex flex-wrap items-center justify-between gap-2 pb-3 border-b border-neutral-100">
           <div>
             <span class="text-xs text-neutral-500 block">مورد انتخابی شما:</span>
-            <strong class="text-base sm:text-lg text-black font-extrabold">${chart.title}${planText}</strong>
+            <strong class="text-base sm:text-lg font-extrabold text-black">${appState.order.chartTitle}${planText}</strong>
           </div>
           <div class="px-4 py-2 rounded-2xl bg-priceText text-white font-extrabold text-sm sm:text-base">
-            ${formatPricePersian(priceOption.amount)} تومان
+            ${formatPricePersian(appState.order.priceAmount)} تومان
           </div>
         </div>
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-2 text-xs text-neutral-700 pt-1">
-          <div>متقاضی: <strong class="text-black">${fullName}</strong></div>
-          <div>فرمت دریافت: <strong class="text-black">${chart.format}</strong></div>
-          <div>مدت انتظار: <strong class="text-black">${waitNote}</strong></div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs sm:text-sm text-neutral-700 pt-1">
+          <p>نام متقاضی: <strong class="text-black">${appState.order.customer.fullName}</strong></p>
+          <p>ایمیل دریافت: <strong class="text-black font-latin">${appState.order.customer.email}</strong></p>
+          <p>فرمت دریافت: <strong class="text-black">${appState.order.format}</strong></p>
+          <p>مدت انتظار: <strong class="text-black">${appState.order.waitTime}${waitExtra}</strong></p>
         </div>
       `;
     }
 
     /**
-     * باز و بسته کردن باکس منعطف قوانین و ضوابط تفسیر در سبد خرید
-     */
-    function toggleTermsBox() {
-      const box = document.getElementById('terms-accordion-box');
-      if (box) {
-        box.classList.toggle('hidden');
-      }
-    }
-
-    /**
-     * کپی شماره کارت با استفاده از document.execCommand('copy') سازگار با iFrame
+     * کپی شماره کارت در کلیپ‌بورد با روش سازگار با تمام مرورگرها و آیفریم‌ها
      */
     function copyCardNumber() {
       const cardEl = document.getElementById('bank-card-number');
       const labelEl = document.getElementById('copy-card-label');
-      if (!cardEl) return;
+      if (!cardEl || !labelEl) return;
 
       const cardText = cardEl.textContent.trim();
-      const tempInput = document.createElement('textarea');
-      tempInput.value = cardText;
-      tempInput.setAttribute('readonly', '');
-      tempInput.style.position = 'fixed';
-      tempInput.style.opacity = '0';
-      document.body.appendChild(tempInput);
-      tempInput.select();
 
       try {
+        const tempInput = document.createElement('textarea');
+        tempInput.value = cardText;
+        tempInput.setAttribute('readonly', '');
+        tempInput.style.position = 'fixed';
+        tempInput.style.opacity = '0';
+        document.body.appendChild(tempInput);
+        tempInput.select();
         document.execCommand('copy');
-        if (labelEl) {
-          labelEl.textContent = 'کپی شد!';
-          setTimeout(() => {
-            labelEl.textContent = 'کپی شماره کارت';
-          }, 2200);
-        }
-      } catch (err) {
-        console.error('Copy failed:', err);
-      } finally {
         document.body.removeChild(tempInput);
+
+        labelEl.textContent = 'کپی شد!';
+        setTimeout(() => {
+          labelEl.textContent = 'کپی شماره کارت';
+        }, 2000);
+      } catch (err) {
+        labelEl.textContent = 'شماره کارت انتخاب شد';
+        setTimeout(() => {
+          labelEl.textContent = 'کپی شماره کارت';
+        }, 2000);
       }
     }
 
     /**
-     * ثبت نهایی سفارش در صفحه سبد خرید
+     * باز و بسته کردن باکس منعطف قوانین و ضوابط تفسیر در صفحه سبد خرید
+     */
+    function toggleTermsBox() {
+      const box = document.getElementById('terms-accordion-box');
+      if (!box) return;
+      box.classList.toggle('hidden');
+    }
+
+    /**
+     * اعتبارسنجی و ثبت نهایی سفارش در صفحه سبد خرید
      */
     function handleFinalOrderSubmit(event) {
       event.preventDefault();
@@ -1543,29 +1627,30 @@
       const errorBox = document.getElementById('cart-error');
 
       if (!termsChecked) {
-        errorBox.textContent = 'لطفاً ابتدا چک‌باکس «قوانین و ضوابط تفسیر را می‌پذیرم» را تیک بزنید.';
+        errorBox.textContent = 'لطفاً ابتدا چک‌باکس «قوانین و ضوابط تفسیر را می‌پذیرم» را تایید نمایید.';
         errorBox.classList.remove('hidden');
         return;
       }
 
       if (!trackingCode || !paymentDate) {
-        errorBox.textContent = 'لطفاً شماره پیگیری و تاریخ پرداخت را به‌صورت کامل وارد نمایید.';
+        errorBox.textContent = 'لطفاً شماره پیگیری بانکی و تاریخ پرداخت را وارد نمایید.';
         errorBox.classList.remove('hidden');
         return;
       }
 
       errorBox.classList.add('hidden');
-
       appState.order.trackingCode = trackingCode;
       appState.order.paymentDate = paymentDate;
 
       const summaryEl = document.getElementById('order-success-summary');
-      if (summaryEl && appState.order.chart && appState.order.priceOption) {
+      if (summaryEl) {
+        const planText = appState.order.priceLabel ? ` (${appState.order.priceLabel})` : '';
         summaryEl.innerHTML = `
-          <div><span class="text-neutral-500">چارت انتخابی:</span> <strong class="text-black">${appState.order.chart.title}</strong></div>
-          <div><span class="text-neutral-500">مبلغ:</span> <strong class="text-black">${formatPricePersian(appState.order.priceOption.amount)} تومان</strong></div>
-          <div><span class="text-neutral-500">ایمیل ارسال تاییدیه:</span> <strong class="text-black font-latin">${appState.order.email}</strong></div>
-          <div><span class="text-neutral-500">شماره پیگیری:</span> <strong class="text-black font-latin">${trackingCode}</strong></div>
+          <p>سفارش ثبت‌شده: <strong>${appState.order.chartTitle}${planText}</strong></p>
+          <p>مبلغ پرداختی: <strong>${formatPricePersian(appState.order.priceAmount)} تومان</strong></p>
+          <p>شماره پیگیری: <strong class="font-latin">${trackingCode}</strong></p>
+          <p>تاریخ پرداخت: <strong>${paymentDate}</strong></p>
+          <p>ایمیل تایید و ارسال: <strong class="font-latin">${appState.order.customer.email}</strong></p>
         `;
       }
 
@@ -1573,154 +1658,159 @@
     }
 
     /**
-     * ریست فرم‌ها پس از اتمام سفارش و بازگشت به صفحه اصلی
+     * پاک‌سازی فرم‌ها پس از اتمام سفارش و بازگشت به صفحه اصلی
      */
     function resetAndGoHome() {
       const birthForm = document.getElementById('birth-details-form');
-      const payForm = document.getElementById('payment-confirm-form');
-      const termsCb = document.getElementById('cart-terms-checkbox');
+      const paymentForm = document.getElementById('payment-confirm-form');
+      const termsCheckbox = document.getElementById('cart-terms-checkbox');
       const termsBox = document.getElementById('terms-accordion-box');
 
       if (birthForm) birthForm.reset();
-      if (payForm) payForm.reset();
-      if (termsCb) termsCb.checked = false;
+      if (paymentForm) paymentForm.reset();
+      if (termsCheckbox) termsCheckbox.checked = false;
       if (termsBox) termsBox.classList.add('hidden');
 
       toggleUnknownBirthDate(false);
+
+      Object.keys(appState.selectedPriceByChart).forEach((key) => {
+        appState.selectedPriceByChart[key] = null;
+      });
+
+      renderCharts();
       navigateTo('home');
     }
 
     /**
-     * محاسبه دقیق نشان تولد بر اساس تاریخ شمسی و بازه‌های مشخص‌شده
+     * محاسبه دقیق نشان تولد بر اساس ماه و روز شمسی طبق بازه‌های تعریف‌شده
      */
     function getZodiacSignFromJalali(month, day) {
-      // ۲۹ اسفند تا ۳۰ فروردین -> Aries — قوچ
-      if ((month === 12 && day >= 29) || (month === 1 && day <= 30)) {
+      if ((month === 12 && day >= 29 && day <= 30) || (month === 1 && day >= 1 && day <= 30)) {
         return 'Aries — قوچ';
       }
-      // ۳۱ فروردین تا ۳۰ اردیبهشت -> Taurus — ثور
-      if ((month === 1 && day === 31) || (month === 2 && day <= 30)) {
+      if ((month === 1 && day === 31) || (month === 2 && day >= 1 && day <= 30)) {
         return 'Taurus — ثور';
       }
-      // ۳۱ اردیبهشت تا ۳۰ خرداد -> Gemini — دوقلو
-      if ((month === 2 && day === 31) || (month === 3 && day <= 30)) {
+      if ((month === 2 && day === 31) || (month === 3 && day >= 1 && day <= 30)) {
         return 'Gemini — دوقلو';
       }
-      // ۳۱ خرداد تا ۳۰ تیر -> Cancer — خرچنگ
-      if ((month === 3 && day === 31) || (month === 4 && day <= 30)) {
+      if ((month === 3 && day === 31) || (month === 4 && day >= 1 && day <= 30)) {
         return 'Cancer — خرچنگ';
       }
-      // ۳۱ تیر تا ۳۰ مرداد -> Leo — اسد
-      if ((month === 4 && day === 31) || (month === 5 && day <= 30)) {
+      if ((month === 4 && day === 31) || (month === 5 && day >= 1 && day <= 30)) {
         return 'Leo — اسد';
       }
-      // ۳۱ مرداد تا ۳۰ شهریور -> Virgo — خوشه
-      if ((month === 5 && day === 31) || (month === 6 && day <= 30)) {
+      if ((month === 5 && day === 31) || (month === 6 && day >= 1 && day <= 30)) {
         return 'Virgo — خوشه';
       }
-      // ۳۱ شهریور تا ۳۰ مهر -> Libra — ترازو
-      if ((month === 6 && day === 31) || (month === 7 && day <= 30)) {
+      if ((month === 6 && day === 31) || (month === 7 && day >= 1 && day <= 30)) {
         return 'Libra — ترازو';
       }
-      // ۱ آبان تا ۳۰ آبان -> Scorpio — عقرب
       if (month === 8 && day >= 1 && day <= 30) {
         return 'Scorpio — عقرب';
       }
-      // ۱ آذر تا ۳۰ آذر -> Sagittarius — کماندار
       if (month === 9 && day >= 1 && day <= 30) {
         return 'Sagittarius — کماندار';
       }
-      // ۱ دی تا ۳۰ دی -> Capricorn — جدی
       if (month === 10 && day >= 1 && day <= 30) {
         return 'Capricorn — جدی';
       }
-      // ۱ بهمن تا ۳۰ بهمن -> Aquarius — دلو
       if (month === 11 && day >= 1 && day <= 30) {
         return 'Aquarius — دلو';
       }
-      // ۱ اسفند تا ۲۸ اسفند -> Pisces — ماهی
       if (month === 12 && day >= 1 && day <= 28) {
         return 'Pisces — ماهی';
       }
-
       return null;
     }
 
     /**
-     * پارس کردن فرمت تاریخ شمسی (پشتیبانی از dd-mm-yyyy و yyyy/mm/dd و yy/mm/dd)
+     * نام ماه‌های شمسی برای نمایش خوانا در نتیجه
      */
-    function parseJalaliDateString(rawInput) {
-      const cleaned = toEnglishDigits(rawInput).trim();
-      const parts = cleaned.split(/[\/\-.\s]+/).filter(Boolean);
+    const JALALI_MONTH_NAMES = [
+      '', 'فروردین', 'اردیبهشت', 'خرداد', 'تیر', 'مرداد', 'شهریور',
+      'مهر', 'آبان', 'آذر', 'دی', 'بهمن', 'اسفند'
+    ];
 
-      if (parts.length !== 3) return null;
-
-      const p0 = parseInt(parts[0], 10);
-      const p1 = parseInt(parts[1], 10);
-      const p2 = parseInt(parts[2], 10);
-
-      if (Number.isNaN(p0) || Number.isNaN(p1) || Number.isNaN(p2)) return null;
-
-      let year, month, day;
-
-      // تشخیص ترتیب سال-ماه-روز یا روز-ماه-سال (مثلاً ۰۸-۰۳-۱۳۷۸ یا ۱۳۷۸/۰۳/۰۸ یا ۷۸/۰۳/۰۸)
-      if (parts[2].length === 4 || p2 > 31) {
-        day = p0;
-        month = p1;
-        year = p2;
-      } else {
-        year = p0;
-        month = p1;
-        day = p2;
+    /**
+     * پر کردن لیست‌های کشویی سال و روز شمسی در صفحه «تشخیص نشان تولد»
+     */
+    function initJalaliDropdowns() {
+      const yearSelect = document.getElementById('z-jalali-year');
+      if (yearSelect && yearSelect.options.length <= 1) {
+        for (let y = 1405; y >= 1310; y--) {
+          const opt = document.createElement('option');
+          opt.value = String(y);
+          opt.textContent = toPersianDigits(y);
+          yearSelect.appendChild(opt);
+        }
       }
-
-      if (month < 1 || month > 12) return null;
-
-      const maxDays = month <= 6 ? 31 : (month <= 11 ? 30 : 30);
-      if (day < 1 || day > maxDays) return null;
-
-      return { year, month, day };
+      updateJalaliDayOptions();
     }
 
     /**
-     * پردازش فرم «تشخیص نشان تولد» و نمایش نتیجه
+     * بروزرسانی تعداد روزهای مجاز ماه انتخاب‌شده (۳۱ روز برای نیمه اول سال و ۳۰ روز برای نیمه دوم)
+     */
+    function updateJalaliDayOptions() {
+      const monthSelect = document.getElementById('z-jalali-month');
+      const daySelect = document.getElementById('z-jalali-day');
+      if (!daySelect) return;
+
+      const selectedMonth = monthSelect ? parseInt(monthSelect.value, 10) : 0;
+      const previousDay = daySelect.value;
+      const maxDays = (!selectedMonth || selectedMonth <= 6) ? 31 : 30;
+
+      daySelect.innerHTML = '<option value="">روز</option>';
+      for (let d = 1; d <= maxDays; d++) {
+        const opt = document.createElement('option');
+        opt.value = String(d);
+        opt.textContent = toPersianDigits(d);
+        daySelect.appendChild(opt);
+      }
+
+      if (previousDay && parseInt(previousDay, 10) <= maxDays) {
+        daySelect.value = previousDay;
+      }
+    }
+
+    /**
+     * پردازش فرم «تشخیص نشان تولد» با تقویم کشویی شمسی و نمایش نتیجه
      */
     function handleZodiacSubmit(event) {
       event.preventDefault();
 
       const name = document.getElementById('z-name').value.trim();
       const contact = document.getElementById('z-contact').value.trim();
-      const rawDate = document.getElementById('z-jalali-date').value.trim();
+      const dayVal = document.getElementById('z-jalali-day').value;
+      const monthVal = document.getElementById('z-jalali-month').value;
+      const yearVal = document.getElementById('z-jalali-year').value;
       const errorBox = document.getElementById('zodiac-error');
 
-      if (!name || !contact || !rawDate) {
-        errorBox.textContent = 'لطفاً تمام فیلدهای ستاره‌دار (نام، ایمیل یا شماره تلفن و تاریخ تولد به شمسی) را تکمیل نمایید.';
+      if (!name || !contact || !dayVal || !monthVal || !yearVal) {
+        errorBox.textContent = 'لطفاً تمام فیلدهای ستاره‌دار (نام، ایمیل یا شماره تلفن و روز، ماه و سال تولد شمسی) را تکمیل نمایید.';
         errorBox.classList.remove('hidden');
         return;
       }
 
-      const parsed = parseJalaliDateString(rawDate);
-      if (!parsed) {
-        errorBox.textContent = 'فرمت تاریخ شمسی معتبر نیست. لطفاً به‌صورت ۰۸-۰۳-۱۳۷۸ یا ۱۳۷۸/۰۳/۰۸ وارد نمایید.';
-        errorBox.classList.remove('hidden');
-        return;
-      }
+      const day = parseInt(dayVal, 10);
+      const month = parseInt(monthVal, 10);
+      const year = parseInt(yearVal, 10);
 
-      const sign = getZodiacSignFromJalali(parsed.month, parsed.day);
+      const sign = getZodiacSignFromJalali(month, day);
       if (!sign) {
-        errorBox.textContent = 'تاریخ واردشده خارج از بازه معتبر تقویم شمسی است.';
+        errorBox.textContent = 'تاریخ انتخاب‌شده خارج از بازه معتبر تقویم شمسی است.';
         errorBox.classList.remove('hidden');
         return;
       }
 
       errorBox.classList.add('hidden');
 
-      const formattedMonth = toPersianDigits(String(parsed.month).padStart(2, '0'));
-      const formattedDay = toPersianDigits(String(parsed.day).padStart(2, '0'));
-      const formattedYear = toPersianDigits(String(parsed.year));
+      const formattedDay = toPersianDigits(String(day).padStart(2, '0'));
+      const monthName = JALALI_MONTH_NAMES[month] || toPersianDigits(String(month).padStart(2, '0'));
+      const formattedYear = toPersianDigits(String(year));
 
       document.getElementById('zr-greeting').textContent = `${name} عزیز، نتیجه محاسبه نشان تولد شما آماده است:`;
-      document.getElementById('zr-date-display').textContent = `تاریخ تولد شمسی ثبت‌شده: ${formattedDay}-${formattedMonth}-${formattedYear}`;
+      document.getElementById('zr-date-display').textContent = `تاریخ تولد شمسی ثبت‌شده: ${formattedDay} ${monthName} ${formattedYear}`;
       document.getElementById('zr-sign-name').textContent = sign;
 
       document.getElementById('zodiac-form-card').classList.add('hidden');
@@ -1733,6 +1823,7 @@
     function resetZodiacForm() {
       const form = document.getElementById('zodiac-form');
       if (form) form.reset();
+      updateJalaliDayOptions();
 
       document.getElementById('zodiac-result-card').classList.add('hidden');
       document.getElementById('zodiac-form-card').classList.remove('hidden');
@@ -1743,6 +1834,7 @@
      */
     window.addEventListener('DOMContentLoaded', () => {
       renderCharts();
+      initJalaliDropdowns();
       navigateTo('home');
     });
   </script>
