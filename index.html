@@ -51,9 +51,9 @@
         <div class="w-[21vw] sm:w-[12vw] md:w-[8.5vw] min-w-[5.25rem] max-w-[6.75rem] aspect-square rounded-full p-[3px] bg-gradient-to-tr from-brandActive via-forecastBlue to-brandLime shadow-sm">
           <img
             id="profile-image"
-            src="https://github.com/astralcoaching/Astralcoaching/blob/main/astral_coaching.jpeg?raw=true"
-            onerror="this.onerror=null; this.src='https://github.com/astralcoaching/Astralcoaching/blob/main/astral_coaching.jpeg?raw=true';"
-            alt="Astral Coaching"
+            src="https://placehold.co/256x256/160297/C0FE07?text=Astral"
+            onerror="this.onerror=null; this.src='https://placehold.co/256x256/FAFAFA/160297?text=AC';"
+            alt="پروفایل Astral Coaching"
             class="w-full h-full object-cover rounded-full bg-white border-2 border-white"
           />
         </div>
@@ -641,7 +641,7 @@
                 dir="ltr"
                 class="font-latin text-xl sm:text-2xl md:text-3xl font-black tracking-wider text-black select-all bg-cardBg px-5 py-3 rounded-2xl border border-neutral-200"
               >
-                6219-8619-0198-2735
+                6219-8619-0198-....
               </div>
 
               <button
@@ -730,8 +730,11 @@
         </div>
 
         <h2 class="text-xl sm:text-2xl font-extrabold text-black">
-          درخواست شما ثبت شد.
+          اسکرین شات صفحه را از طریق ایمیل ارسال کنید.
         </h2>
+        <p class="text-sm sm:text-base text-neutral-700 leading-relaxed">
+          ایمیل: <span dir="ltr">tachub.charts@gmail.com</span>
+        </p>
         <p class="text-sm sm:text-base text-neutral-700 leading-relaxed">
           تا ۵۰ دقیقه دیگر تایید نهایی ایمیل خواهد شد.
         </p>
@@ -1540,7 +1543,7 @@
      * ارسال اطلاعات کامل سفارش (مرحله ثبت تاریخ تولد و سبد خرید) به گوگل‌شیت
      */
     async function sendOrderToGoogleSheet(payload) {
-      if (!GOOGLE_SCRIPT_URL || GOOGLE_SCRIPT_URL === 'https://script.google.com/macros/s/AKfycbxQNp4Ix05v-KIevo6BRd3b0FTui_O73QqimQF9Umys80VDRX1i27MNuNi7boWu7IxI/exec') {
+      if (!GOOGLE_SCRIPT_URL || GOOGLE_SCRIPT_URL === 'YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE') {
         return;
       }
 
@@ -1617,6 +1620,12 @@
       if (summaryEl) {
         const planText = appState.order.priceLabel ? ` (${appState.order.priceLabel})` : '';
         summaryEl.innerHTML = `
+          <p>نام کامل: <strong>${appState.order.customer.fullName}</strong></p>
+          <p>تاریخ تولد: <strong class="font-latin">${appState.order.customer.birthDate}</strong></p>
+          <p>مکان تولد: <strong>${appState.order.customer.birthPlace}</strong></p>
+          <p>ساعت تولد: <strong>${appState.order.customer.birthTime}</strong></p>
+          <p>شماره تماس: <strong class="font-latin">${appState.order.customer.phone}</strong></p>
+          <p>ایمیل: <strong class="font-latin">${appState.order.customer.email}</strong></p>
           <p>سفارش ثبت‌شده: <strong>${appState.order.chartTitle}${planText}</strong></p>
           <p>مبلغ پرداختی: <strong>${formatPricePersian(appState.order.priceAmount)} تومان</strong></p>
           <p>شماره پیگیری: <strong class="font-latin">${trackingCode}</strong></p>
