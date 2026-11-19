@@ -440,12 +440,13 @@ class="w-full bg-transparent text-sm text-black outline-none placeholder:text-ne
 <!-- تاریخ تولد میلادی -->
 <div id="bf-birthdate-wrapper" class="bg-white rounded-2xl border border-neutral-200 p-3.5 focus-within:border-brandActive transition-colors">
 <label for="bf-birthdate" class="block text-xs font-bold text-neutral-700 mb-1.5">
-تاریخ تولد (میلادی):
+تاریخ تولد (میلادی): <span class="text-red-500">*</span>
 </label>
 <input
 id="bf-birthdate"
 type="text"
 dir="ltr"
+required
 placeholder="YYYY-MM-DD (مثلاً 1999-05-29)"
 class="w-full bg-transparent text-sm text-black text-right font-latin outline-none placeholder:text-neutral-400"
 />
@@ -468,11 +469,12 @@ class="w-full bg-transparent text-sm text-black outline-none placeholder:text-ne
 <!-- ساعت تولد -->
 <div class="bg-white rounded-2xl border border-neutral-200 p-3.5 focus-within:border-brandActive transition-colors">
 <label for="bf-birthtime" class="block text-xs font-bold text-neutral-700 mb-1.5">
-ساعت تولد:
+ساعت تولد: <span class="text-red-500">*</span>
 </label>
 <input
 id="bf-birthtime"
 type="text"
+required
 placeholder="مثلاً ۱۴:۳۰ یا ۲:۳۰ بعدازظهر"
 class="w-full bg-transparent text-sm text-black outline-none placeholder:text-neutral-400"
 />
@@ -525,14 +527,13 @@ class="w-5 h-5 rounded accent-brandActive cursor-pointer"
 <p class="text-xs text-neutral-600 leading-relaxed pr-8">
 اگر ساعت تولد خودتان را نمی‌دانید از طریق پرسشنامه چارت شما استخراج خواهد شد و ۲ روز به زمان انتظار شما اضافه می‌شود.
 </p>
-</div>
-
-<!-- چک‌باکس قوانین و ضوابط تفسیر (بدون باکس، منتقل‌شده از سبد خرید با لینک ثابت) -->
+<!-- چک‌باکس قوانین و ضوابط تفسیر (بدون باکس، الزامی با ستاره قرمز و لینک ثابت) -->
 <div class="relative pt-1 space-y-3">
 <div class="flex items-start gap-3">
 <input
 id="birth-terms-checkbox"
 type="checkbox"
+required
 class="w-4 h-4 mt-0.5 rounded accent-brandActive cursor-pointer shrink-0"
 />
 <div class="text-xs leading-relaxed text-black">
@@ -543,6 +544,7 @@ class="underline underline-offset-4 font-semibold text-black hover:text-brandAct
 >
 قوانین و ضوابط تفسیر را می‌پذیرم
 </button>
+<span class="text-red-500 font-bold mr-0.5" title="تایید قوانین الزامی است">*</span>
 <span class="text-neutral-500 mr-1">(برای مطالعه قوانین کلیک کنید)</span>
 </div>
 </div>
@@ -593,7 +595,7 @@ class="w-full sm:w-44 h-12 rounded-2xl bg-white border border-neutral-300 text-b
 type="submit"
 class="w-full sm:w-48 h-12 rounded-2xl bg-brandLime text-black font-extrabold text-sm hover:bg-brandActive hover:text-white transition-all duration-200 shadow-sm active:scale-95 cursor-pointer"
 >
-ثبت نهایی
+مرحله بعدی (سبد خرید)
 </button>
 </div>
 </form>
@@ -989,6 +991,12 @@ class="flex-1 py-3 px-4 rounded-2xl bg-cardBg border border-neutral-200 text-bla
 
 <!-- ==================== اسکریپت کامل منطق برنامه ==================== -->
 <script>
+/**
+* لینک وب‌اپ Google Apps Script برای ثبت خودکار سفارش‌ها در گوگل‌شیت
+* پس از Deploy کردن اسکریپت در گوگل‌شیت، لینک Web App را جایگزین متن زیر کنید
+*/
+const GOOGLE_SCRIPT_URL = 'YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE';
+
 /**
 * تبدیل اعداد انگلیسی به اعداد فارسی
 */
@@ -1388,7 +1396,7 @@ summaryBox.innerHTML = `
 <div class="space-y-1">
 <span class="text-xs text-neutral-500 block">چارت انتخاب‌شده:</span>
 <strong class="text-base sm:text-lg font-extrabold text-black">${appState.order.chartTitle}${planText}</strong>
-<p class="text-xs text-neutral-600">فرمت دریافت: ${appState.order.format} | مدت انتظار ${appState.order.waitTime}${waitExtra}</p>
+<p class="text-xs text-neutral-600">فرمت دریافت: ${appState.order.format} | مدت انتظار: ${appState.order.waitTime}${waitExtra}</p>
 </div>
 <div class="px-4 py-2 rounded-2xl bg-priceText text-white font-extrabold text-sm sm:text-base">
 ${formatPricePersian(appState.order.priceAmount)} تومان
@@ -1423,8 +1431,8 @@ const unknownBirth = document.getElementById('bf-unknown-birth').checked;
 const termsChecked = document.getElementById('birth-terms-checkbox').checked;
 const errorBox = document.getElementById('bf-error');
 
-if (!fullName || !birthDate || !birthPlace || !email || !phone) {
-errorBox.textContent = 'لطفاً نام کامل، تاریخ تولد (میلادی)، مکان تولد، ایمیل و شماره تماس را تکمیل نمایید.';
+if (!fullName || !birthDate || !birthPlace || (!unknownBirth && !birthTime) || !email || !phone) {
+errorBox.textContent = 'لطفاً تمام فیلدهای الزامی (ستاره‌دار) را تکمیل نمایید. در صورتی که ساعت تولد خود را نمی‌دانید، گزینه «ساعت تولد اصلا نمی‌دانم» را تیک بزنید.';
 errorBox.classList.remove('hidden');
 return;
 }
@@ -1529,14 +1537,38 @@ box.classList.toggle('hidden');
 }
 
 /**
-* اعتبارسنجی و ثبت نهایی سفارش در صفحه سبد خرید
+* ارسال اطلاعات کامل سفارش (مرحله ثبت تاریخ تولد و سبد خرید) به گوگل‌شیت
 */
-function handleFinalOrderSubmit(event) {
+async function sendOrderToGoogleSheet(payload) {
+if (!GOOGLE_SCRIPT_URL || GOOGLE_SCRIPT_URL === 'https://script.google.com/macros/s/AKfycbxwqeX6OhafhkMmM6mjcJetv6CH8e_Dwt1CEG8txK4eVJ0NGGi-5sY5xjSKwLrMT_uI/exec
+') {
+return;
+}
+
+try {
+await fetch(GOOGLE_SCRIPT_URL, {
+method: 'POST',
+mode: 'no-cors',
+headers: {
+'Content-Type': 'text/plain;charset=utf-8'
+},
+body: JSON.stringify(payload)
+});
+} catch (error) {
+console.error('خطا در ارسال اطلاعات به گوگل‌شیت:', error);
+}
+}
+
+/**
+* اعتبارسنجی و ثبت نهایی سفارش در صفحه سبد خرید و ارسال به گوگل‌شیت
+*/
+async function handleFinalOrderSubmit(event) {
 event.preventDefault();
 
 const trackingCode = document.getElementById('cart-tracking-code').value.trim();
 const paymentDate = document.getElementById('cart-payment-date').value.trim();
 const errorBox = document.getElementById('cart-error');
+const submitBtn = event.target.querySelector('button[type="submit"]');
 
 if (!trackingCode || !paymentDate) {
 errorBox.textContent = 'لطفاً شماره پیگیری بانکی و تاریخ پرداخت را وارد نمایید.';
@@ -1547,6 +1579,40 @@ return;
 errorBox.classList.add('hidden');
 appState.order.trackingCode = trackingCode;
 appState.order.paymentDate = paymentDate;
+
+const waitExtra = appState.order.unknownBirthDate ? ' + ۲ روز بابت پرسشنامه' : '';
+const sheetPayload = {
+chartTitle: appState.order.chartTitle || '',
+priceLabel: appState.order.priceLabel || 'تک‌پلن',
+priceAmount: appState.order.priceAmount || 0,
+format: appState.order.format || '',
+waitTime: `${appState.order.waitTime || ''}${waitExtra}`,
+fullName: appState.order.customer.fullName || '',
+birthDate: appState.order.customer.birthDate || '',
+birthPlace: appState.order.customer.birthPlace || '',
+birthTime: appState.order.customer.birthTime || '',
+unknownBirthTime: appState.order.unknownBirthDate ? 'بله' : 'خیر',
+email: appState.order.customer.email || '',
+phone: appState.order.customer.phone || '',
+termsAccepted: 'بله',
+trackingCode: trackingCode,
+paymentDate: paymentDate
+};
+
+const originalBtnText = submitBtn ? submitBtn.textContent : 'ثبت نهایی';
+if (submitBtn) {
+submitBtn.disabled = true;
+submitBtn.textContent = 'در حال ثبت نهایی...';
+}
+
+try {
+await sendOrderToGoogleSheet(sheetPayload);
+} finally {
+if (submitBtn) {
+submitBtn.disabled = false;
+submitBtn.textContent = originalBtnText;
+}
+}
 
 const summaryEl = document.getElementById('order-success-summary');
 if (summaryEl) {
