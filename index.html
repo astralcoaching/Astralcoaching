@@ -1,1748 +1,1748 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>تحلیل و تفسیر کاربردی | Astral Coaching</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>تحلیل و تفسیر کاربردی | Astral Coaching</title>
 
-  <!-- بارگذاری فونت فارسی Vazirmatn و فونت انگلیسی Inter -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+<!-- بارگذاری فونت فارسی Vazirmatn و فونت انگلیسی Inter -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
 
-  <!-- بارگذاری Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
+<!-- بارگذاری Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- پیکربندی رنگ‌ها و فونت‌های اختصاصی پروژه در Tailwind -->
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['Vazirmatn', 'Inter', 'system-ui', 'sans-serif'],
-            latin: ['Inter', 'Vazirmatn', 'sans-serif'],
-          },
-          colors: {
-            brandLime: '#C0FE07',
-            brandActive: '#160297',
-            priceText: '#1800AD',
-            priceBg: '#DDECFB',
-            forecastBlue: '#5477FF',
-            cardBg: '#FAFAFA',
-            zodiacBg: '#F3F2F2',
-          },
-        },
-      },
-    };
-  </script>
+<!-- پیکربندی رنگ‌ها و فونت‌های اختصاصی پروژه در Tailwind -->
+<script>
+tailwind.config = {
+theme: {
+extend: {
+fontFamily: {
+sans: ['Vazirmatn', 'Inter', 'system-ui', 'sans-serif'],
+latin: ['Inter', 'Vazirmatn', 'sans-serif'],
+},
+colors: {
+brandLime: '#C0FE07',
+brandActive: '#160297',
+priceText: '#1800AD',
+priceBg: '#DDECFB',
+forecastBlue: '#5477FF',
+cardBg: '#FAFAFA',
+zodiacBg: '#F3F2F2',
+},
+},
+},
+};
+</script>
 </head>
 <!-- لینک عکس پس‌زمینه سایت: برای تغییر پس‌زمینه، آدرس تصویر خود را داخل url('...') قرار دهید -->
 <body
-  class="bg-white text-black font-sans antialiased selection:bg-brandLime selection:text-black overflow-x-hidden min-h-screen flex flex-col"
-  style="background-image: url('https://placehold.co/1920x1080/FFFFFF/FFFFFF?text=+'); background-size: cover; background-position: center; background-repeat: no-repeat; background-attachment: fixed;"
+class="bg-white text-black font-sans antialiased selection:bg-brandLime selection:text-black overflow-x-hidden min-h-screen flex flex-col"
+style="background-image: url('https://placehold.co/1920x1080/FFFFFF/FFFFFF?text=+'); background-size: cover; background-position: center; background-repeat: no-repeat; background-attachment: fixed;"
 >
 
-  <!-- ==================== هدر ثابت و بخش پروفایل / ناوبری اصلی (وسط‌چین و مینیمال) ==================== -->
-  <header class="w-full bg-white border-b border-neutral-100">
-    <div class="w-[94%] max-w-5xl mx-auto px-3 sm:px-6 lg:px-8 pt-9 sm:pt-12 pb-8 sm:pb-10 flex flex-col items-center text-center">
-
-      <!-- جایگاه عکس پروفایل (برای تغییر تصویر، لینک عکس خود را در src قرار دهید) -->
-      <div class="relative mb-5">
-        <div class="w-[21vw] sm:w-[12vw] md:w-[8.5vw] min-w-[5.25rem] max-w-[6.75rem] aspect-square rounded-full p-[3px] bg-gradient-to-tr from-brandActive via-forecastBlue to-brandLime shadow-sm">
-          <img
-            id="profile-image"
-            src="https://placehold.co/256x256/160297/C0FE07?text=Astral"
-            onerror="this.onerror=null; this.src='https://placehold.co/256x256/FAFAFA/160297?text=AC';"
-            alt="پروفایل Astral Coaching"
-            class="w-full h-full object-cover rounded-full bg-white border-2 border-white"
-          />
-        </div>
-      </div>
-
-      <!-- تیتر اصلی سایت -->
-      <h1 class="text-lg sm:text-2xl md:text-[1.75rem] font-extrabold text-black tracking-tight mb-5 text-center leading-snug">
-        تحلیل و تفسیر کاربردی
-        <span class="text-neutral-300 font-light mx-2">|</span>
-        <span class="font-latin text-brandActive tracking-normal">Astral Coaching</span>
-      </h1>
-
-      <!-- دکمه‌های شبکه‌های اجتماعی (کانال بله، کانال تلگرام و صفحه اینستاگرام) -->
-      <div class="flex flex-wrap items-center justify-center gap-2.5 sm:gap-3 mb-9">
-        <a
-          href="https://ble.ir/astral_coaching"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="inline-flex items-center justify-center gap-2 px-4 sm:px-5 py-2.5 rounded-full bg-cardBg hover:bg-brandActive hover:text-white border border-neutral-200/80 hover:border-brandActive text-black text-xs sm:text-sm font-semibold transition-all duration-200 active:scale-95"
-        >
-          <!-- آیکون پیام‌رسان بله -->
-          <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
-          </svg>
-          <span>کانال بله</span>
-        </a>
-
-        <a
-          href="https://t.me/astral_coaching"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="inline-flex items-center justify-center gap-2 px-4 sm:px-5 py-2.5 rounded-full bg-cardBg hover:bg-brandActive hover:text-white border border-neutral-200/80 hover:border-brandActive text-black text-xs sm:text-sm font-semibold transition-all duration-200 active:scale-95"
-        >
-          <!-- آیکون تلگرام -->
-          <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" />
-          </svg>
-          <span>کانال تلگرام</span>
-        </a>
-
-        <a
-          href="https://instagram.com/astral_coaching"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="inline-flex items-center justify-center gap-2 px-4 sm:px-5 py-2.5 rounded-full bg-cardBg hover:bg-brandActive hover:text-white border border-neutral-200/80 hover:border-brandActive text-black text-xs sm:text-sm font-semibold transition-all duration-200 active:scale-95"
-        >
-          <!-- آیکون اینستاگرام -->
-          <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <rect width="20" height="20" x="2" y="2" rx="5" ry="5" stroke-linecap="round" stroke-linejoin="round" />
-            <path stroke-linecap="round" stroke-linejoin="round" d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" />
-            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke-linecap="round" stroke-linejoin="round" />
-          </svg>
-          <span>صفحه اینستاگرام</span>
-        </a>
-      </div>
-
-      <!-- چهار دکمه مستطیلی با گوشه‌های گرد کنار هم (وسط‌چین) -->
-      <nav aria-label="منوی اصلی" class="w-full max-w-3xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-2.5 sm:gap-3">
-        <button
-          type="button"
-          data-nav="home"
-          onclick="navigateTo('home')"
-          class="nav-btn px-4 py-3.5 rounded-2xl font-bold text-sm sm:text-base transition-all duration-200 border border-brandActive bg-brandActive text-white shadow-sm cursor-pointer active:scale-95"
-        >
-          صفحه اصلی
-        </button>
-
-        <button
-          type="button"
-          data-nav="podcasts"
-          onclick="navigateTo('podcasts')"
-          class="nav-btn px-4 py-3.5 rounded-2xl font-bold text-sm sm:text-base transition-all duration-200 border border-neutral-200 bg-cardBg text-black hover:border-brandActive shadow-sm cursor-pointer active:scale-95"
-        >
-          خرید پادکست
-        </button>
-
-        <button
-          type="button"
-          data-nav="zodiac"
-          onclick="navigateTo('zodiac')"
-          class="nav-btn px-4 py-3.5 rounded-2xl font-bold text-sm sm:text-base transition-all duration-200 border border-neutral-200 bg-cardBg text-black hover:border-brandActive shadow-sm cursor-pointer active:scale-95"
-        >
-          تشخیص نشان تولد
-        </button>
-
-        <button
-          type="button"
-          data-nav="consultation"
-          onclick="openConsultationModal(this)"
-          class="nav-btn px-4 py-3.5 rounded-2xl font-bold text-sm sm:text-base transition-all duration-200 border border-neutral-200 bg-cardBg text-black hover:border-brandActive shadow-sm cursor-pointer active:scale-95"
-        >
-          مشاوره خرید
-        </button>
-      </nav>
-    </div>
-  </header>
-
-  <!-- ==================== بدنه اصلی (تغییر داینامیک صفحات) ==================== -->
-  <main class="flex-1 w-[94%] max-w-6xl mx-auto px-2 sm:px-6 lg:px-8 py-8 sm:py-12">
-
-    <!-- ========================================================================= -->
-    <!-- بخش ۱: صفحه اصلی (طراحی مینیمال حرفه‌ای، وسط‌چین کادر، معرفی راست‌چین)    -->
-    <!-- ========================================================================= -->
-    <section id="view-home" class="page-view w-full max-w-5xl mx-auto flex flex-col items-center">
-
-      <!-- بخش جملات معرفی: بدون باکس، کل کادر در وسط صفحه و نوشته‌ها کاملاً راست‌چین -->
-      <div class="w-full max-w-3xl mx-auto px-4 sm:px-8 pt-6 sm:pt-10 pb-6 sm:pb-8">
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-y-5 sm:gap-x-14 items-start">
-
-          <!-- ستون اول: دو جمله زیر هم (راست‌چین) -->
-          <div class="w-full flex flex-col items-start text-right space-y-5">
-            <p class="group flex items-start gap-3 text-xs sm:text-sm md:text-[15px] font-medium text-neutral-800 leading-7 text-right">
-              <span class="mt-1 w-5 h-5 rounded-full bg-priceBg text-brandActive flex items-center justify-center shrink-0 transition-transform duration-200 group-hover:scale-110">
-                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-                </svg>
-              </span>
-              <span>تفسیر الگو‌های فردی، پتانسیل شما در مسیر زندگی</span>
-            </p>
-
-            <p class="group flex items-start gap-3 text-xs sm:text-sm md:text-[15px] font-medium text-neutral-800 leading-7 text-right">
-              <span class="mt-1 w-5 h-5 rounded-full bg-priceBg text-brandActive flex items-center justify-center shrink-0 transition-transform duration-200 group-hover:scale-110">
-                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-                </svg>
-              </span>
-              <span>تفسیر کاربردی و غیر معنوی</span>
-            </p>
-          </div>
-
-          <!-- ستون دوم در کنار آن: دو جمله زیر هم (راست‌چین) -->
-          <div class="w-full flex flex-col items-start text-right space-y-5">
-            <p class="group flex items-start gap-3 text-xs sm:text-sm md:text-[15px] font-medium text-neutral-800 leading-7 text-right">
-              <span class="mt-1 w-5 h-5 rounded-full bg-priceBg text-brandActive flex items-center justify-center shrink-0 transition-transform duration-200 group-hover:scale-110">
-                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-                </svg>
-              </span>
-              <span>شناخت ابعاد بیشتر بخش‌های مختلف زندگی</span>
-            </p>
-
-            <p class="group flex items-start gap-3 text-xs sm:text-sm md:text-[15px] font-medium text-neutral-800 leading-7 text-right">
-              <span class="mt-1 w-5 h-5 rounded-full bg-priceBg text-brandActive flex items-center justify-center shrink-0 transition-transform duration-200 group-hover:scale-110">
-                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-                </svg>
-              </span>
-              <span>شناخت ابعاد شخصیتی و فردی</span>
-            </p>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- بخش مستطیل‌های افقی: قرارگیری پایین‌تر با فضای تنفس مینیمال و وسط‌چین -->
-      <div class="w-full mt-20 sm:mt-28 md:mt-32 pt-12 sm:pt-16 border-t border-neutral-100 flex flex-col items-center space-y-8">
-
-        <!-- تیتر وسط‌چین مینیمال بالای مستطیل‌ها -->
-        <div class="flex flex-col items-center text-center space-y-3">
-          <span class="w-12 h-1 rounded-full bg-brandLime"></span>
-          <h2 class="text-base sm:text-lg md:text-xl font-extrabold text-black text-center tracking-tight">
-            تفسیرهایی که منتشر شده
-          </h2>
-          <p class="text-[11px] sm:text-xs text-neutral-400 font-medium">
-            برای مشاهده سایر تفسیرها به صورت افقی اسکرول کنید
-          </p>
-        </div>
-
-        <!-- ردیف افقی و قابل اسکرول افقی شامل ۸ مستطیل ۴:۵ با لینک و کاور قابل ویرایش -->
-        <!-- راهنما: برای هر کارت، لینک مقصد را در href و لینک تصویر کاور را در src جایگزین کنید -->
-        <div
-          id="published-carousel"
-          class="w-full flex flex-nowrap items-stretch gap-3.5 sm:gap-5 overflow-x-auto pb-6 pt-2 px-1 scroll-smooth snap-x snap-mandatory"
-        >
-          <!-- مستطیل ۱ -->
-          <a
-            href="https://t.me/astral_coaching"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="group snap-start shrink-0 w-[38%] sm:w-[24%] md:w-[19%] lg:w-[15.5%] rounded-2xl overflow-hidden bg-cardBg border border-neutral-200/70 hover:border-brandActive/50 shadow-[0_2px_10px_rgba(0,0,0,0.03)] hover:shadow-[0_12px_24px_rgba(22,2,151,0.09)] hover:-translate-y-1.5 transition-all duration-300 block"
-          >
-            <div class="aspect-[4/5] w-full overflow-hidden bg-neutral-100">
-              <img
-                src="https://placehold.co/400x500/FAFAFA/160297?text=Cover+1"
-                onerror="this.onerror=null; this.src='https://placehold.co/400x500/F3F2F2/000000?text=1';"
-                alt="کاور تفسیر منتشر شده ۱"
-                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-              />
-            </div>
-          </a>
-
-          <!-- مستطیل ۲ -->
-          <a
-            href="https://t.me/astral_coaching"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="group snap-start shrink-0 w-[38%] sm:w-[24%] md:w-[19%] lg:w-[15.5%] rounded-2xl overflow-hidden bg-cardBg border border-neutral-200/70 hover:border-brandActive/50 shadow-[0_2px_10px_rgba(0,0,0,0.03)] hover:shadow-[0_12px_24px_rgba(22,2,151,0.09)] hover:-translate-y-1.5 transition-all duration-300 block"
-          >
-            <div class="aspect-[4/5] w-full overflow-hidden bg-neutral-100">
-              <img
-                src="https://placehold.co/400x500/DDECFB/1800AD?text=Cover+2"
-                onerror="this.onerror=null; this.src='https://placehold.co/400x500/F3F2F2/000000?text=2';"
-                alt="کاور تفسیر منتشر شده ۲"
-                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-              />
-            </div>
-          </a>
-
-          <!-- مستطیل ۳ -->
-          <a
-            href="https://t.me/astral_coaching"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="group snap-start shrink-0 w-[38%] sm:w-[24%] md:w-[19%] lg:w-[15.5%] rounded-2xl overflow-hidden bg-cardBg border border-neutral-200/70 hover:border-brandActive/50 shadow-[0_2px_10px_rgba(0,0,0,0.03)] hover:shadow-[0_12px_24px_rgba(22,2,151,0.09)] hover:-translate-y-1.5 transition-all duration-300 block"
-          >
-            <div class="aspect-[4/5] w-full overflow-hidden bg-neutral-100">
-              <img
-                src="https://placehold.co/400x500/F3F2F2/160297?text=Cover+3"
-                onerror="this.onerror=null; this.src='https://placehold.co/400x500/F3F2F2/000000?text=3';"
-                alt="کاور تفسیر منتشر شده ۳"
-                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-              />
-            </div>
-          </a>
-
-          <!-- مستطیل ۴ -->
-          <a
-            href="https://t.me/astral_coaching"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="group snap-start shrink-0 w-[38%] sm:w-[24%] md:w-[19%] lg:w-[15.5%] rounded-2xl overflow-hidden bg-cardBg border border-neutral-200/70 hover:border-brandActive/50 shadow-[0_2px_10px_rgba(0,0,0,0.03)] hover:shadow-[0_12px_24px_rgba(22,2,151,0.09)] hover:-translate-y-1.5 transition-all duration-300 block"
-          >
-            <div class="aspect-[4/5] w-full overflow-hidden bg-neutral-100">
-              <img
-                src="https://placehold.co/400x500/C0FE07/160297?text=Cover+4"
-                onerror="this.onerror=null; this.src='https://placehold.co/400x500/F3F2F2/000000?text=4';"
-                alt="کاور تفسیر منتشر شده ۴"
-                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-              />
-            </div>
-          </a>
-
-          <!-- مستطیل ۵ -->
-          <a
-            href="https://t.me/astral_coaching"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="group snap-start shrink-0 w-[38%] sm:w-[24%] md:w-[19%] lg:w-[15.5%] rounded-2xl overflow-hidden bg-cardBg border border-neutral-200/70 hover:border-brandActive/50 shadow-[0_2px_10px_rgba(0,0,0,0.03)] hover:shadow-[0_12px_24px_rgba(22,2,151,0.09)] hover:-translate-y-1.5 transition-all duration-300 block"
-          >
-            <div class="aspect-[4/5] w-full overflow-hidden bg-neutral-100">
-              <img
-                src="https://placehold.co/400x500/FAFAFA/1800AD?text=Cover+5"
-                onerror="this.onerror=null; this.src='https://placehold.co/400x500/F3F2F2/000000?text=5';"
-                alt="کاور تفسیر منتشر شده ۵"
-                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-              />
-            </div>
-          </a>
-
-          <!-- مستطیل ۶ -->
-          <a
-            href="https://t.me/astral_coaching"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="group snap-start shrink-0 w-[38%] sm:w-[24%] md:w-[19%] lg:w-[15.5%] rounded-2xl overflow-hidden bg-cardBg border border-neutral-200/70 hover:border-brandActive/50 shadow-[0_2px_10px_rgba(0,0,0,0.03)] hover:shadow-[0_12px_24px_rgba(22,2,151,0.09)] hover:-translate-y-1.5 transition-all duration-300 block"
-          >
-            <div class="aspect-[4/5] w-full overflow-hidden bg-neutral-100">
-              <img
-                src="https://placehold.co/400x500/DDECFB/160297?text=Cover+6"
-                onerror="this.onerror=null; this.src='https://placehold.co/400x500/F3F2F2/000000?text=6';"
-                alt="کاور تفسیر منتشر شده ۶"
-                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-              />
-            </div>
-          </a>
-
-          <!-- مستطیل ۷ -->
-          <a
-            href="https://t.me/astral_coaching"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="group snap-start shrink-0 w-[38%] sm:w-[24%] md:w-[19%] lg:w-[15.5%] rounded-2xl overflow-hidden bg-cardBg border border-neutral-200/70 hover:border-brandActive/50 shadow-[0_2px_10px_rgba(0,0,0,0.03)] hover:shadow-[0_12px_24px_rgba(22,2,151,0.09)] hover:-translate-y-1.5 transition-all duration-300 block"
-          >
-            <div class="aspect-[4/5] w-full overflow-hidden bg-neutral-100">
-              <img
-                src="https://placehold.co/400x500/F3F2F2/1800AD?text=Cover+7"
-                onerror="this.onerror=null; this.src='https://placehold.co/400x500/F3F2F2/000000?text=7';"
-                alt="کاور تفسیر منتشر شده ۷"
-                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-              />
-            </div>
-          </a>
-
-          <!-- مستطیل ۸ -->
-          <a
-            href="https://t.me/astral_coaching"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="group snap-start shrink-0 w-[38%] sm:w-[24%] md:w-[19%] lg:w-[15.5%] rounded-2xl overflow-hidden bg-cardBg border border-neutral-200/70 hover:border-brandActive/50 shadow-[0_2px_10px_rgba(0,0,0,0.03)] hover:shadow-[0_12px_24px_rgba(22,2,151,0.09)] hover:-translate-y-1.5 transition-all duration-300 block"
-          >
-            <div class="aspect-[4/5] w-full overflow-hidden bg-neutral-100">
-              <img
-                src="https://placehold.co/400x500/C0FE07/1800AD?text=Cover+8"
-                onerror="this.onerror=null; this.src='https://placehold.co/400x500/F3F2F2/000000?text=8';"
-                alt="کاور تفسیر منتشر شده ۸"
-                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-              />
-            </div>
-          </a>
-        </div>
-      </div>
-
-    </section>
-
-    <!-- ========================================================================= -->
-    <!-- بخش ۲: صفحه خرید پادکست و چارت‌ها                                         -->
-    <!-- ========================================================================= -->
-    <section id="view-podcasts" class="page-view hidden space-y-6">
-      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-2 border-b border-neutral-100">
-        <div>
-          <h2 class="text-xl sm:text-2xl font-extrabold text-black">
-            خرید پادکست و تحلیل چارت‌ها
-          </h2>
-          <p class="text-sm text-neutral-600 mt-1">
-            چارت مورد نظر خود را انتخاب کرده و روی دکمه «ثبت خرید» کلیک کنید.
-          </p>
-        </div>
-        <button
-          type="button"
-          onclick="navigateTo('home')"
-          class="self-start sm:self-auto px-4 py-2 rounded-2xl bg-cardBg border border-neutral-200 text-sm font-semibold text-black hover:bg-brandActive hover:text-white transition-colors cursor-pointer"
-        >
-          بازگشت به صفحه اصلی
-        </button>
-      </div>
-
-      <!-- کانتینر رندر داینامیک باکس‌های افقی چارت‌ها -->
-      <div id="charts-list" class="space-y-6"></div>
-    </section>
-
-    <!-- ========================================================================= -->
-    <!-- بخش ۳: مرحله ثبت تاریخ تولد (مرحله اول خرید)                               -->
-    <!-- ========================================================================= -->
-    <section id="view-birth-form" class="page-view hidden">
-      <div class="max-w-3xl mx-auto">
-
-        <!-- نوار نمایش مراحل خرید -->
-        <div class="flex items-center justify-center gap-2 sm:gap-4 mb-8 text-xs sm:text-sm font-bold">
-          <span class="px-3.5 py-1.5 rounded-full bg-cardBg text-neutral-500 border border-neutral-200">۱. انتخاب چارت</span>
-          <span class="text-neutral-300">←</span>
-          <span class="px-3.5 py-1.5 rounded-full bg-brandActive text-white shadow-sm">۲. ثبت تاریخ تولد</span>
-          <span class="text-neutral-300">←</span>
-          <span class="px-3.5 py-1.5 rounded-full bg-cardBg text-neutral-500 border border-neutral-200">۳. سبد خرید</span>
-        </div>
-
-        <!-- خلاصه چارت انتخاب‌شده -->
-        <div id="birth-form-summary" class="mb-6 p-4 sm:p-5 rounded-3xl bg-cardBg border border-neutral-200 flex flex-wrap items-center justify-between gap-3">
-          <!-- توسط جاوااسکریپت پر می‌شود -->
-        </div>
-
-        <!-- کارت فرم ثبت اطلاعات -->
-        <div class="bg-cardBg border border-neutral-200 rounded-3xl p-5 sm:p-8 shadow-sm">
-          <h2 class="text-xl sm:text-2xl font-extrabold text-black mb-6">
-            مرحله ثبت تاریخ تولد
-          </h2>
-
-          <form id="birth-details-form" onsubmit="handleBirthFormSubmit(event)" novalidate class="space-y-5">
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
-
-              <!-- نام کامل -->
-              <div class="bg-white rounded-2xl border border-neutral-200 p-3.5 focus-within:border-brandActive transition-colors">
-                <label for="bf-fullname" class="block text-xs font-bold text-neutral-700 mb-1.5">
-                  نام کامل: <span class="text-red-500">*</span>
-                </label>
-                <input
-                  id="bf-fullname"
-                  type="text"
-                  required
-                  placeholder="نام و نام خانوادگی خود را وارد کنید"
-                  class="w-full bg-transparent text-sm text-black outline-none placeholder:text-neutral-400"
-                />
-              </div>
-
-              <!-- تاریخ تولد میلادی -->
-              <div id="bf-birthdate-wrapper" class="bg-white rounded-2xl border border-neutral-200 p-3.5 focus-within:border-brandActive transition-colors">
-                <label for="bf-birthdate" class="block text-xs font-bold text-neutral-700 mb-1.5">
-                  تاریخ تولد (میلادی):
-                </label>
-                <input
-                  id="bf-birthdate"
-                  type="text"
-                  dir="ltr"
-                  placeholder="YYYY-MM-DD (مثلاً 1999-05-29)"
-                  class="w-full bg-transparent text-sm text-black text-right font-latin outline-none placeholder:text-neutral-400"
-                />
-              </div>
-
-              <!-- مکان تولد -->
-              <div class="bg-white rounded-2xl border border-neutral-200 p-3.5 focus-within:border-brandActive transition-colors">
-                <label for="bf-birthplace" class="block text-xs font-bold text-neutral-700 mb-1.5">
-                  مکان تولد: <span class="text-red-500">*</span>
-                </label>
-                <input
-                  id="bf-birthplace"
-                  type="text"
-                  required
-                  placeholder="شهر و کشور محل تولد"
-                  class="w-full bg-transparent text-sm text-black outline-none placeholder:text-neutral-400"
-                />
-              </div>
-
-              <!-- ساعت تولد -->
-              <div class="bg-white rounded-2xl border border-neutral-200 p-3.5 focus-within:border-brandActive transition-colors">
-                <label for="bf-birthtime" class="block text-xs font-bold text-neutral-700 mb-1.5">
-                  ساعت تولد:
-                </label>
-                <input
-                  id="bf-birthtime"
-                  type="text"
-                  placeholder="مثلاً ۱۴:۳۰ یا ۲:۳۰ بعدازظهر"
-                  class="w-full bg-transparent text-sm text-black outline-none placeholder:text-neutral-400"
-                />
-              </div>
-
-              <!-- ایمیل -->
-              <div class="bg-white rounded-2xl border border-neutral-200 p-3.5 focus-within:border-brandActive transition-colors">
-                <label for="bf-email" class="block text-xs font-bold text-neutral-700 mb-1.5">
-                  ایمیل: <span class="text-red-500">*</span>
-                </label>
-                <input
-                  id="bf-email"
-                  type="email"
-                  dir="ltr"
-                  required
-                  placeholder="example@email.com"
-                  class="w-full bg-transparent text-sm text-black text-right font-latin outline-none placeholder:text-neutral-400"
-                />
-              </div>
-
-              <!-- شماره تماس -->
-              <div class="bg-white rounded-2xl border border-neutral-200 p-3.5 focus-within:border-brandActive transition-colors">
-                <label for="bf-phone" class="block text-xs font-bold text-neutral-700 mb-1.5">
-                  شماره تماس: <span class="text-red-500">*</span>
-                </label>
-                <input
-                  id="bf-phone"
-                  type="tel"
-                  dir="ltr"
-                  required
-                  placeholder="09123456789"
-                  class="w-full bg-transparent text-sm text-black text-right font-latin outline-none placeholder:text-neutral-400"
-                />
-              </div>
-            </div>
-
-            <!-- باکس گزینه «ساعت تولد اصلا نمی‌دانم» -->
-            <div class="bg-white rounded-2xl border border-neutral-200 p-4 space-y-2">
-              <label class="flex items-center gap-3 cursor-pointer select-none">
-                <input
-                  id="bf-unknown-birth"
-                  type="checkbox"
-                  onchange="toggleUnknownBirthDate(this.checked)"
-                  class="w-5 h-5 rounded accent-brandActive cursor-pointer"
-                />
-                <span class="text-sm font-bold text-black">
-                  ساعت تولد اصلا نمی‌دانم.
-                </span>
-              </label>
-              <p class="text-xs text-neutral-600 leading-relaxed pr-8">
-                اگر ساعت تولد خودتان را نمی‌دانید از طریق پرسشنامه چارت شما استخراج خواهد شد و ۲ روز به زمان انتظار شما اضافه می‌شود.
-              </p>
-            </div>
-
-            <!-- چک‌باکس قوانین و ضوابط تفسیر (بدون باکس، منتقل‌شده از سبد خرید با لینک ثابت) -->
-            <div class="relative pt-1 space-y-3">
-              <div class="flex items-start gap-3">
-                <input
-                  id="birth-terms-checkbox"
-                  type="checkbox"
-                  class="w-4 h-4 mt-0.5 rounded accent-brandActive cursor-pointer shrink-0"
-                />
-                <div class="text-xs leading-relaxed text-black">
-                  <button
-                    type="button"
-                    onclick="toggleTermsBox()"
-                    class="underline underline-offset-4 font-semibold text-black hover:text-brandActive transition-colors text-right cursor-pointer"
-                  >
-                    قوانین و ضوابط تفسیر را می‌پذیرم
-                  </button>
-                  <span class="text-neutral-500 mr-1">(برای مطالعه قوانین کلیک کنید)</span>
-                </div>
-              </div>
-
-              <!-- باکس منعطف و رلتیو نمایش متن قوانین (چینش صفحه را به هم نمی‌ریزد) -->
-              <div
-                id="terms-accordion-box"
-                class="hidden relative w-full rounded-2xl bg-white border border-neutral-200 p-4 sm:p-5 text-xs sm:text-sm text-black font-normal leading-7 space-y-2.5 transition-all"
-              >
-                <p>
-                  «خدمات ما در زمینه تحلیل چارت‌ها و الگوهای فردی بر اساس چارت تولد (نه نشان تولد) است؛ برای ارتقا آگاهی و شناخت بیشتر، پتانسیل، فرصت و چالش‌های احتمالی در زمینه‌های عاطفی، اجتماعی، شخصیت و پیش‌بینی الگوهای تکرارپذیر و احتمالی می‌باشد.
-                </p>
-                <p>
-                  هدف این بررسی پیشگویی و طالع‌بینی سرنوشت از پیش تعیین شده نیست.
-                </p>
-                <p>
-                  ما معتقدیم شرایط بیرونی؛ مانند تاثیرات محیطی می‌توانند از طریق تفسیر چارت‌ها بررسی شوند، الگوهای تکرارپذیر شفاف‌تر شوند و در نتیجه اتفاقات تکرارپذیر و قابل پیش‌بینی مشخص شوند؛ اما در نهایت عاملیت فردی همچنان پابرجاست و شما مسئول تصمیم‌گیری‌های خود هستید.
-                </p>
-                <p>
-                  زمان پادکست‌ها در چارت طلائی، برلیان و الماس حداقل ۳۰ دقیقه می‌باشد و امکان طرح پرسش تا ۴۸ ساعت وجود دارد.
-                </p>
-                <p>
-                  زمان انتظار بدون احتساب روز جمعه می‌باشد.
-                </p>
-                <p>
-                  دریافت پادکست‌ها و چارت‌ها تنها از طریق ایمیل ممکن است.
-                </p>
-                <p>
-                  مورد انتخابی بعد از پرداخت قابل تغییر نیست و هزینه پرداخت شده قابل استرداد نمی‌باشد؛ لذا در انتخاب خود دقت فرمایید.»
-                </p>
-              </div>
-            </div>
-
-            <!-- باکس خطای اعتبارسنجی -->
-            <div id="bf-error" class="hidden p-3.5 rounded-2xl bg-red-50 border border-red-200 text-red-700 text-xs sm:text-sm font-medium"></div>
-
-            <!-- دکمه‌های مرحله قبلی و مرحله بعدی -->
-            <div class="flex flex-col-reverse sm:flex-row items-center justify-between gap-3 pt-3">
-              <button
-                type="button"
-                onclick="navigateTo('podcasts')"
-                class="w-full sm:w-44 h-12 rounded-2xl bg-white border border-neutral-300 text-black font-bold text-sm hover:bg-brandActive hover:text-white hover:border-brandActive transition-all duration-200 active:scale-95 cursor-pointer"
-              >
-                مرحله قبلی
-              </button>
-
-              <button
-                type="submit"
-                class="w-full sm:w-48 h-12 rounded-2xl bg-brandLime text-black font-extrabold text-sm hover:bg-brandActive hover:text-white transition-all duration-200 shadow-sm active:scale-95 cursor-pointer"
-              >
-                مرحله بعدی (سبد خرید)
-              </button>
-            </div>
-          </form>
-        </div>
-      </div>
-    </section>
-
-    <!-- ========================================================================= -->
-    <!-- بخش ۴: صفحه سبد خرید و ثبت نهایی پرداخت                                   -->
-    <!-- ========================================================================= -->
-    <section id="view-cart" class="page-view hidden">
-      <div class="max-w-3xl mx-auto">
-
-        <!-- نوار نمایش مراحل خرید -->
-        <div class="flex items-center justify-center gap-2 sm:gap-4 mb-8 text-xs sm:text-sm font-bold">
-          <span class="px-3.5 py-1.5 rounded-full bg-cardBg text-neutral-500 border border-neutral-200">۱. انتخاب چارت</span>
-          <span class="text-neutral-300">←</span>
-          <span class="px-3.5 py-1.5 rounded-full bg-cardBg text-neutral-500 border border-neutral-200">۲. ثبت تاریخ تولد</span>
-          <span class="text-neutral-300">←</span>
-          <span class="px-3.5 py-1.5 rounded-full bg-brandActive text-white shadow-sm">۳. سبد خرید</span>
-        </div>
-
-        <div class="bg-cardBg border border-neutral-200 rounded-3xl p-5 sm:p-8 shadow-sm space-y-6">
-          <h2 class="text-xl sm:text-2xl font-extrabold text-black">
-            سبد خرید و تکمیل پرداخت
-          </h2>
-
-          <!-- باکس مورد انتخابی و قیمت -->
-          <div id="cart-order-details" class="bg-white rounded-2xl border border-neutral-200 p-5 space-y-3">
-            <!-- توسط جاوااسکریپت رندر می‌شود -->
-          </div>
-
-          <!-- مستطیل شماره کارت (بزرگ، بولد و قابل کپی) -->
-          <div class="bg-white rounded-2xl border-2 border-neutral-200 p-5 sm:p-6 text-center space-y-3">
-            <p class="text-xs font-semibold text-neutral-500">
-              مبلغ سفارش را به شماره کارت زیر واریز نمایید:
-            </p>
-
-            <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
-              <!-- شماره کارت با فونت بزرگ و بولد -->
-              <div
-                id="bank-card-number"
-                dir="ltr"
-                class="font-latin text-xl sm:text-2xl md:text-3xl font-black tracking-wider text-black select-all bg-cardBg px-5 py-3 rounded-2xl border border-neutral-200"
-              >
-                6219-8619-0198-....
-              </div>
-
-              <button
-                type="button"
-                id="copy-card-btn"
-                onclick="copyCardNumber()"
-                class="inline-flex items-center justify-center gap-2 px-4 py-3 rounded-2xl bg-priceBg text-priceText hover:bg-brandActive hover:text-white font-bold text-xs sm:text-sm transition-all duration-200 active:scale-95 cursor-pointer"
-              >
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
-                </svg>
-                <span id="copy-card-label">کپی شماره کارت</span>
-              </button>
-            </div>
-
-            <p class="text-sm font-bold text-black pt-1">
-              نام صاحب کارت: <span class="text-brandActive">تیموری</span>
-            </p>
-          </div>
-
-          <!-- فرم شماره پیگیری و تاریخ پرداخت -->
-          <form id="payment-confirm-form" onsubmit="handleFinalOrderSubmit(event)" novalidate class="space-y-4">
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div class="bg-white rounded-2xl border border-neutral-200 p-3.5 focus-within:border-brandActive transition-colors">
-                <label for="cart-tracking-code" class="block text-xs font-bold text-neutral-700 mb-1.5">
-                  شماره پیگیری: <span class="text-red-500">*</span>
-                </label>
-                <input
-                  id="cart-tracking-code"
-                  type="text"
-                  dir="ltr"
-                  required
-                  placeholder="شماره پیگیری رسید بانکی"
-                  class="w-full bg-transparent text-sm text-black text-right font-latin outline-none placeholder:text-neutral-400"
-                />
-              </div>
-
-              <div class="bg-white rounded-2xl border border-neutral-200 p-3.5 focus-within:border-brandActive transition-colors">
-                <label for="cart-payment-date" class="block text-xs font-bold text-neutral-700 mb-1.5">
-                  تاریخ پرداخت: <span class="text-red-500">*</span>
-                </label>
-                <input
-                  id="cart-payment-date"
-                  type="text"
-                  required
-                  placeholder="مثلاً ۱۴۰۵/۰۸/۲۸"
-                  class="w-full bg-transparent text-sm text-black outline-none placeholder:text-neutral-400"
-                />
-              </div>
-            </div>
-
-            <!-- باکس خطای سبد خرید -->
-            <div id="cart-error" class="hidden p-3.5 rounded-2xl bg-red-50 border border-red-200 text-red-700 text-xs sm:text-sm font-medium"></div>
-
-            <!-- دکمه‌های مرحله قبلی و ثبت نهایی -->
-            <div class="flex flex-col-reverse sm:flex-row items-center justify-between gap-3 pt-2">
-              <button
-                type="button"
-                onclick="navigateTo('birth-form')"
-                class="w-full sm:w-44 h-12 rounded-2xl bg-white border border-neutral-300 text-black font-bold text-sm hover:bg-brandActive hover:text-white hover:border-brandActive transition-all duration-200 active:scale-95 cursor-pointer"
-              >
-                مرحله قبلی
-              </button>
-
-              <button
-                type="submit"
-                class="w-full sm:w-52 h-12 rounded-2xl bg-brandLime text-black font-extrabold text-sm hover:bg-brandActive hover:text-white transition-all duration-200 shadow-sm active:scale-95 cursor-pointer"
-              >
-                ثبت نهایی
-              </button>
-            </div>
-          </form>
-        </div>
-      </div>
-    </section>
-
-    <!-- ========================================================================= -->
-    <!-- بخش ۵: پیام موفقیت ثبت سفارش                                              -->
-    <!-- ========================================================================= -->
-    <section id="view-order-success" class="page-view hidden">
-      <div class="max-w-xl mx-auto bg-cardBg border border-neutral-200 rounded-3xl p-8 sm:p-10 text-center space-y-5 shadow-sm">
-        <div class="w-16 h-16 mx-auto rounded-full bg-brandLime flex items-center justify-center text-black shadow-sm">
-          <svg class="w-9 h-9" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-          </svg>
-        </div>
-
-        <h2 class="text-xl sm:text-2xl font-extrabold text-black">
-          درخواست شما ثبت شد.
-        </h2>
-        <p class="text-sm sm:text-base text-neutral-700 leading-relaxed">
-          تا ۵۰ دقیقه دیگر تایید نهایی ایمیل خواهد شد.
-        </p>
-
-        <div id="order-success-summary" class="bg-white rounded-2xl border border-neutral-200 p-4 text-xs sm:text-sm text-right space-y-1.5">
-          <!-- جزئیات خلاصه سفارش -->
-        </div>
-
-        <div class="pt-2">
-          <button
-            type="button"
-            onclick="resetAndGoHome()"
-            class="px-7 py-3 rounded-2xl bg-brandActive text-white font-bold text-sm hover:bg-brandLime hover:text-black transition-all duration-200 active:scale-95 cursor-pointer"
-          >
-            بازگشت به صفحه اصلی
-          </button>
-        </div>
-      </div>
-    </section>
-
-    <!-- ========================================================================= -->
-    <!-- بخش ۶: صفحه تشخیص نشان تولد (پالت رنگی #C0FE07، #F3F2F2، #160297)          -->
-    <!-- ========================================================================= -->
-    <section id="view-zodiac" class="page-view hidden">
-      <div class="max-w-2xl mx-auto">
-
-        <!-- فرم ورودی تشخیص نشان تولد -->
-        <div id="zodiac-form-card" class="bg-zodiacBg rounded-3xl p-6 sm:p-9 border border-neutral-200/80 shadow-sm space-y-6">
-          <div class="space-y-1.5">
-            <span class="inline-block px-3 py-1 rounded-full bg-brandActive text-white text-xs font-bold">
-              تقویم شمسی
-            </span>
-            <h2 class="text-xl sm:text-2xl font-extrabold text-brandActive">
-              تشخیص نشان تولد
-            </h2>
-            <p class="text-xs sm:text-sm text-neutral-700">
-              اطلاعات زیر را وارد کنید تا نشان خورشیدی تولد شما محاسبه شود.
-            </p>
-          </div>
-
-          <form id="zodiac-form" onsubmit="handleZodiacSubmit(event)" novalidate class="space-y-4">
-            <!-- نام -->
-            <div class="bg-white rounded-2xl border border-neutral-200 p-4 focus-within:border-brandActive transition-colors">
-              <label for="z-name" class="flex items-center gap-1 text-xs sm:text-sm font-bold text-black mb-1.5">
-                <span>نام</span>
-                <span class="text-red-600 text-[10px] leading-none" title="تکمیل این بخش الزامی است">*</span>
-              </label>
-              <input
-                id="z-name"
-                type="text"
-                required
-                placeholder="نام خود را وارد کنید"
-                class="w-full bg-transparent text-sm text-black outline-none placeholder:text-neutral-400"
-              />
-            </div>
-
-            <!-- ایمیل یا شماره تلفن -->
-            <div class="bg-white rounded-2xl border border-neutral-200 p-4 focus-within:border-brandActive transition-colors">
-              <label for="z-contact" class="flex items-center gap-1 text-xs sm:text-sm font-bold text-black mb-1.5">
-                <span>ایمیل یا شماره تلفن</span>
-                <span class="text-red-600 text-[10px] leading-none" title="تکمیل این بخش الزامی است">*</span>
-              </label>
-              <input
-                id="z-contact"
-                type="text"
-                dir="ltr"
-                required
-                placeholder="example@email.com یا 09123456789"
-                class="w-full bg-transparent text-sm text-black text-right font-latin outline-none placeholder:text-neutral-400"
-              />
-            </div>
-
-            <!-- تاریخ تولد به شمسی (تقویم کشویی روز، ماه، سال) -->
-            <div class="bg-white rounded-2xl border border-neutral-200 p-4 focus-within:border-brandActive transition-colors">
-              <label class="flex items-center gap-1 text-xs sm:text-sm font-bold text-black mb-2.5">
-                <span>تاریخ تولد به شمسی</span>
-                <span class="text-red-600 text-[10px] leading-none" title="تکمیل این بخش الزامی است">*</span>
-              </label>
-
-              <div class="grid grid-cols-3 gap-2.5 sm:gap-3">
-                <!-- انتخاب روز -->
-                <div class="relative">
-                  <select
-                    id="z-jalali-day"
-                    required
-                    aria-label="روز تولد شمسی"
-                    class="w-full appearance-none rounded-xl bg-zodiacBg/70 border border-neutral-200 px-3 py-2.5 text-xs sm:text-sm font-semibold text-black outline-none focus:border-brandActive focus:bg-white transition-colors cursor-pointer"
-                  >
-                    <option value="">روز</option>
-                  </select>
-                  <svg class="pointer-events-none absolute left-2.5 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-neutral-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
-                  </svg>
-                </div>
-
-                <!-- انتخاب ماه -->
-                <div class="relative">
-                  <select
-                    id="z-jalali-month"
-                    required
-                    aria-label="ماه تولد شمسی"
-                    onchange="updateJalaliDayOptions()"
-                    class="w-full appearance-none rounded-xl bg-zodiacBg/70 border border-neutral-200 px-3 py-2.5 text-xs sm:text-sm font-semibold text-black outline-none focus:border-brandActive focus:bg-white transition-colors cursor-pointer"
-                  >
-                    <option value="">ماه</option>
-                    <option value="1">فروردین</option>
-                    <option value="2">اردیبهشت</option>
-                    <option value="3">خرداد</option>
-                    <option value="4">تیر</option>
-                    <option value="5">مرداد</option>
-                    <option value="6">شهریور</option>
-                    <option value="7">مهر</option>
-                    <option value="8">آبان</option>
-                    <option value="9">آذر</option>
-                    <option value="10">دی</option>
-                    <option value="11">بهمن</option>
-                    <option value="12">اسفند</option>
-                  </select>
-                  <svg class="pointer-events-none absolute left-2.5 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-neutral-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
-                  </svg>
-                </div>
-
-                <!-- انتخاب سال -->
-                <div class="relative">
-                  <select
-                    id="z-jalali-year"
-                    required
-                    aria-label="سال تولد شمسی"
-                    class="w-full appearance-none rounded-xl bg-zodiacBg/70 border border-neutral-200 px-3 py-2.5 text-xs sm:text-sm font-semibold text-black outline-none focus:border-brandActive focus:bg-white transition-colors cursor-pointer"
-                  >
-                    <option value="">سال</option>
-                  </select>
-                  <svg class="pointer-events-none absolute left-2.5 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-neutral-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
-                  </svg>
-                </div>
-              </div>
-            </div>
-
-            <!-- باکس نمایش خطا -->
-            <div id="zodiac-error" class="hidden p-3.5 rounded-2xl bg-red-50 border border-red-200 text-red-700 text-xs sm:text-sm font-medium"></div>
-
-            <!-- دکمه مرحله بعدی -->
-            <div class="flex flex-col-reverse sm:flex-row items-center justify-between gap-3 pt-2">
-              <button
-                type="button"
-                onclick="navigateTo('home')"
-                class="w-full sm:w-40 h-12 rounded-2xl bg-white border border-neutral-300 text-black font-bold text-sm hover:bg-brandActive hover:text-white hover:border-brandActive transition-all duration-200 active:scale-95 cursor-pointer"
-              >
-                بازگشت
-              </button>
-
-              <button
-                type="submit"
-                class="w-full sm:w-48 h-12 rounded-2xl bg-brandLime text-black font-extrabold text-sm hover:bg-brandActive hover:text-white transition-all duration-200 shadow-sm active:scale-95 cursor-pointer"
-              >
-                مرحله بعدی
-              </button>
-            </div>
-          </form>
-        </div>
-
-        <!-- کارت نمایش نتیجه نشان تولد -->
-        <div id="zodiac-result-card" class="hidden bg-zodiacBg rounded-3xl p-6 sm:p-10 border border-neutral-200 shadow-sm text-center space-y-6">
-          <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brandLime text-black text-xs font-extrabold">
-            نتیجه تشخیص نشان تولد
-          </div>
-
-          <div class="space-y-2">
-            <p id="zr-greeting" class="text-sm sm:text-base text-neutral-700 font-medium"></p>
-            <p id="zr-date-display" class="text-xs sm:text-sm text-neutral-600"></p>
-          </div>
-
-          <!-- نمایش اصلی نشان با فرمت دقیق خواسته‌شده -->
-          <div class="bg-brandActive text-white rounded-3xl py-8 px-6 shadow-md space-y-2">
-            <span class="block text-xs text-brandLime font-semibold">نشان تولد شما:</span>
-            <div id="zr-sign-name" class="text-2xl sm:text-3xl md:text-4xl font-black tracking-wide">
-              <!-- مثال: Aries — قوچ -->
-            </div>
-          </div>
-
-          <div class="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2">
-            <button
-              type="button"
-              onclick="resetZodiacForm()"
-              class="w-full sm:w-auto px-6 h-12 rounded-2xl bg-white border border-neutral-300 text-black font-bold text-sm hover:bg-brandActive hover:text-white transition-all active:scale-95 cursor-pointer"
-            >
-              بررسی تاریخ جدید
-            </button>
-
-            <button
-              type="button"
-              onclick="navigateTo('podcasts')"
-              class="w-full sm:w-auto px-6 h-12 rounded-2xl bg-brandLime text-black font-extrabold text-sm hover:bg-brandActive hover:text-white transition-all shadow-sm active:scale-95 cursor-pointer"
-            >
-              مشاهده و خرید چارت‌های تخصصی
-            </button>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-  </main>
-
-  <!-- ==================== فوتر ==================== -->
-  <footer class="w-full border-t border-neutral-100 bg-white mt-auto">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6 text-center text-xs text-neutral-500">
-      تحلیل و تفسیر کاربردی | <span class="font-latin font-semibold text-brandActive">Astral Coaching</span>
-    </div>
-  </footer>
-
-  <!-- ==================== مودال مشاوره خرید (به‌جای alert) ==================== -->
-  <div
-    id="consultation-modal"
-    class="fixed inset-0 z-50 hidden items-center justify-center bg-black/50 backdrop-blur-xs p-4"
-    onclick="closeConsultationModal(event)"
-  >
-    <div
-      class="bg-white rounded-3xl max-w-md w-full p-6 sm:p-8 text-center space-y-5 shadow-2xl border border-neutral-100"
-      onclick="event.stopPropagation()"
-    >
-      <div class="w-14 h-14 mx-auto rounded-2xl bg-priceBg text-priceText flex items-center justify-center">
-        <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-        </svg>
-      </div>
-
-      <h3 class="text-lg font-extrabold text-black">
-        مشاوره خرید
-      </h3>
-
-      <p class="text-sm sm:text-base text-neutral-700 leading-relaxed font-medium">
-        صفحه در حال توسعه است، از طریق دایرکت اقدام کنید.
-      </p>
-
-      <div class="flex flex-col sm:flex-row gap-2.5 pt-2">
-        <a
-          href="https://t.me/astral_coaching"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="flex-1 py-3 px-4 rounded-2xl bg-brandLime text-black font-bold text-sm hover:bg-brandActive hover:text-white transition-colors"
-        >
-          ارتباط در تلگرام
-        </a>
-        <button
-          type="button"
-          onclick="closeConsultationModal()"
-          class="flex-1 py-3 px-4 rounded-2xl bg-cardBg border border-neutral-200 text-black font-bold text-sm hover:bg-brandActive hover:text-white transition-colors cursor-pointer"
-        >
-          متوجه شدم
-        </button>
-      </div>
-    </div>
-  </div>
-
-  <!-- ==================== اسکریپت کامل منطق برنامه ==================== -->
-  <script>
-    /**
-     * تبدیل اعداد انگلیسی به اعداد فارسی
-     */
-    function toPersianDigits(value) {
-      const persianDigits = ['۰', '۱', '۲', '۳', '۴', '۵', '۶', '۷', '۸', '۹'];
-      return String(value).replace(/\d/g, (digit) => persianDigits[Number(digit)]);
-    }
-
-    /**
-     * قالب‌بندی قیمت با جداکننده هزارگان و اعداد فارسی
-     */
-    function formatPricePersian(amount) {
-      const formatted = Number(amount).toLocaleString('en-US');
-      return toPersianDigits(formatted);
-    }
-
-    /**
-     * داده‌های کامل هر ۶ چارت در بخش خرید پادکست
-     */
-    const CHARTS_DATA = [
-      {
-        id: 'basic',
-        title: 'چارت پایه (تولد)',
-        waitTime: 'یک هفته',
-        format: 'کتابچه',
-        badges: ['چارت تولد'],
-        items: [
-          'تحلیل ویژگی شخصیت و ویژگی‌های فردی که کدام استعداد و کدام عادت دردسرساز شماست',
-          'تحلیل روابط، یادگیری، ارتباط با خواهر و برادر، تصمیم‌گیری برای بررسی مشکلات و روش‌های حل',
-          'تحلیل الگوی احساسات، نحوه بروز احساسات و عواطف، واکنش‌های عاطفی، رابطه با مادر برای شناخت بیشتر جهت حل تعارض‌ها',
-          'پیدا کردن زیبایی‌های فردی، ارزش و اعتماد بنفس شخصی، روابط عاطفی',
-          'بررسی خشم، انگیزه، رقابت و کشمکش شما برای ابراز خشم بهتر و دسترسی به انگیزه درونی صحیح',
-          'بررسی شانس، مهاجرت، عقاید فردی، تحصیلات عالیه و تخصصی برای رشد فرصت‌ها',
-          'تحلیل چگونگی مسئولیت و محدودیت‌ها، نظم فردی، رابطه با پدر، محدودیت‌های تجربه شده تا مسئولیت‌ها و محدودیت‌های درست، شناخته شوند',
-          'تحلیل الگوی ارتباطات، رفت و آمدهای کوتاه، لوازم ارتباطی و نحوه ارتباطات شما، اسناد قراردادها، تحصیل و مهاجرت و ارتباط شما با مسائل قانونی و حقوقی که چطور می‌توانند در این زمینه به حل مشکلات شما کمک کنند'
-        ],
-        prices: [
-          { id: 'single', label: '', amount: 1112000 }
-        ]
-      },
-      {
-        id: 'bronze',
-        title: 'چارت برنز (ماهانه)',
-        waitTime: 'یک هفته',
-        format: 'پادکست',
-        badges: ['چارت Lunar Return'],
-        items: [
-          'بررسی دغدغه و تمرکز اصلی ۳۰ روز آینده',
-          'تجربیات عاطفی و چالش و فرصت‌های عاطفی و فشارهای عاطفی ۳۰ روز آینده',
-          'انگیزه و عملکرد، وضعیت مالی، اجتماعی و درآمدی',
-          'روتین و کارهای روزمره، عادات سالم و چالش‌برانگیز که در ۳۰ روز آینده مهم هستند، موضوعات مربوط به خانواده و تغییرات در خانه',
-          'فرصت‌ها و چالش‌های ۳۰ روز آینده'
-        ],
-        prices: [
-          { id: '30d', label: 'اشتراک ۳۰ روزه', amount: 769000 },
-          { id: '3m', label: 'اشتراک ۳ ماهه', amount: 1757000 }
-        ]
-      },
-      {
-        id: 'silver',
-        title: 'چارت نقره‌ای',
-        waitTime: '۵ روز',
-        format: 'کتابچه',
-        badges: ['چارت تولد', 'ژوپیتر ترانزیتی', 'سترن ترانزیتی'],
-        items: [
-          'تحلیل ویژگی شخصیت و ویژگی‌های فردی که کدام استعداد و کدام عادت دردسرساز است',
-          'تحلیل روابط، یادگیری، ارتباط با خواهر و برادر، تصمیم‌گیری برای بررسی رشد بهتر',
-          'تحلیل الگوی ارتباطات، رفت و آمدهای کوتاه، لوازم ارتباطی و نحوه ارتباطات شما، اسناد قراردادها، تحصیل و مهاجرت و ارتباط شما با مسائل قانونی و حقوقی که چطور می‌توانند در این زمینه به حل مشکلات شما کمک کنند'
-        ],
-        forecastTitle: 'پیش‌بینی الگوهای زمانی:',
-        forecastItems: [
-          'بستر شانس و فرصت‌ها تا یک سال آینده در کدام بخش از زندگی شماست؟',
-          'محدودیت‌ها و مسئولیت‌های شما و قسمت سخت‌گیرانه تا یک سال آینده در کدام بعد از زندگی شماست؟'
-        ],
-        prices: [
-          { id: 'single', label: '', amount: 1239000 }
-        ]
-      },
-      {
-        id: 'gold',
-        title: 'چارت طلائی',
-        waitTime: '۵ روز',
-        format: 'پادکست',
-        badges: ['چارت سیناستری', 'چارت Secondary Progressed', 'چارت Composite', 'سترن ترانزیتی'],
-        items: [
-          'چارت تولد پارتنر + چارت تولد شما',
-          'الگوهای عاطفی، نیاز عاطفی شما',
-          'بررسی مسیر رابطه، الگوهای رابطه، چالش‌ها',
-          'پتانسیل تعهد و ازدواج در رابطه',
-          'بررسی هماهنگی شخصیت، ابراز علاقه، روتین زندگی، هیجانات، سلیقه شخصی و زبان علاقه',
-          'سازگاری طرز فکر، احساسات، خانواده شما با پارتنر',
-          'بررسی پتانسیل بازگشت ارتباط پایان یافته',
-          'جایگاه فرد در زندگی شما و بررسی الگوهای آینده رابطه'
-        ],
-        forecastTitle: 'پیش‌بینی الگوهای زمانی:',
-        forecastItems: [
-          'بررسی تغییرات تا یک سال آینده از بعد مسئولیت و محدودیت‌ها',
-          'آیا تغییرات سترن ترانزیتی در رابطه شما به تعهد و تداوم رابطه کمک می‌کند یا جدایی رابطه؟',
-          'این محدودیت‌ها منجر به چه تجربیاتی خواهند شد؟'
-        ],
-        prices: [
-          { id: 'single', label: '', amount: 2699000 }
-        ]
-      },
-      {
-        id: 'brilliant',
-        title: 'چارت برلیان (سالانه)',
-        waitTime: '۳ روز',
-        format: 'پادکست',
-        badges: ['چارت Profection Annual', 'چارت Solar Return', 'چارت Secondary Progressed', 'چارت Solar Arc'],
-        items: [
-          'تمرکز و اهمیت بعد مهم زندگی شما در یک سال',
-          'روابط عاطفی، ازدواج، فرزند و تعهد',
-          'شراکت‌ها، مشتریان بازار کار، قراردادهای کاری، پروژه‌های کاری در یک سال',
-          'محیط اجتماعی، جامعه، تاثیرات اتفاقات پیش‌روی جامعه و قوانین در یک سال',
-          'محدودیت‌های سال، مسئولیت‌های جدید در یک سال، موانع در بعدی که در چارت شما مشخص می‌شود کدام بخش از زندگیست در یک سال',
-          'ارتباطات، رفت و آمدهای کوتاه، لوازم ارتباطی و نحوه ارتباطات شما، اسناد قراردادها، تحصیل و مهاجرت و ارتباط شما با مسائل قانونی و حقوقی در یک سال',
-          'منابع مشترک مالی، مالیات، بیمه، وام، شراکت‌های بزرگ سرمایه‌گذاری در یک سال',
-          'تفریح، روتین، ارزش و اهمیت‌های فردی، تغییرات فردی و شخصیتی در یک سال',
-          'الگوی درآمد-مخارج مستقیم و نقدینگی، پس‌انداز و سرمایه‌گذاری در یک سال'
-        ],
-        note: 'بصورت کلی تمام ابعاد زندگی که زیر شاخه این موضوعات قرار می‌گیرند در یک سال کامل بررسی خواهد شد.',
-        prices: [
-          { id: 'single', label: '', amount: 3224000 }
-        ]
-      },
-      {
-        id: 'diamond',
-        title: 'چارت الماس',
-        waitTime: '۳ روز',
-        format: 'پادکست',
-        badges: ['چارت Profection Annual', 'چارت Solar Return', 'چارت Secondary Progressed', 'چارت Solar Arc', 'چارت تولد'],
-        items: [
-          'چارت پایه (چارت تولد) + چارت سالانه (چارت برلیان)'
-        ],
-        prices: [
-          { id: 'single', label: '', amount: 4799000 }
-        ]
-      }
-    ];
-
-    /**
-     * وضعیت مرکزی برنامه برای نگهداری صفحه فعال و اطلاعات سفارش
-     */
-    const appState = {
-      currentView: 'home',
-      selectedPriceByChart: {},
-      order: {
-        chartId: null,
-        chartTitle: '',
-        priceId: null,
-        priceLabel: '',
-        priceAmount: 0,
-        waitTime: '',
-        format: '',
-        unknownBirthDate: false,
-        customer: {
-          fullName: '',
-          birthDate: '',
-          birthPlace: '',
-          birthTime: '',
-          email: '',
-          phone: ''
-        },
-        trackingCode: '',
-        paymentDate: ''
-      }
-    };
-
-    /**
-     * جابه‌جایی بین صفحات مختلف برنامه و بروزرسانی وضعیت فعال دکمه‌های منو
-     */
-    function navigateTo(viewName) {
-      appState.currentView = viewName;
-
-      document.querySelectorAll('.page-view').forEach((section) => {
-        section.classList.add('hidden');
-      });
-
-      const targetSection = document.getElementById(`view-${viewName}`);
-      if (targetSection) {
-        targetSection.classList.remove('hidden');
-      }
-
-      const navKey = (viewName === 'birth-form' || viewName === 'cart' || viewName === 'order-success')
-        ? 'podcasts'
-        : viewName;
-
-      document.querySelectorAll('.nav-btn').forEach((btn) => {
-        const isCurrent = btn.dataset.nav === navKey;
-        if (isCurrent) {
-          btn.classList.remove('bg-cardBg', 'text-black', 'border-neutral-200');
-          btn.classList.add('bg-brandActive', 'text-white', 'border-brandActive');
-        } else {
-          btn.classList.remove('bg-brandActive', 'text-white', 'border-brandActive');
-          btn.classList.add('bg-cardBg', 'text-black', 'border-neutral-200');
-        }
-      });
-
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-
-    /**
-     * باز کردن پنجره مودال مشاوره خرید
-     */
-    function openConsultationModal(triggerBtn) {
-      const modal = document.getElementById('consultation-modal');
-      if (modal) {
-        modal.classList.remove('hidden');
-        modal.classList.add('flex');
-      }
-      if (triggerBtn) {
-        triggerBtn.classList.add('bg-brandActive', 'text-white', 'border-brandActive');
-        triggerBtn.classList.remove('bg-cardBg', 'text-black', 'border-neutral-200');
-      }
-    }
-
-    /**
-     * بستن پنجره مودال مشاوره خرید و بازگرداندن وضعیت دکمه فعال
-     */
-    function closeConsultationModal(event) {
-      if (event && event.target !== event.currentTarget) return;
-      const modal = document.getElementById('consultation-modal');
-      if (modal) {
-        modal.classList.add('hidden');
-        modal.classList.remove('flex');
-      }
-      navigateTo(appState.currentView);
-    }
-
-    /**
-     * رندر داینامیک کارت‌های چارت در صفحه خرید پادکست دقیقاً مطابق طراحی مرجع
-     */
-    function renderCharts() {
-      const container = document.getElementById('charts-list');
-      if (!container) return;
-
-      container.innerHTML = CHARTS_DATA.map((chart) => {
-        const selectedPriceId = appState.selectedPriceByChart[chart.id];
-
-        const badgesHtml = chart.badges.map((badge) => `
-          <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white border border-neutral-200 text-xs font-semibold text-black select-none cursor-default">
-            <svg class="w-3.5 h-3.5 text-brandActive shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-            </svg>
-            <span>${badge}</span>
-          </span>
-        `).join('');
-
-        const itemsHtml = chart.items.map((item) => `
-          <li class="flex items-start gap-2.5 text-xs sm:text-sm text-black leading-7">
-            <span class="mt-2.5 w-1.5 h-1.5 rounded-full bg-brandActive shrink-0"></span>
-            <span>${item}</span>
-          </li>
-        `).join('');
-
-        const forecastHtml = chart.forecastTitle ? `
-          <div class="pt-3 space-y-2">
-            <h4 class="text-sm sm:text-base font-bold text-forecastBlue">${chart.forecastTitle}</h4>
-            <ul class="space-y-1.5">
-              ${chart.forecastItems.map((fItem) => `
-                <li class="flex items-start gap-2.5 text-xs sm:text-sm text-black leading-7">
-                  <span class="mt-2.5 w-1.5 h-1.5 rounded-full bg-brandActive shrink-0"></span>
-                  <span>${fItem}</span>
-                </li>
-              `).join('')}
-            </ul>
-          </div>
-        ` : '';
-
-        const noteHtml = chart.note ? `
-          <p class="pt-2 text-xs sm:text-sm font-medium text-neutral-700 leading-7">${chart.note}</p>
-        ` : '';
-
-        const pricesHtml = chart.prices.map((price) => {
-          const isActive = selectedPriceId === price.id;
-          const colorClasses = isActive
-            ? 'bg-priceText text-white shadow-sm'
-            : 'bg-priceBg text-priceText hover:opacity-90';
-          const priceLabelText = price.label
-            ? `${price.label}: ${formatPricePersian(price.amount)} تومان`
-            : `${formatPricePersian(price.amount)} تومان`;
-
-          return `
-            <button
-              type="button"
-              onclick="selectPriceOption('${chart.id}', '${price.id}')"
-              class="w-full py-3.5 px-4 rounded-2xl font-extrabold text-sm sm:text-base transition-all duration-200 cursor-pointer active:scale-[0.99] ${colorClasses}"
-            >
-              ${priceLabelText}
-            </button>
-          `;
-        }).join('');
-
-        return `
-          <article class="bg-cardBg border border-neutral-200 rounded-3xl p-4 sm:p-6 shadow-xs space-y-5">
-            <!-- باکس سفید بالایی شامل نام چارت، مدت انتظار، فرمت دریافت و تگ‌های تیک‌دار -->
-            <div class="bg-white border border-neutral-200/90 rounded-2xl p-4 sm:p-5 space-y-3">
-              <h3 class="text-lg sm:text-xl font-extrabold text-black">${chart.title}</h3>
-
-              <div class="space-y-2">
-                <div class="flex items-center justify-between bg-cardBg rounded-full px-4 py-2 text-xs sm:text-sm">
-                  <span class="text-neutral-500">مدت انتظار:</span>
-                  <span class="font-bold text-black">${chart.waitTime}</span>
-                </div>
-                <div class="flex items-center justify-between bg-cardBg rounded-full px-4 py-2 text-xs sm:text-sm">
-                  <span class="text-neutral-500">فرمت دریافت:</span>
-                  <span class="font-bold text-black">${chart.format}</span>
-                </div>
-              </div>
-
-              <div class="pt-3 border-t border-neutral-100 flex flex-wrap items-center gap-2">
-                ${badgesHtml}
-              </div>
-            </div>
-
-            <!-- لیست جزئیات چارت با بولت آبی یکدست -->
-            <div class="px-1 sm:px-2 space-y-2">
-              <ul class="space-y-1.5">
-                ${itemsHtml}
-              </ul>
-              ${forecastHtml}
-              ${noteHtml}
-            </div>
-
-            <!-- بخش دکمه‌های قیمت و ثبت خرید تمام‌عرض -->
-            <div class="pt-4 border-t border-neutral-200/80 flex flex-col gap-3">
-              <div class="flex flex-col gap-2.5">
-                ${pricesHtml}
-              </div>
-              <button
-                type="button"
-                onclick="startOrder('${chart.id}')"
-                class="w-full py-3.5 px-4 rounded-2xl bg-brandLime text-black hover:bg-brandActive hover:text-white active:bg-brandActive active:text-white font-extrabold text-sm sm:text-base transition-all duration-200 shadow-xs cursor-pointer active:scale-[0.99]"
-              >
-                ثبت خرید
-              </button>
-            </div>
-          </article>
-        `;
-      }).join('');
-    }
-
-    /**
-     * انتخاب و فعال‌سازی باکس قیمت هر چارت
-     */
-    function selectPriceOption(chartId, priceId) {
-      appState.selectedPriceByChart[chartId] = priceId;
-      renderCharts();
-    }
-
-    /**
-     * شروع فرآیند خرید چارت انتخابی و انتقال به مرحله ثبت تاریخ تولد
-     */
-    function startOrder(chartId) {
-      const chart = CHARTS_DATA.find((c) => c.id === chartId);
-      if (!chart) return;
-
-      let selectedPriceId = appState.selectedPriceByChart[chartId];
-      if (!selectedPriceId) {
-        selectedPriceId = chart.prices[0].id;
-        appState.selectedPriceByChart[chartId] = selectedPriceId;
-        renderCharts();
-      }
-
-      const priceObj = chart.prices.find((p) => p.id === selectedPriceId) || chart.prices[0];
-
-      appState.order.chartId = chart.id;
-      appState.order.chartTitle = chart.title;
-      appState.order.priceId = priceObj.id;
-      appState.order.priceLabel = priceObj.label;
-      appState.order.priceAmount = priceObj.amount;
-      appState.order.waitTime = chart.waitTime;
-      appState.order.format = chart.format;
-
-      const unknownCheckbox = document.getElementById('bf-unknown-birth');
-      appState.order.unknownBirthDate = Boolean(unknownCheckbox && unknownCheckbox.checked);
-
-      const bfError = document.getElementById('bf-error');
-      if (bfError) bfError.classList.add('hidden');
-
-      renderBirthFormSummary();
-      navigateTo('birth-form');
-    }
-
-    /**
-     * رندر خلاصه چارت انتخاب‌شده در بالای فرم مرحله ثبت تاریخ تولد
-     */
-    function renderBirthFormSummary() {
-      const summaryBox = document.getElementById('birth-form-summary');
-      if (!summaryBox) return;
-
-      const planText = appState.order.priceLabel ? ` (${appState.order.priceLabel})` : '';
-      const waitExtra = appState.order.unknownBirthDate ? ' + ۲ روز بابت پرسشنامه' : '';
-
-      summaryBox.innerHTML = `
-        <div class="space-y-1">
-          <span class="text-xs text-neutral-500 block">چارت انتخاب‌شده:</span>
-          <strong class="text-base sm:text-lg font-extrabold text-black">${appState.order.chartTitle}${planText}</strong>
-          <p class="text-xs text-neutral-600">فرمت دریافت: ${appState.order.format} | مدت انتظار: ${appState.order.waitTime}${waitExtra}</p>
-        </div>
-        <div class="px-4 py-2 rounded-2xl bg-priceText text-white font-extrabold text-sm sm:text-base">
-          ${formatPricePersian(appState.order.priceAmount)} تومان
-        </div>
-      `;
-    }
-
-    /**
-     * ثبت وضعیت گزینه «ساعت تولد اصلا نمی‌دانم» بدون غیرفعال کردن هیچ فیلد یا دکمه‌ای
-     */
-    function toggleUnknownBirthDate(isChecked) {
-      appState.order.unknownBirthDate = Boolean(isChecked);
-
-      if (appState.order.chartId) {
-        renderBirthFormSummary();
-      }
-    }
-
-    /**
-     * اعتبارسنجی و ثبت فرم مرحله ثبت تاریخ تولد (شامل تایید قوانین) و انتقال به صفحه سبد خرید
-     */
-    function handleBirthFormSubmit(event) {
-      event.preventDefault();
-
-      const fullName = document.getElementById('bf-fullname').value.trim();
-      const birthDate = document.getElementById('bf-birthdate').value.trim();
-      const birthPlace = document.getElementById('bf-birthplace').value.trim();
-      const birthTime = document.getElementById('bf-birthtime').value.trim();
-      const email = document.getElementById('bf-email').value.trim();
-      const phone = document.getElementById('bf-phone').value.trim();
-      const unknownBirth = document.getElementById('bf-unknown-birth').checked;
-      const termsChecked = document.getElementById('birth-terms-checkbox').checked;
-      const errorBox = document.getElementById('bf-error');
-
-      if (!fullName || !birthDate || !birthPlace || !email || !phone) {
-        errorBox.textContent = 'لطفاً نام کامل، تاریخ تولد (میلادی)، مکان تولد، ایمیل و شماره تماس را تکمیل نمایید.';
-        errorBox.classList.remove('hidden');
-        return;
-      }
-
-      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-        errorBox.textContent = 'لطفاً یک آدرس ایمیل معتبر وارد نمایید (ارسال فایل‌ها فقط از طریق ایمیل انجام می‌شود).';
-        errorBox.classList.remove('hidden');
-        return;
-      }
-
-      if (!termsChecked) {
-        errorBox.textContent = 'لطفاً ابتدا چک‌باکس «قوانین و ضوابط تفسیر را می‌پذیرم» را تایید نمایید.';
-        errorBox.classList.remove('hidden');
-        return;
-      }
-
-      errorBox.classList.add('hidden');
-
-      appState.order.unknownBirthDate = unknownBirth;
-      appState.order.customer = {
-        fullName,
-        birthDate,
-        birthPlace,
-        birthTime: unknownBirth ? (birthTime || 'نامشخص (استخراج از طریق پرسشنامه)') : (birthTime || 'ثبت نشده'),
-        email,
-        phone
-      };
-
-      renderCartPage();
-      navigateTo('cart');
-    }
-
-    /**
-     * رندر اطلاعات سفارش در صفحه سبد خرید
-     */
-    function renderCartPage() {
-      const box = document.getElementById('cart-order-details');
-      if (!box) return;
-
-      const planText = appState.order.priceLabel ? ` (${appState.order.priceLabel})` : '';
-      const waitExtra = appState.order.unknownBirthDate ? ' + ۲ روز بابت پرسشنامه' : '';
-
-      box.innerHTML = `
-        <div class="flex flex-wrap items-center justify-between gap-2 pb-3 border-b border-neutral-100">
-          <div>
-            <span class="text-xs text-neutral-500 block">مورد انتخابی شما:</span>
-            <strong class="text-base sm:text-lg font-extrabold text-black">${appState.order.chartTitle}${planText}</strong>
-          </div>
-          <div class="px-4 py-2 rounded-2xl bg-priceText text-white font-extrabold text-sm sm:text-base">
-            ${formatPricePersian(appState.order.priceAmount)} تومان
-          </div>
-        </div>
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs sm:text-sm text-neutral-700 pt-1">
-          <p>نام متقاضی: <strong class="text-black">${appState.order.customer.fullName}</strong></p>
-          <p>ایمیل دریافت: <strong class="text-black font-latin">${appState.order.customer.email}</strong></p>
-          <p>فرمت دریافت: <strong class="text-black">${appState.order.format}</strong></p>
-          <p>مدت انتظار: <strong class="text-black">${appState.order.waitTime}${waitExtra}</strong></p>
-        </div>
-      `;
-    }
-
-    /**
-     * کپی شماره کارت در کلیپ‌بورد با روش سازگار با تمام مرورگرها و آیفریم‌ها
-     */
-    function copyCardNumber() {
-      const cardEl = document.getElementById('bank-card-number');
-      const labelEl = document.getElementById('copy-card-label');
-      if (!cardEl || !labelEl) return;
-
-      const cardText = cardEl.textContent.trim();
-
-      try {
-        const tempInput = document.createElement('textarea');
-        tempInput.value = cardText;
-        tempInput.setAttribute('readonly', '');
-        tempInput.style.position = 'fixed';
-        tempInput.style.opacity = '0';
-        document.body.appendChild(tempInput);
-        tempInput.select();
-        document.execCommand('copy');
-        document.body.removeChild(tempInput);
-
-        labelEl.textContent = 'کپی شد!';
-        setTimeout(() => {
-          labelEl.textContent = 'کپی شماره کارت';
-        }, 2000);
-      } catch (err) {
-        labelEl.textContent = 'شماره کارت انتخاب شد';
-        setTimeout(() => {
-          labelEl.textContent = 'کپی شماره کارت';
-        }, 2000);
-      }
-    }
-
-    /**
-     * باز و بسته کردن باکس منعطف قوانین و ضوابط تفسیر در صفحه سبد خرید
-     */
-    function toggleTermsBox() {
-      const box = document.getElementById('terms-accordion-box');
-      if (!box) return;
-      box.classList.toggle('hidden');
-    }
-
-    /**
-     * اعتبارسنجی و ثبت نهایی سفارش در صفحه سبد خرید
-     */
-    function handleFinalOrderSubmit(event) {
-      event.preventDefault();
-
-      const trackingCode = document.getElementById('cart-tracking-code').value.trim();
-      const paymentDate = document.getElementById('cart-payment-date').value.trim();
-      const errorBox = document.getElementById('cart-error');
-
-      if (!trackingCode || !paymentDate) {
-        errorBox.textContent = 'لطفاً شماره پیگیری بانکی و تاریخ پرداخت را وارد نمایید.';
-        errorBox.classList.remove('hidden');
-        return;
-      }
-
-      errorBox.classList.add('hidden');
-      appState.order.trackingCode = trackingCode;
-      appState.order.paymentDate = paymentDate;
-
-      const summaryEl = document.getElementById('order-success-summary');
-      if (summaryEl) {
-        const planText = appState.order.priceLabel ? ` (${appState.order.priceLabel})` : '';
-        summaryEl.innerHTML = `
-          <p>سفارش ثبت‌شده: <strong>${appState.order.chartTitle}${planText}</strong></p>
-          <p>مبلغ پرداختی: <strong>${formatPricePersian(appState.order.priceAmount)} تومان</strong></p>
-          <p>شماره پیگیری: <strong class="font-latin">${trackingCode}</strong></p>
-          <p>تاریخ پرداخت: <strong>${paymentDate}</strong></p>
-          <p>ایمیل تایید و ارسال: <strong class="font-latin">${appState.order.customer.email}</strong></p>
-        `;
-      }
-
-      navigateTo('order-success');
-    }
-
-    /**
-     * پاک‌سازی فرم‌ها پس از اتمام سفارش و بازگشت به صفحه اصلی
-     */
-    function resetAndGoHome() {
-      const birthForm = document.getElementById('birth-details-form');
-      const paymentForm = document.getElementById('payment-confirm-form');
-      const termsCheckbox = document.getElementById('birth-terms-checkbox');
-      const termsBox = document.getElementById('terms-accordion-box');
-
-      if (birthForm) birthForm.reset();
-      if (paymentForm) paymentForm.reset();
-      if (termsCheckbox) termsCheckbox.checked = false;
-      if (termsBox) termsBox.classList.add('hidden');
-
-      toggleUnknownBirthDate(false);
-
-      Object.keys(appState.selectedPriceByChart).forEach((key) => {
-        appState.selectedPriceByChart[key] = null;
-      });
-
-      renderCharts();
-      navigateTo('home');
-    }
-
-    /**
-     * محاسبه دقیق نشان تولد بر اساس ماه و روز شمسی طبق بازه‌های تعریف‌شده
-     */
-    function getZodiacSignFromJalali(month, day) {
-      if ((month === 12 && day >= 29 && day <= 30) || (month === 1 && day >= 1 && day <= 30)) {
-        return 'Aries — قوچ';
-      }
-      if ((month === 1 && day === 31) || (month === 2 && day >= 1 && day <= 30)) {
-        return 'Taurus — ثور';
-      }
-      if ((month === 2 && day === 31) || (month === 3 && day >= 1 && day <= 30)) {
-        return 'Gemini — دوقلو';
-      }
-      if ((month === 3 && day === 31) || (month === 4 && day >= 1 && day <= 30)) {
-        return 'Cancer — خرچنگ';
-      }
-      if ((month === 4 && day === 31) || (month === 5 && day >= 1 && day <= 30)) {
-        return 'Leo — اسد';
-      }
-      if ((month === 5 && day === 31) || (month === 6 && day >= 1 && day <= 30)) {
-        return 'Virgo — خوشه';
-      }
-      if ((month === 6 && day === 31) || (month === 7 && day >= 1 && day <= 30)) {
-        return 'Libra — ترازو';
-      }
-      if (month === 8 && day >= 1 && day <= 30) {
-        return 'Scorpio — عقرب';
-      }
-      if (month === 9 && day >= 1 && day <= 30) {
-        return 'Sagittarius — کماندار';
-      }
-      if (month === 10 && day >= 1 && day <= 30) {
-        return 'Capricorn — جدی';
-      }
-      if (month === 11 && day >= 1 && day <= 30) {
-        return 'Aquarius — دلو';
-      }
-      if (month === 12 && day >= 1 && day <= 28) {
-        return 'Pisces — ماهی';
-      }
-      return null;
-    }
-
-    /**
-     * نام ماه‌های شمسی برای نمایش خوانا در نتیجه
-     */
-    const JALALI_MONTH_NAMES = [
-      '', 'فروردین', 'اردیبهشت', 'خرداد', 'تیر', 'مرداد', 'شهریور',
-      'مهر', 'آبان', 'آذر', 'دی', 'بهمن', 'اسفند'
-    ];
-
-    /**
-     * پر کردن لیست‌های کشویی سال و روز شمسی در صفحه «تشخیص نشان تولد»
-     */
-    function initJalaliDropdowns() {
-      const yearSelect = document.getElementById('z-jalali-year');
-      if (yearSelect && yearSelect.options.length <= 1) {
-        for (let y = 1405; y >= 1310; y--) {
-          const opt = document.createElement('option');
-          opt.value = String(y);
-          opt.textContent = toPersianDigits(y);
-          yearSelect.appendChild(opt);
-        }
-      }
-      updateJalaliDayOptions();
-    }
-
-    /**
-     * بروزرسانی تعداد روزهای مجاز ماه انتخاب‌شده (۳۱ روز برای نیمه اول سال و ۳۰ روز برای نیمه دوم)
-     */
-    function updateJalaliDayOptions() {
-      const monthSelect = document.getElementById('z-jalali-month');
-      const daySelect = document.getElementById('z-jalali-day');
-      if (!daySelect) return;
-
-      const selectedMonth = monthSelect ? parseInt(monthSelect.value, 10) : 0;
-      const previousDay = daySelect.value;
-      const maxDays = (!selectedMonth || selectedMonth <= 6) ? 31 : 30;
-
-      daySelect.innerHTML = '<option value="">روز</option>';
-      for (let d = 1; d <= maxDays; d++) {
-        const opt = document.createElement('option');
-        opt.value = String(d);
-        opt.textContent = toPersianDigits(d);
-        daySelect.appendChild(opt);
-      }
-
-      if (previousDay && parseInt(previousDay, 10) <= maxDays) {
-        daySelect.value = previousDay;
-      }
-    }
-
-    /**
-     * پردازش فرم «تشخیص نشان تولد» با تقویم کشویی شمسی و نمایش نتیجه
-     */
-    function handleZodiacSubmit(event) {
-      event.preventDefault();
-
-      const name = document.getElementById('z-name').value.trim();
-      const contact = document.getElementById('z-contact').value.trim();
-      const dayVal = document.getElementById('z-jalali-day').value;
-      const monthVal = document.getElementById('z-jalali-month').value;
-      const yearVal = document.getElementById('z-jalali-year').value;
-      const errorBox = document.getElementById('zodiac-error');
-
-      if (!name || !contact || !dayVal || !monthVal || !yearVal) {
-        errorBox.textContent = 'لطفاً تمام فیلدهای ستاره‌دار (نام، ایمیل یا شماره تلفن و روز، ماه و سال تولد شمسی) را تکمیل نمایید.';
-        errorBox.classList.remove('hidden');
-        return;
-      }
-
-      const day = parseInt(dayVal, 10);
-      const month = parseInt(monthVal, 10);
-      const year = parseInt(yearVal, 10);
-
-      const sign = getZodiacSignFromJalali(month, day);
-      if (!sign) {
-        errorBox.textContent = 'تاریخ انتخاب‌شده خارج از بازه معتبر تقویم شمسی است.';
-        errorBox.classList.remove('hidden');
-        return;
-      }
-
-      errorBox.classList.add('hidden');
-
-      const formattedDay = toPersianDigits(String(day).padStart(2, '0'));
-      const monthName = JALALI_MONTH_NAMES[month] || toPersianDigits(String(month).padStart(2, '0'));
-      const formattedYear = toPersianDigits(String(year));
-
-      document.getElementById('zr-greeting').textContent = `${name} عزیز، نتیجه محاسبه نشان تولد شما آماده است:`;
-      document.getElementById('zr-date-display').textContent = `تاریخ تولد شمسی ثبت‌شده: ${formattedDay} ${monthName} ${formattedYear}`;
-      document.getElementById('zr-sign-name').textContent = sign;
-
-      document.getElementById('zodiac-form-card').classList.add('hidden');
-      document.getElementById('zodiac-result-card').classList.remove('hidden');
-    }
-
-    /**
-     * بازگشت به فرم تشخیص نشان تولد برای بررسی تاریخ جدید
-     */
-    function resetZodiacForm() {
-      const form = document.getElementById('zodiac-form');
-      if (form) form.reset();
-      updateJalaliDayOptions();
-
-      document.getElementById('zodiac-result-card').classList.add('hidden');
-      document.getElementById('zodiac-form-card').classList.remove('hidden');
-    }
-
-    /**
-     * راه‌اندازی اولیه برنامه پس از بارگذاری کامل صفحه
-     */
-    window.addEventListener('DOMContentLoaded', () => {
-      renderCharts();
-      initJalaliDropdowns();
-      navigateTo('home');
-    });
-  </script>
+<!-- ==================== هدر ثابت و بخش پروفایل / ناوبری اصلی (وسط‌چین و مینیمال) ==================== -->
+<header class="w-full bg-white border-b border-neutral-100">
+<div class="w-[94%] max-w-5xl mx-auto px-3 sm:px-6 lg:px-8 pt-9 sm:pt-12 pb-8 sm:pb-10 flex flex-col items-center text-center">
+
+<!-- جایگاه عکس پروفایل (برای تغییر تصویر، لینک عکس خود را در src قرار دهید) -->
+<div class="relative mb-5">
+<div class="w-[21vw] sm:w-[12vw] md:w-[8.5vw] min-w-[5.25rem] max-w-[6.75rem] aspect-square rounded-full p-[3px] bg-gradient-to-tr from-brandActive via-forecastBlue to-brandLime shadow-sm">
+<img
+id="profile-image"
+src="https://placehold.co/256x256/160297/C0FE07?text=Astral"
+onerror="this.onerror=null; this.src='https://placehold.co/256x256/FAFAFA/160297?text=AC';"
+alt="پروفایل Astral Coaching"
+class="w-full h-full object-cover rounded-full bg-white border-2 border-white"
+/>
+</div>
+</div>
+
+<!-- تیتر اصلی سایت -->
+<h1 class="text-lg sm:text-2xl md:text-[1.75rem] font-extrabold text-black tracking-tight mb-5 text-center leading-snug">
+تحلیل و تفسیر کاربردی
+<span class="text-neutral-300 font-light mx-2">|</span>
+<span class="font-latin text-brandActive tracking-normal">Astral Coaching</span>
+</h1>
+
+<!-- دکمه‌های شبکه‌های اجتماعی (کانال بله، کانال تلگرام و صفحه اینستاگرام) -->
+<div class="flex flex-wrap items-center justify-center gap-2.5 sm:gap-3 mb-9">
+<a
+href="https://ble.ir/astral_coaching"
+target="_blank"
+rel="noopener noreferrer"
+class="inline-flex items-center justify-center gap-2 px-4 sm:px-5 py-2.5 rounded-full bg-cardBg hover:bg-brandActive hover:text-white border border-neutral-200/80 hover:border-brandActive text-black text-xs sm:text-sm font-semibold transition-all duration-200 active:scale-95"
+>
+<!-- آیکون پیام‌رسان بله -->
+<svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path stroke-linecap="round" stroke-linejoin="round" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
+</svg>
+<span>کانال بله</span>
+</a>
+
+<a
+href="https://t.me/astral_coaching"
+target="_blank"
+rel="noopener noreferrer"
+class="inline-flex items-center justify-center gap-2 px-4 sm:px-5 py-2.5 rounded-full bg-cardBg hover:bg-brandActive hover:text-white border border-neutral-200/80 hover:border-brandActive text-black text-xs sm:text-sm font-semibold transition-all duration-200 active:scale-95"
+>
+<!-- آیکون تلگرام -->
+<svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path stroke-linecap="round" stroke-linejoin="round" d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" />
+</svg>
+<span>کانال تلگرام</span>
+</a>
+
+<a
+href="https://instagram.com/astral_coaching"
+target="_blank"
+rel="noopener noreferrer"
+class="inline-flex items-center justify-center gap-2 px-4 sm:px-5 py-2.5 rounded-full bg-cardBg hover:bg-brandActive hover:text-white border border-neutral-200/80 hover:border-brandActive text-black text-xs sm:text-sm font-semibold transition-all duration-200 active:scale-95"
+>
+<!-- آیکون اینستاگرام -->
+<svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<rect width="20" height="20" x="2" y="2" rx="5" ry="5" stroke-linecap="round" stroke-linejoin="round" />
+<path stroke-linecap="round" stroke-linejoin="round" d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" />
+<line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke-linecap="round" stroke-linejoin="round" />
+</svg>
+<span>صفحه اینستاگرام</span>
+</a>
+</div>
+
+<!-- چهار دکمه مستطیلی با گوشه‌های گرد کنار هم (وسط‌چین) -->
+<nav aria-label="منوی اصلی" class="w-full max-w-3xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-2.5 sm:gap-3">
+<button
+type="button"
+data-nav="home"
+onclick="navigateTo('home')"
+class="nav-btn px-4 py-3.5 rounded-2xl font-bold text-sm sm:text-base transition-all duration-200 border border-brandActive bg-brandActive text-white shadow-sm cursor-pointer active:scale-95"
+>
+صفحه اصلی
+</button>
+
+<button
+type="button"
+data-nav="podcasts"
+onclick="navigateTo('podcasts')"
+class="nav-btn px-4 py-3.5 rounded-2xl font-bold text-sm sm:text-base transition-all duration-200 border border-neutral-200 bg-cardBg text-black hover:border-brandActive shadow-sm cursor-pointer active:scale-95"
+>
+خرید پادکست
+</button>
+
+<button
+type="button"
+data-nav="zodiac"
+onclick="navigateTo('zodiac')"
+class="nav-btn px-4 py-3.5 rounded-2xl font-bold text-sm sm:text-base transition-all duration-200 border border-neutral-200 bg-cardBg text-black hover:border-brandActive shadow-sm cursor-pointer active:scale-95"
+>
+تشخیص نشان تولد
+</button>
+
+<button
+type="button"
+data-nav="consultation"
+onclick="openConsultationModal(this)"
+class="nav-btn px-4 py-3.5 rounded-2xl font-bold text-sm sm:text-base transition-all duration-200 border border-neutral-200 bg-cardBg text-black hover:border-brandActive shadow-sm cursor-pointer active:scale-95"
+>
+مشاوره خرید
+</button>
+</nav>
+</div>
+</header>
+
+<!-- ==================== بدنه اصلی (تغییر داینامیک صفحات) ==================== -->
+<main class="flex-1 w-[94%] max-w-6xl mx-auto px-2 sm:px-6 lg:px-8 py-8 sm:py-12">
+
+<!-- ========================================================================= -->
+<!-- بخش ۱: صفحه اصلی (طراحی مینیمال حرفه‌ای، وسط‌چین کادر، معرفی راست‌چین) -->
+<!-- ========================================================================= -->
+<section id="view-home" class="page-view w-full max-w-5xl mx-auto flex flex-col items-center">
+
+<!-- بخش جملات معرفی: بدون باکس، کل کادر در وسط صفحه و نوشته‌ها کاملاً راست‌چین -->
+<div class="w-full max-w-3xl mx-auto px-4 sm:px-8 pt-6 sm:pt-10 pb-6 sm:pb-8">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-y-5 sm:gap-x-14 items-start">
+
+<!-- ستون اول: دو جمله زیر هم (راست‌چین) -->
+<div class="w-full flex flex-col items-start text-right space-y-5">
+<p class="group flex items-start gap-3 text-xs sm:text-sm md:text-[15px] font-medium text-neutral-800 leading-7 text-right">
+<span class="mt-1 w-5 h-5 rounded-full bg-priceBg text-brandActive flex items-center justify-center shrink-0 transition-transform duration-200 group-hover:scale-110">
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+<path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+</svg>
+</span>
+<span>تفسیر الگو‌های فردی، پتانسیل شما در مسیر زندگی</span>
+</p>
+
+<p class="group flex items-start gap-3 text-xs sm:text-sm md:text-[15px] font-medium text-neutral-800 leading-7 text-right">
+<span class="mt-1 w-5 h-5 rounded-full bg-priceBg text-brandActive flex items-center justify-center shrink-0 transition-transform duration-200 group-hover:scale-110">
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+<path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+</svg>
+</span>
+<span>تفسیر کاربردی و غیر معنوی</span>
+</p>
+</div>
+
+<!-- ستون دوم در کنار آن: دو جمله زیر هم (راست‌چین) -->
+<div class="w-full flex flex-col items-start text-right space-y-5">
+<p class="group flex items-start gap-3 text-xs sm:text-sm md:text-[15px] font-medium text-neutral-800 leading-7 text-right">
+<span class="mt-1 w-5 h-5 rounded-full bg-priceBg text-brandActive flex items-center justify-center shrink-0 transition-transform duration-200 group-hover:scale-110">
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+<path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+</svg>
+</span>
+<span>شناخت ابعاد بیشتر بخش‌های مختلف زندگی</span>
+</p>
+
+<p class="group flex items-start gap-3 text-xs sm:text-sm md:text-[15px] font-medium text-neutral-800 leading-7 text-right">
+<span class="mt-1 w-5 h-5 rounded-full bg-priceBg text-brandActive flex items-center justify-center shrink-0 transition-transform duration-200 group-hover:scale-110">
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+<path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+</svg>
+</span>
+<span>شناخت ابعاد شخصیتی و فردی</span>
+</p>
+</div>
+
+</div>
+</div>
+
+<!-- بخش مستطیل‌های افقی: قرارگیری پایین‌تر با فضای تنفس مینیمال و وسط‌چین -->
+<div class="w-full mt-20 sm:mt-28 md:mt-32 pt-12 sm:pt-16 border-t border-neutral-100 flex flex-col items-center space-y-8">
+
+<!-- تیتر وسط‌چین مینیمال بالای مستطیل‌ها -->
+<div class="flex flex-col items-center text-center space-y-3">
+<span class="w-12 h-1 rounded-full bg-brandLime"></span>
+<h2 class="text-base sm:text-lg md:text-xl font-extrabold text-black text-center tracking-tight">
+تفسیرهایی که منتشر شده
+</h2>
+<p class="text-[11px] sm:text-xs text-neutral-400 font-medium">
+برای مشاهده سایر تفسیرها به صورت افقی اسکرول کنید
+</p>
+</div>
+
+<!-- ردیف افقی و قابل اسکرول افقی شامل ۸ مستطیل ۴:۵ با لینک و کاور قابل ویرایش -->
+<!-- راهنما: برای هر کارت، لینک مقصد را در href و لینک تصویر کاور را در src جایگزین کنید -->
+<div
+id="published-carousel"
+class="w-full flex flex-nowrap items-stretch gap-3.5 sm:gap-5 overflow-x-auto pb-6 pt-2 px-1 scroll-smooth snap-x snap-mandatory"
+>
+<!-- مستطیل ۱ -->
+<a
+href="https://t.me/astral_coaching"
+target="_blank"
+rel="noopener noreferrer"
+class="group snap-start shrink-0 w-[38%] sm:w-[24%] md:w-[19%] lg:w-[15.5%] rounded-2xl overflow-hidden bg-cardBg border border-neutral-200/70 hover:border-brandActive/50 shadow-[0_2px_10px_rgba(0,0,0,0.03)] hover:shadow-[0_12px_24px_rgba(22,2,151,0.09)] hover:-translate-y-1.5 transition-all duration-300 block"
+>
+<div class="aspect-[4/5] w-full overflow-hidden bg-neutral-100">
+<img
+src="https://placehold.co/400x500/FAFAFA/160297?text=Cover+1"
+onerror="this.onerror=null; this.src='https://placehold.co/400x500/F3F2F2/000000?text=1';"
+alt="کاور تفسیر منتشر شده ۱"
+class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+/>
+</div>
+</a>
+
+<!-- مستطیل ۲ -->
+<a
+href="https://t.me/astral_coaching"
+target="_blank"
+rel="noopener noreferrer"
+class="group snap-start shrink-0 w-[38%] sm:w-[24%] md:w-[19%] lg:w-[15.5%] rounded-2xl overflow-hidden bg-cardBg border border-neutral-200/70 hover:border-brandActive/50 shadow-[0_2px_10px_rgba(0,0,0,0.03)] hover:shadow-[0_12px_24px_rgba(22,2,151,0.09)] hover:-translate-y-1.5 transition-all duration-300 block"
+>
+<div class="aspect-[4/5] w-full overflow-hidden bg-neutral-100">
+<img
+src="https://placehold.co/400x500/DDECFB/1800AD?text=Cover+2"
+onerror="this.onerror=null; this.src='https://placehold.co/400x500/F3F2F2/000000?text=2';"
+alt="کاور تفسیر منتشر شده ۲"
+class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+/>
+</div>
+</a>
+
+<!-- مستطیل ۳ -->
+<a
+href="https://t.me/astral_coaching"
+target="_blank"
+rel="noopener noreferrer"
+class="group snap-start shrink-0 w-[38%] sm:w-[24%] md:w-[19%] lg:w-[15.5%] rounded-2xl overflow-hidden bg-cardBg border border-neutral-200/70 hover:border-brandActive/50 shadow-[0_2px_10px_rgba(0,0,0,0.03)] hover:shadow-[0_12px_24px_rgba(22,2,151,0.09)] hover:-translate-y-1.5 transition-all duration-300 block"
+>
+<div class="aspect-[4/5] w-full overflow-hidden bg-neutral-100">
+<img
+src="https://placehold.co/400x500/F3F2F2/160297?text=Cover+3"
+onerror="this.onerror=null; this.src='https://placehold.co/400x500/F3F2F2/000000?text=3';"
+alt="کاور تفسیر منتشر شده ۳"
+class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+/>
+</div>
+</a>
+
+<!-- مستطیل ۴ -->
+<a
+href="https://t.me/astral_coaching"
+target="_blank"
+rel="noopener noreferrer"
+class="group snap-start shrink-0 w-[38%] sm:w-[24%] md:w-[19%] lg:w-[15.5%] rounded-2xl overflow-hidden bg-cardBg border border-neutral-200/70 hover:border-brandActive/50 shadow-[0_2px_10px_rgba(0,0,0,0.03)] hover:shadow-[0_12px_24px_rgba(22,2,151,0.09)] hover:-translate-y-1.5 transition-all duration-300 block"
+>
+<div class="aspect-[4/5] w-full overflow-hidden bg-neutral-100">
+<img
+src="https://placehold.co/400x500/C0FE07/160297?text=Cover+4"
+onerror="this.onerror=null; this.src='https://placehold.co/400x500/F3F2F2/000000?text=4';"
+alt="کاور تفسیر منتشر شده ۴"
+class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+/>
+</div>
+</a>
+
+<!-- مستطیل ۵ -->
+<a
+href="https://t.me/astral_coaching"
+target="_blank"
+rel="noopener noreferrer"
+class="group snap-start shrink-0 w-[38%] sm:w-[24%] md:w-[19%] lg:w-[15.5%] rounded-2xl overflow-hidden bg-cardBg border border-neutral-200/70 hover:border-brandActive/50 shadow-[0_2px_10px_rgba(0,0,0,0.03)] hover:shadow-[0_12px_24px_rgba(22,2,151,0.09)] hover:-translate-y-1.5 transition-all duration-300 block"
+>
+<div class="aspect-[4/5] w-full overflow-hidden bg-neutral-100">
+<img
+src="https://placehold.co/400x500/FAFAFA/1800AD?text=Cover+5"
+onerror="this.onerror=null; this.src='https://placehold.co/400x500/F3F2F2/000000?text=5';"
+alt="کاور تفسیر منتشر شده ۵"
+class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+/>
+</div>
+</a>
+
+<!-- مستطیل ۶ -->
+<a
+href="https://t.me/astral_coaching"
+target="_blank"
+rel="noopener noreferrer"
+class="group snap-start shrink-0 w-[38%] sm:w-[24%] md:w-[19%] lg:w-[15.5%] rounded-2xl overflow-hidden bg-cardBg border border-neutral-200/70 hover:border-brandActive/50 shadow-[0_2px_10px_rgba(0,0,0,0.03)] hover:shadow-[0_12px_24px_rgba(22,2,151,0.09)] hover:-translate-y-1.5 transition-all duration-300 block"
+>
+<div class="aspect-[4/5] w-full overflow-hidden bg-neutral-100">
+<img
+src="https://placehold.co/400x500/DDECFB/160297?text=Cover+6"
+onerror="this.onerror=null; this.src='https://placehold.co/400x500/F3F2F2/000000?text=6';"
+alt="کاور تفسیر منتشر شده ۶"
+class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+/>
+</div>
+</a>
+
+<!-- مستطیل ۷ -->
+<a
+href="https://t.me/astral_coaching"
+target="_blank"
+rel="noopener noreferrer"
+class="group snap-start shrink-0 w-[38%] sm:w-[24%] md:w-[19%] lg:w-[15.5%] rounded-2xl overflow-hidden bg-cardBg border border-neutral-200/70 hover:border-brandActive/50 shadow-[0_2px_10px_rgba(0,0,0,0.03)] hover:shadow-[0_12px_24px_rgba(22,2,151,0.09)] hover:-translate-y-1.5 transition-all duration-300 block"
+>
+<div class="aspect-[4/5] w-full overflow-hidden bg-neutral-100">
+<img
+src="https://placehold.co/400x500/F3F2F2/1800AD?text=Cover+7"
+onerror="this.onerror=null; this.src='https://placehold.co/400x500/F3F2F2/000000?text=7';"
+alt="کاور تفسیر منتشر شده ۷"
+class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+/>
+</div>
+</a>
+
+<!-- مستطیل ۸ -->
+<a
+href="https://t.me/astral_coaching"
+target="_blank"
+rel="noopener noreferrer"
+class="group snap-start shrink-0 w-[38%] sm:w-[24%] md:w-[19%] lg:w-[15.5%] rounded-2xl overflow-hidden bg-cardBg border border-neutral-200/70 hover:border-brandActive/50 shadow-[0_2px_10px_rgba(0,0,0,0.03)] hover:shadow-[0_12px_24px_rgba(22,2,151,0.09)] hover:-translate-y-1.5 transition-all duration-300 block"
+>
+<div class="aspect-[4/5] w-full overflow-hidden bg-neutral-100">
+<img
+src="https://placehold.co/400x500/C0FE07/1800AD?text=Cover+8"
+onerror="this.onerror=null; this.src='https://placehold.co/400x500/F3F2F2/000000?text=8';"
+alt="کاور تفسیر منتشر شده ۸"
+class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+/>
+</div>
+</a>
+</div>
+</div>
+
+</section>
+
+<!-- ========================================================================= -->
+<!-- بخش ۲: صفحه خرید پادکست و چارت‌ها -->
+<!-- ========================================================================= -->
+<section id="view-podcasts" class="page-view hidden space-y-6">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-2 border-b border-neutral-100">
+<div>
+<h2 class="text-xl sm:text-2xl font-extrabold text-black">
+خرید پادکست و تحلیل چارت‌ها
+</h2>
+<p class="text-sm text-neutral-600 mt-1">
+چارت مورد نظر خود را انتخاب کرده و روی دکمه «ثبت خرید» کلیک کنید.
+</p>
+</div>
+<button
+type="button"
+onclick="navigateTo('home')"
+class="self-start sm:self-auto px-4 py-2 rounded-2xl bg-cardBg border border-neutral-200 text-sm font-semibold text-black hover:bg-brandActive hover:text-white transition-colors cursor-pointer"
+>
+بازگشت به صفحه اصلی
+</button>
+</div>
+
+<!-- کانتینر رندر داینامیک باکس‌های افقی چارت‌ها -->
+<div id="charts-list" class="space-y-6"></div>
+</section>
+
+<!-- ========================================================================= -->
+<!-- بخش ۳: مرحله ثبت تاریخ تولد (مرحله اول خرید) -->
+<!-- ========================================================================= -->
+<section id="view-birth-form" class="page-view hidden">
+<div class="max-w-3xl mx-auto">
+
+<!-- نوار نمایش مراحل خرید -->
+<div class="flex items-center justify-center gap-2 sm:gap-4 mb-8 text-xs sm:text-sm font-bold">
+<span class="px-3.5 py-1.5 rounded-full bg-cardBg text-neutral-500 border border-neutral-200">۱. انتخاب چارت</span>
+<span class="text-neutral-300">←</span>
+<span class="px-3.5 py-1.5 rounded-full bg-brandActive text-white shadow-sm">۲. ثبت تاریخ تولد</span>
+<span class="text-neutral-300">←</span>
+<span class="px-3.5 py-1.5 rounded-full bg-cardBg text-neutral-500 border border-neutral-200">۳. سبد خرید</span>
+</div>
+
+<!-- خلاصه چارت انتخاب‌شده -->
+<div id="birth-form-summary" class="mb-6 p-4 sm:p-5 rounded-3xl bg-cardBg border border-neutral-200 flex flex-wrap items-center justify-between gap-3">
+<!-- توسط جاوااسکریپت پر می‌شود -->
+</div>
+
+<!-- کارت فرم ثبت اطلاعات -->
+<div class="bg-cardBg border border-neutral-200 rounded-3xl p-5 sm:p-8 shadow-sm">
+<h2 class="text-xl sm:text-2xl font-extrabold text-black mb-6">
+مرحله ثبت تاریخ تولد
+</h2>
+
+<form id="birth-details-form" onsubmit="handleBirthFormSubmit(event)" novalidate class="space-y-5">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
+
+<!-- نام کامل -->
+<div class="bg-white rounded-2xl border border-neutral-200 p-3.5 focus-within:border-brandActive transition-colors">
+<label for="bf-fullname" class="block text-xs font-bold text-neutral-700 mb-1.5">
+نام کامل: <span class="text-red-500">*</span>
+</label>
+<input
+id="bf-fullname"
+type="text"
+required
+placeholder="نام و نام خانوادگی خود را وارد کنید"
+class="w-full bg-transparent text-sm text-black outline-none placeholder:text-neutral-400"
+/>
+</div>
+
+<!-- تاریخ تولد میلادی -->
+<div id="bf-birthdate-wrapper" class="bg-white rounded-2xl border border-neutral-200 p-3.5 focus-within:border-brandActive transition-colors">
+<label for="bf-birthdate" class="block text-xs font-bold text-neutral-700 mb-1.5">
+تاریخ تولد (میلادی):
+</label>
+<input
+id="bf-birthdate"
+type="text"
+dir="ltr"
+placeholder="YYYY-MM-DD (مثلاً 1999-05-29)"
+class="w-full bg-transparent text-sm text-black text-right font-latin outline-none placeholder:text-neutral-400"
+/>
+</div>
+
+<!-- مکان تولد -->
+<div class="bg-white rounded-2xl border border-neutral-200 p-3.5 focus-within:border-brandActive transition-colors">
+<label for="bf-birthplace" class="block text-xs font-bold text-neutral-700 mb-1.5">
+مکان تولد: <span class="text-red-500">*</span>
+</label>
+<input
+id="bf-birthplace"
+type="text"
+required
+placeholder="شهر و کشور محل تولد"
+class="w-full bg-transparent text-sm text-black outline-none placeholder:text-neutral-400"
+/>
+</div>
+
+<!-- ساعت تولد -->
+<div class="bg-white rounded-2xl border border-neutral-200 p-3.5 focus-within:border-brandActive transition-colors">
+<label for="bf-birthtime" class="block text-xs font-bold text-neutral-700 mb-1.5">
+ساعت تولد:
+</label>
+<input
+id="bf-birthtime"
+type="text"
+placeholder="مثلاً ۱۴:۳۰ یا ۲:۳۰ بعدازظهر"
+class="w-full bg-transparent text-sm text-black outline-none placeholder:text-neutral-400"
+/>
+</div>
+
+<!-- ایمیل -->
+<div class="bg-white rounded-2xl border border-neutral-200 p-3.5 focus-within:border-brandActive transition-colors">
+<label for="bf-email" class="block text-xs font-bold text-neutral-700 mb-1.5">
+ایمیل: <span class="text-red-500">*</span>
+</label>
+<input
+id="bf-email"
+type="email"
+dir="ltr"
+required
+placeholder="example@email.com"
+class="w-full bg-transparent text-sm text-black text-right font-latin outline-none placeholder:text-neutral-400"
+/>
+</div>
+
+<!-- شماره تماس -->
+<div class="bg-white rounded-2xl border border-neutral-200 p-3.5 focus-within:border-brandActive transition-colors">
+<label for="bf-phone" class="block text-xs font-bold text-neutral-700 mb-1.5">
+شماره تماس: <span class="text-red-500">*</span>
+</label>
+<input
+id="bf-phone"
+type="tel"
+dir="ltr"
+required
+placeholder="09123456789"
+class="w-full bg-transparent text-sm text-black text-right font-latin outline-none placeholder:text-neutral-400"
+/>
+</div>
+</div>
+
+<!-- باکس گزینه «ساعت تولد اصلا نمی‌دانم» -->
+<div class="bg-white rounded-2xl border border-neutral-200 p-4 space-y-2">
+<label class="flex items-center gap-3 cursor-pointer select-none">
+<input
+id="bf-unknown-birth"
+type="checkbox"
+onchange="toggleUnknownBirthDate(this.checked)"
+class="w-5 h-5 rounded accent-brandActive cursor-pointer"
+/>
+<span class="text-sm font-bold text-black">
+ساعت تولد اصلا نمی‌دانم.
+</span>
+</label>
+<p class="text-xs text-neutral-600 leading-relaxed pr-8">
+اگر ساعت تولد خودتان را نمی‌دانید از طریق پرسشنامه چارت شما استخراج خواهد شد و ۲ روز به زمان انتظار شما اضافه می‌شود.
+</p>
+</div>
+
+<!-- چک‌باکس قوانین و ضوابط تفسیر (بدون باکس، منتقل‌شده از سبد خرید با لینک ثابت) -->
+<div class="relative pt-1 space-y-3">
+<div class="flex items-start gap-3">
+<input
+id="birth-terms-checkbox"
+type="checkbox"
+class="w-4 h-4 mt-0.5 rounded accent-brandActive cursor-pointer shrink-0"
+/>
+<div class="text-xs leading-relaxed text-black">
+<button
+type="button"
+onclick="toggleTermsBox()"
+class="underline underline-offset-4 font-semibold text-black hover:text-brandActive transition-colors text-right cursor-pointer"
+>
+قوانین و ضوابط تفسیر را می‌پذیرم
+</button>
+<span class="text-neutral-500 mr-1">(برای مطالعه قوانین کلیک کنید)</span>
+</div>
+</div>
+
+<!-- باکس منعطف و رلتیو نمایش متن قوانین (چینش صفحه را به هم نمی‌ریزد) -->
+<div
+id="terms-accordion-box"
+class="hidden relative w-full rounded-2xl bg-white border border-neutral-200 p-4 sm:p-5 text-xs sm:text-sm text-black font-normal leading-7 space-y-2.5 transition-all"
+>
+<p>
+«خدمات ما در زمینه تحلیل چارت‌ها و الگوهای فردی بر اساس چارت تولد (نه نشان تولد) است؛ برای ارتقا آگاهی و شناخت بیشتر، پتانسیل، فرصت و چالش‌های احتمالی در زمینه‌های عاطفی، اجتماعی، شخصیت و پیش‌بینی الگوهای تکرارپذیر و احتمالی می‌باشد.
+</p>
+<p>
+هدف این بررسی پیشگویی و طالع‌بینی سرنوشت از پیش تعیین شده نیست.
+</p>
+<p>
+ما معتقدیم شرایط بیرونی؛ مانند تاثیرات محیطی می‌توانند از طریق تفسیر چارت‌ها بررسی شوند، الگوهای تکرارپذیر شفاف‌تر شوند و در نتیجه اتفاقات تکرارپذیر و قابل پیش‌بینی مشخص شوند؛ اما در نهایت عاملیت فردی همچنان پابرجاست و شما مسئول تصمیم‌گیری‌های خود هستید.
+</p>
+<p>
+زمان پادکست‌ها در چارت طلائی، برلیان و الماس حداقل ۳۰ دقیقه می‌باشد و امکان طرح پرسش تا ۴۸ ساعت وجود دارد.
+</p>
+<p>
+زمان انتظار بدون احتساب روز جمعه می‌باشد.
+</p>
+<p>
+دریافت پادکست‌ها و چارت‌ها تنها از طریق ایمیل ممکن است.
+</p>
+<p>
+مورد انتخابی بعد از پرداخت قابل تغییر نیست و هزینه پرداخت شده قابل استرداد نمی‌باشد؛ لذا در انتخاب خود دقت فرمایید.»
+</p>
+</div>
+</div>
+
+<!-- باکس خطای اعتبارسنجی -->
+<div id="bf-error" class="hidden p-3.5 rounded-2xl bg-red-50 border border-red-200 text-red-700 text-xs sm:text-sm font-medium"></div>
+
+<!-- دکمه‌های مرحله قبلی و مرحله بعدی -->
+<div class="flex flex-col-reverse sm:flex-row items-center justify-between gap-3 pt-3">
+<button
+type="button"
+onclick="navigateTo('podcasts')"
+class="w-full sm:w-44 h-12 rounded-2xl bg-white border border-neutral-300 text-black font-bold text-sm hover:bg-brandActive hover:text-white hover:border-brandActive transition-all duration-200 active:scale-95 cursor-pointer"
+>
+مرحله قبلی
+</button>
+
+<button
+type="submit"
+class="w-full sm:w-48 h-12 rounded-2xl bg-brandLime text-black font-extrabold text-sm hover:bg-brandActive hover:text-white transition-all duration-200 shadow-sm active:scale-95 cursor-pointer"
+>
+مرحله بعدی (سبد خرید)
+</button>
+</div>
+</form>
+</div>
+</div>
+</section>
+
+<!-- ========================================================================= -->
+<!-- بخش ۴: صفحه سبد خرید و ثبت نهایی پرداخت -->
+<!-- ========================================================================= -->
+<section id="view-cart" class="page-view hidden">
+<div class="max-w-3xl mx-auto">
+
+<!-- نوار نمایش مراحل خرید -->
+<div class="flex items-center justify-center gap-2 sm:gap-4 mb-8 text-xs sm:text-sm font-bold">
+<span class="px-3.5 py-1.5 rounded-full bg-cardBg text-neutral-500 border border-neutral-200">۱. انتخاب چارت</span>
+<span class="text-neutral-300">←</span>
+<span class="px-3.5 py-1.5 rounded-full bg-cardBg text-neutral-500 border border-neutral-200">۲. ثبت تاریخ تولد</span>
+<span class="text-neutral-300">←</span>
+<span class="px-3.5 py-1.5 rounded-full bg-brandActive text-white shadow-sm">۳. سبد خرید</span>
+</div>
+
+<div class="bg-cardBg border border-neutral-200 rounded-3xl p-5 sm:p-8 shadow-sm space-y-6">
+<h2 class="text-xl sm:text-2xl font-extrabold text-black">
+سبد خرید و تکمیل پرداخت
+</h2>
+
+<!-- باکس مورد انتخابی و قیمت -->
+<div id="cart-order-details" class="bg-white rounded-2xl border border-neutral-200 p-5 space-y-3">
+<!-- توسط جاوااسکریپت رندر می‌شود -->
+</div>
+
+<!-- مستطیل شماره کارت (بزرگ، بولد و قابل کپی) -->
+<div class="bg-white rounded-2xl border-2 border-neutral-200 p-5 sm:p-6 text-center space-y-3">
+<p class="text-xs font-semibold text-neutral-500">
+مبلغ سفارش را به شماره کارت زیر واریز نمایید:
+</p>
+
+<div class="flex flex-col sm:flex-row items-center justify-center gap-3">
+<!-- شماره کارت با فونت بزرگ و بولد -->
+<div
+id="bank-card-number"
+dir="ltr"
+class="font-latin text-xl sm:text-2xl md:text-3xl font-black tracking-wider text-black select-all bg-cardBg px-5 py-3 rounded-2xl border border-neutral-200"
+>
+6219-8619-0198-....
+</div>
+
+<button
+type="button"
+id="copy-card-btn"
+onclick="copyCardNumber()"
+class="inline-flex items-center justify-center gap-2 px-4 py-3 rounded-2xl bg-priceBg text-priceText hover:bg-brandActive hover:text-white font-bold text-xs sm:text-sm transition-all duration-200 active:scale-95 cursor-pointer"
+>
+<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path stroke-linecap="round" stroke-linejoin="round" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+</svg>
+<span id="copy-card-label">کپی شماره کارت</span>
+</button>
+</div>
+
+<p class="text-sm font-bold text-black pt-1">
+نام صاحب کارت: <span class="text-brandActive">تیموری</span>
+</p>
+</div>
+
+<!-- فرم شماره پیگیری و تاریخ پرداخت -->
+<form id="payment-confirm-form" onsubmit="handleFinalOrderSubmit(event)" novalidate class="space-y-4">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div class="bg-white rounded-2xl border border-neutral-200 p-3.5 focus-within:border-brandActive transition-colors">
+<label for="cart-tracking-code" class="block text-xs font-bold text-neutral-700 mb-1.5">
+شماره پیگیری: <span class="text-red-500">*</span>
+</label>
+<input
+id="cart-tracking-code"
+type="text"
+dir="ltr"
+required
+placeholder="شماره پیگیری رسید بانکی"
+class="w-full bg-transparent text-sm text-black text-right font-latin outline-none placeholder:text-neutral-400"
+/>
+</div>
+
+<div class="bg-white rounded-2xl border border-neutral-200 p-3.5 focus-within:border-brandActive transition-colors">
+<label for="cart-payment-date" class="block text-xs font-bold text-neutral-700 mb-1.5">
+تاریخ پرداخت: <span class="text-red-500">*</span>
+</label>
+<input
+id="cart-payment-date"
+type="text"
+required
+placeholder="مثلاً ۱۴۰۵/۰۸/۲۸"
+class="w-full bg-transparent text-sm text-black outline-none placeholder:text-neutral-400"
+/>
+</div>
+</div>
+
+<!-- باکس خطای سبد خرید -->
+<div id="cart-error" class="hidden p-3.5 rounded-2xl bg-red-50 border border-red-200 text-red-700 text-xs sm:text-sm font-medium"></div>
+
+<!-- دکمه‌های مرحله قبلی و ثبت نهایی -->
+<div class="flex flex-col-reverse sm:flex-row items-center justify-between gap-3 pt-2">
+<button
+type="button"
+onclick="navigateTo('birth-form')"
+class="w-full sm:w-44 h-12 rounded-2xl bg-white border border-neutral-300 text-black font-bold text-sm hover:bg-brandActive hover:text-white hover:border-brandActive transition-all duration-200 active:scale-95 cursor-pointer"
+>
+مرحله قبلی
+</button>
+
+<button
+type="submit"
+class="w-full sm:w-52 h-12 rounded-2xl bg-brandLime text-black font-extrabold text-sm hover:bg-brandActive hover:text-white transition-all duration-200 shadow-sm active:scale-95 cursor-pointer"
+>
+ثبت نهایی
+</button>
+</div>
+</form>
+</div>
+</div>
+</section>
+
+<!-- ========================================================================= -->
+<!-- بخش ۵: پیام موفقیت ثبت سفارش -->
+<!-- ========================================================================= -->
+<section id="view-order-success" class="page-view hidden">
+<div class="max-w-xl mx-auto bg-cardBg border border-neutral-200 rounded-3xl p-8 sm:p-10 text-center space-y-5 shadow-sm">
+<div class="w-16 h-16 mx-auto rounded-full bg-brandLime flex items-center justify-center text-black shadow-sm">
+<svg class="w-9 h-9" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+<path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+</svg>
+</div>
+
+<h2 class="text-xl sm:text-2xl font-extrabold text-black">
+درخواست شما ثبت شد.
+</h2>
+<p class="text-sm sm:text-base text-neutral-700 leading-relaxed">
+تا ۵۰ دقیقه دیگر تایید نهایی ایمیل خواهد شد.
+</p>
+
+<div id="order-success-summary" class="bg-white rounded-2xl border border-neutral-200 p-4 text-xs sm:text-sm text-right space-y-1.5">
+<!-- جزئیات خلاصه سفارش -->
+</div>
+
+<div class="pt-2">
+<button
+type="button"
+onclick="resetAndGoHome()"
+class="px-7 py-3 rounded-2xl bg-brandActive text-white font-bold text-sm hover:bg-brandLime hover:text-black transition-all duration-200 active:scale-95 cursor-pointer"
+>
+بازگشت به صفحه اصلی
+</button>
+</div>
+</div>
+</section>
+
+<!-- ========================================================================= -->
+<!-- بخش ۶: صفحه تشخیص نشان تولد (پالت رنگی #C0FE07، #F3F2F2، #160297) -->
+<!-- ========================================================================= -->
+<section id="view-zodiac" class="page-view hidden">
+<div class="max-w-2xl mx-auto">
+
+<!-- فرم ورودی تشخیص نشان تولد -->
+<div id="zodiac-form-card" class="bg-zodiacBg rounded-3xl p-6 sm:p-9 border border-neutral-200/80 shadow-sm space-y-6">
+<div class="space-y-1.5">
+<span class="inline-block px-3 py-1 rounded-full bg-brandActive text-white text-xs font-bold">
+تقویم شمسی
+</span>
+<h2 class="text-xl sm:text-2xl font-extrabold text-brandActive">
+تشخیص نشان تولد
+</h2>
+<p class="text-xs sm:text-sm text-neutral-700">
+اطلاعات زیر را وارد کنید تا نشان خورشیدی تولد شما محاسبه شود.
+</p>
+</div>
+
+<form id="zodiac-form" onsubmit="handleZodiacSubmit(event)" novalidate class="space-y-4">
+<!-- نام -->
+<div class="bg-white rounded-2xl border border-neutral-200 p-4 focus-within:border-brandActive transition-colors">
+<label for="z-name" class="flex items-center gap-1 text-xs sm:text-sm font-bold text-black mb-1.5">
+<span>نام</span>
+<span class="text-red-600 text-[10px] leading-none" title="تکمیل این بخش الزامی است">*</span>
+</label>
+<input
+id="z-name"
+type="text"
+required
+placeholder="نام خود را وارد کنید"
+class="w-full bg-transparent text-sm text-black outline-none placeholder:text-neutral-400"
+/>
+</div>
+
+<!-- ایمیل یا شماره تلفن -->
+<div class="bg-white rounded-2xl border border-neutral-200 p-4 focus-within:border-brandActive transition-colors">
+<label for="z-contact" class="flex items-center gap-1 text-xs sm:text-sm font-bold text-black mb-1.5">
+<span>ایمیل یا شماره تلفن</span>
+<span class="text-red-600 text-[10px] leading-none" title="تکمیل این بخش الزامی است">*</span>
+</label>
+<input
+id="z-contact"
+type="text"
+dir="ltr"
+required
+placeholder="example@email.com یا 09123456789"
+class="w-full bg-transparent text-sm text-black text-right font-latin outline-none placeholder:text-neutral-400"
+/>
+</div>
+
+<!-- تاریخ تولد به شمسی (تقویم کشویی روز، ماه، سال) -->
+<div class="bg-white rounded-2xl border border-neutral-200 p-4 focus-within:border-brandActive transition-colors">
+<label class="flex items-center gap-1 text-xs sm:text-sm font-bold text-black mb-2.5">
+<span>تاریخ تولد به شمسی</span>
+<span class="text-red-600 text-[10px] leading-none" title="تکمیل این بخش الزامی است">*</span>
+</label>
+
+<div class="grid grid-cols-3 gap-2.5 sm:gap-3">
+<!-- انتخاب روز -->
+<div class="relative">
+<select
+id="z-jalali-day"
+required
+aria-label="روز تولد شمسی"
+class="w-full appearance-none rounded-xl bg-zodiacBg/70 border border-neutral-200 px-3 py-2.5 text-xs sm:text-sm font-semibold text-black outline-none focus:border-brandActive focus:bg-white transition-colors cursor-pointer"
+>
+<option value="">روز</option>
+</select>
+<svg class="pointer-events-none absolute left-2.5 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-neutral-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+</svg>
+</div>
+
+<!-- انتخاب ماه -->
+<div class="relative">
+<select
+id="z-jalali-month"
+required
+aria-label="ماه تولد شمسی"
+onchange="updateJalaliDayOptions()"
+class="w-full appearance-none rounded-xl bg-zodiacBg/70 border border-neutral-200 px-3 py-2.5 text-xs sm:text-sm font-semibold text-black outline-none focus:border-brandActive focus:bg-white transition-colors cursor-pointer"
+>
+<option value="">ماه</option>
+<option value="1">فروردین</option>
+<option value="2">اردیبهشت</option>
+<option value="3">خرداد</option>
+<option value="4">تیر</option>
+<option value="5">مرداد</option>
+<option value="6">شهریور</option>
+<option value="7">مهر</option>
+<option value="8">آبان</option>
+<option value="9">آذر</option>
+<option value="10">دی</option>
+<option value="11">بهمن</option>
+<option value="12">اسفند</option>
+</select>
+<svg class="pointer-events-none absolute left-2.5 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-neutral-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+</svg>
+</div>
+
+<!-- انتخاب سال -->
+<div class="relative">
+<select
+id="z-jalali-year"
+required
+aria-label="سال تولد شمسی"
+class="w-full appearance-none rounded-xl bg-zodiacBg/70 border border-neutral-200 px-3 py-2.5 text-xs sm:text-sm font-semibold text-black outline-none focus:border-brandActive focus:bg-white transition-colors cursor-pointer"
+>
+<option value="">سال</option>
+</select>
+<svg class="pointer-events-none absolute left-2.5 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-neutral-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+</svg>
+</div>
+</div>
+</div>
+
+<!-- باکس نمایش خطا -->
+<div id="zodiac-error" class="hidden p-3.5 rounded-2xl bg-red-50 border border-red-200 text-red-700 text-xs sm:text-sm font-medium"></div>
+
+<!-- دکمه مرحله بعدی -->
+<div class="flex flex-col-reverse sm:flex-row items-center justify-between gap-3 pt-2">
+<button
+type="button"
+onclick="navigateTo('home')"
+class="w-full sm:w-40 h-12 rounded-2xl bg-white border border-neutral-300 text-black font-bold text-sm hover:bg-brandActive hover:text-white hover:border-brandActive transition-all duration-200 active:scale-95 cursor-pointer"
+>
+بازگشت
+</button>
+
+<button
+type="submit"
+class="w-full sm:w-48 h-12 rounded-2xl bg-brandLime text-black font-extrabold text-sm hover:bg-brandActive hover:text-white transition-all duration-200 shadow-sm active:scale-95 cursor-pointer"
+>
+مرحله بعدی
+</button>
+</div>
+</form>
+</div>
+
+<!-- کارت نمایش نتیجه نشان تولد -->
+<div id="zodiac-result-card" class="hidden bg-zodiacBg rounded-3xl p-6 sm:p-10 border border-neutral-200 shadow-sm text-center space-y-6">
+<div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brandLime text-black text-xs font-extrabold">
+نتیجه تشخیص نشان تولد
+</div>
+
+<div class="space-y-2">
+<p id="zr-greeting" class="text-sm sm:text-base text-neutral-700 font-medium"></p>
+<p id="zr-date-display" class="text-xs sm:text-sm text-neutral-600"></p>
+</div>
+
+<!-- نمایش اصلی نشان با فرمت دقیق خواسته‌شده -->
+<div class="bg-brandActive text-white rounded-3xl py-8 px-6 shadow-md space-y-2">
+<span class="block text-xs text-brandLime font-semibold">نشان تولد شما:</span>
+<div id="zr-sign-name" class="text-2xl sm:text-3xl md:text-4xl font-black tracking-wide">
+<!-- مثال: Aries — قوچ -->
+</div>
+</div>
+
+<div class="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2">
+<button
+type="button"
+onclick="resetZodiacForm()"
+class="w-full sm:w-auto px-6 h-12 rounded-2xl bg-white border border-neutral-300 text-black font-bold text-sm hover:bg-brandActive hover:text-white transition-all active:scale-95 cursor-pointer"
+>
+بررسی تاریخ جدید
+</button>
+
+<button
+type="button"
+onclick="navigateTo('podcasts')"
+class="w-full sm:w-auto px-6 h-12 rounded-2xl bg-brandLime text-black font-extrabold text-sm hover:bg-brandActive hover:text-white transition-all shadow-sm active:scale-95 cursor-pointer"
+>
+مشاهده و خرید چارت‌های تخصصی
+</button>
+</div>
+</div>
+
+</div>
+</section>
+
+</main>
+
+<!-- ==================== فوتر ==================== -->
+<footer class="w-full border-t border-neutral-100 bg-white mt-auto">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6 text-center text-xs text-neutral-500">
+تحلیل و تفسیر کاربردی | <span class="font-latin font-semibold text-brandActive">Astral Coaching</span>
+</div>
+</footer>
+
+<!-- ==================== مودال مشاوره خرید (به‌جای alert) ==================== -->
+<div
+id="consultation-modal"
+class="fixed inset-0 z-50 hidden items-center justify-center bg-black/50 backdrop-blur-xs p-4"
+onclick="closeConsultationModal(event)"
+>
+<div
+class="bg-white rounded-3xl max-w-md w-full p-6 sm:p-8 text-center space-y-5 shadow-2xl border border-neutral-100"
+onclick="event.stopPropagation()"
+>
+<div class="w-14 h-14 mx-auto rounded-2xl bg-priceBg text-priceText flex items-center justify-center">
+<svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+</svg>
+</div>
+
+<h3 class="text-lg font-extrabold text-black">
+مشاوره خرید
+</h3>
+
+<p class="text-sm sm:text-base text-neutral-700 leading-relaxed font-medium">
+صفحه در حال توسعه است، از طریق دایرکت اقدام کنید.
+</p>
+
+<div class="flex flex-col sm:flex-row gap-2.5 pt-2">
+<a
+href="https://t.me/astral_coaching"
+target="_blank"
+rel="noopener noreferrer"
+class="flex-1 py-3 px-4 rounded-2xl bg-brandLime text-black font-bold text-sm hover:bg-brandActive hover:text-white transition-colors"
+>
+ارتباط در تلگرام
+</a>
+<button
+type="button"
+onclick="closeConsultationModal()"
+class="flex-1 py-3 px-4 rounded-2xl bg-cardBg border border-neutral-200 text-black font-bold text-sm hover:bg-brandActive hover:text-white transition-colors cursor-pointer"
+>
+متوجه شدم
+</button>
+</div>
+</div>
+</div>
+
+<!-- ==================== اسکریپت کامل منطق برنامه ==================== -->
+<script>
+/**
+* تبدیل اعداد انگلیسی به اعداد فارسی
+*/
+function toPersianDigits(value) {
+const persianDigits = ['۰', '۱', '۲', '۳', '۴', '۵', '۶', '۷', '۸', '۹'];
+return String(value).replace(/\d/g, (digit) => persianDigits[Number(digit)]);
+}
+
+/**
+* قالب‌بندی قیمت با جداکننده هزارگان و اعداد فارسی
+*/
+function formatPricePersian(amount) {
+const formatted = Number(amount).toLocaleString('en-US');
+return toPersianDigits(formatted);
+}
+
+/**
+* داده‌های کامل هر ۶ چارت در بخش خرید پادکست
+*/
+const CHARTS_DATA = [
+{
+id: 'basic',
+title: 'چارت پایه (تولد)',
+waitTime: 'یک هفته',
+format: 'کتابچه',
+badges: ['چارت تولد'],
+items: [
+'تحلیل ویژگی شخصیت و ویژگی‌های فردی که کدام استعداد و کدام عادت دردسرساز شماست',
+'تحلیل روابط، یادگیری، ارتباط با خواهر و برادر، تصمیم‌گیری برای بررسی مشکلات و روش‌های حل',
+'تحلیل الگوی احساسات، نحوه بروز احساسات و عواطف، واکنش‌های عاطفی، رابطه با مادر برای شناخت بیشتر جهت حل تعارض‌ها',
+'پیدا کردن زیبایی‌های فردی، ارزش و اعتماد بنفس شخصی، روابط عاطفی',
+'بررسی خشم، انگیزه، رقابت و کشمکش شما برای ابراز خشم بهتر و دسترسی به انگیزه درونی صحیح',
+'بررسی شانس، مهاجرت، عقاید فردی، تحصیلات عالیه و تخصصی برای رشد فرصت‌ها',
+'تحلیل چگونگی مسئولیت و محدودیت‌ها، نظم فردی، رابطه با پدر، محدودیت‌های تجربه شده تا مسئولیت‌ها و محدودیت‌های درست، شناخته شوند',
+'تحلیل الگوی ارتباطات، رفت و آمدهای کوتاه، لوازم ارتباطی و نحوه ارتباطات شما، اسناد قراردادها، تحصیل و مهاجرت و ارتباط شما با مسائل قانونی و حقوقی که چطور می‌توانند در این زمینه به حل مشکلات شما کمک کنند'
+],
+prices: [
+{ id: 'single', label: '', amount: 1112000 }
+]
+},
+{
+id: 'bronze',
+title: 'چارت برنز (ماهانه)',
+waitTime: 'یک هفته',
+format: 'پادکست',
+badges: ['چارت Lunar Return'],
+items: [
+'بررسی دغدغه و تمرکز اصلی ۳۰ روز آینده',
+'تجربیات عاطفی و چالش و فرصت‌های عاطفی و فشارهای عاطفی ۳۰ روز آینده',
+'انگیزه و عملکرد، وضعیت مالی، اجتماعی و درآمدی',
+'روتین و کارهای روزمره، عادات سالم و چالش‌برانگیز که در ۳۰ روز آینده مهم هستند، موضوعات مربوط به خانواده و تغییرات در خانه',
+'فرصت‌ها و چالش‌های ۳۰ روز آینده'
+],
+prices: [
+{ id: '30d', label: 'اشتراک ۳۰ روزه', amount: 769000 },
+{ id: '3m', label: 'اشتراک ۳ ماهه', amount: 1757000 }
+]
+},
+{
+id: 'silver',
+title: 'چارت نقره‌ای',
+waitTime: '۵ روز',
+format: 'کتابچه',
+badges: ['چارت تولد', 'ژوپیتر ترانزیتی', 'سترن ترانزیتی'],
+items: [
+'تحلیل ویژگی شخصیت و ویژگی‌های فردی که کدام استعداد و کدام عادت دردسرساز است',
+'تحلیل روابط، یادگیری، ارتباط با خواهر و برادر، تصمیم‌گیری برای بررسی رشد بهتر',
+'تحلیل الگوی ارتباطات، رفت و آمدهای کوتاه، لوازم ارتباطی و نحوه ارتباطات شما، اسناد قراردادها، تحصیل و مهاجرت و ارتباط شما با مسائل قانونی و حقوقی که چطور می‌توانند در این زمینه به حل مشکلات شما کمک کنند'
+],
+forecastTitle: 'پیش‌بینی الگوهای زمانی:',
+forecastItems: [
+'بستر شانس و فرصت‌ها تا یک سال آینده در کدام بخش از زندگی شماست؟',
+'محدودیت‌ها و مسئولیت‌های شما و قسمت سخت‌گیرانه تا یک سال آینده در کدام بعد از زندگی شماست؟'
+],
+prices: [
+{ id: 'single', label: '', amount: 1239000 }
+]
+},
+{
+id: 'gold',
+title: 'چارت طلائی',
+waitTime: '۵ روز',
+format: 'پادکست',
+badges: ['چارت سیناستری', 'چارت Secondary Progressed', 'چارت Composite', 'سترن ترانزیتی'],
+items: [
+'چارت تولد پارتنر + چارت تولد شما',
+'الگوهای عاطفی، نیاز عاطفی شما',
+'بررسی مسیر رابطه، الگوهای رابطه، چالش‌ها',
+'پتانسیل تعهد و ازدواج در رابطه',
+'بررسی هماهنگی شخصیت، ابراز علاقه، روتین زندگی، هیجانات، سلیقه شخصی و زبان علاقه',
+'سازگاری طرز فکر، احساسات، خانواده شما با پارتنر',
+'بررسی پتانسیل بازگشت ارتباط پایان یافته',
+'جایگاه فرد در زندگی شما و بررسی الگوهای آینده رابطه'
+],
+forecastTitle: 'پیش‌بینی الگوهای زمانی:',
+forecastItems: [
+'بررسی تغییرات تا یک سال آینده از بعد مسئولیت و محدودیت‌ها',
+'آیا تغییرات سترن ترانزیتی در رابطه شما به تعهد و تداوم رابطه کمک می‌کند یا جدایی رابطه؟',
+'این محدودیت‌ها منجر به چه تجربیاتی خواهند شد؟'
+],
+prices: [
+{ id: 'single', label: '', amount: 2699000 }
+]
+},
+{
+id: 'brilliant',
+title: 'چارت برلیان (سالانه)',
+waitTime: '۳ روز',
+format: 'پادکست',
+badges: ['چارت Profection Annual', 'چارت Solar Return', 'چارت Secondary Progressed', 'چارت Solar Arc'],
+items: [
+'تمرکز و اهمیت بعد مهم زندگی شما در یک سال',
+'روابط عاطفی، ازدواج، فرزند و تعهد',
+'شراکت‌ها، مشتریان بازار کار، قراردادهای کاری، پروژه‌های کاری در یک سال',
+'محیط اجتماعی، جامعه، تاثیرات اتفاقات پیش‌روی جامعه و قوانین در یک سال',
+'محدودیت‌های سال، مسئولیت‌های جدید در یک سال، موانع در بعدی که در چارت شما مشخص می‌شود کدام بخش از زندگیست در یک سال',
+'ارتباطات، رفت و آمدهای کوتاه، لوازم ارتباطی و نحوه ارتباطات شما، اسناد قراردادها، تحصیل و مهاجرت و ارتباط شما با مسائل قانونی و حقوقی در یک سال',
+'منابع مشترک مالی، مالیات، بیمه، وام، شراکت‌های بزرگ سرمایه‌گذاری در یک سال',
+'تفریح، روتین، ارزش و اهمیت‌های فردی، تغییرات فردی و شخصیتی در یک سال',
+'الگوی درآمد-مخارج مستقیم و نقدینگی، پس‌انداز و سرمایه‌گذاری در یک سال'
+],
+note: 'بصورت کلی تمام ابعاد زندگی که زیر شاخه این موضوعات قرار می‌گیرند در یک سال کامل بررسی خواهد شد.',
+prices: [
+{ id: 'single', label: '', amount: 3224000 }
+]
+},
+{
+id: 'diamond',
+title: 'چارت الماس',
+waitTime: '۳ روز',
+format: 'پادکست',
+badges: ['چارت Profection Annual', 'چارت Solar Return', 'چارت Secondary Progressed', 'چارت Solar Arc', 'چارت تولد'],
+items: [
+'چارت پایه (چارت تولد) + چارت سالانه (چارت برلیان)'
+],
+prices: [
+{ id: 'single', label: '', amount: 4799000 }
+]
+}
+];
+
+/**
+* وضعیت مرکزی برنامه برای نگهداری صفحه فعال و اطلاعات سفارش
+*/
+const appState = {
+currentView: 'home',
+selectedPriceByChart: {},
+order: {
+chartId: null,
+chartTitle: '',
+priceId: null,
+priceLabel: '',
+priceAmount: 0,
+waitTime: '',
+format: '',
+unknownBirthDate: false,
+customer: {
+fullName: '',
+birthDate: '',
+birthPlace: '',
+birthTime: '',
+email: '',
+phone: ''
+},
+trackingCode: '',
+paymentDate: ''
+}
+};
+
+/**
+* جابه‌جایی بین صفحات مختلف برنامه و بروزرسانی وضعیت فعال دکمه‌های منو
+*/
+function navigateTo(viewName) {
+appState.currentView = viewName;
+
+document.querySelectorAll('.page-view').forEach((section) => {
+section.classList.add('hidden');
+});
+
+const targetSection = document.getElementById(`view-${viewName}`);
+if (targetSection) {
+targetSection.classList.remove('hidden');
+}
+
+const navKey = (viewName === 'birth-form' || viewName === 'cart' || viewName === 'order-success')
+? 'podcasts'
+: viewName;
+
+document.querySelectorAll('.nav-btn').forEach((btn) => {
+const isCurrent = btn.dataset.nav === navKey;
+if (isCurrent) {
+btn.classList.remove('bg-cardBg', 'text-black', 'border-neutral-200');
+btn.classList.add('bg-brandActive', 'text-white', 'border-brandActive');
+} else {
+btn.classList.remove('bg-brandActive', 'text-white', 'border-brandActive');
+btn.classList.add('bg-cardBg', 'text-black', 'border-neutral-200');
+}
+});
+
+window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+/**
+* باز کردن پنجره مودال مشاوره خرید
+*/
+function openConsultationModal(triggerBtn) {
+const modal = document.getElementById('consultation-modal');
+if (modal) {
+modal.classList.remove('hidden');
+modal.classList.add('flex');
+}
+if (triggerBtn) {
+triggerBtn.classList.add('bg-brandActive', 'text-white', 'border-brandActive');
+triggerBtn.classList.remove('bg-cardBg', 'text-black', 'border-neutral-200');
+}
+}
+
+/**
+* بستن پنجره مودال مشاوره خرید و بازگرداندن وضعیت دکمه فعال
+*/
+function closeConsultationModal(event) {
+if (event && event.target !== event.currentTarget) return;
+const modal = document.getElementById('consultation-modal');
+if (modal) {
+modal.classList.add('hidden');
+modal.classList.remove('flex');
+}
+navigateTo(appState.currentView);
+}
+
+/**
+* رندر داینامیک کارت‌های چارت در صفحه خرید پادکست دقیقاً مطابق طراحی مرجع
+*/
+function renderCharts() {
+const container = document.getElementById('charts-list');
+if (!container) return;
+
+container.innerHTML = CHARTS_DATA.map((chart) => {
+const selectedPriceId = appState.selectedPriceByChart[chart.id];
+
+const badgesHtml = chart.badges.map((badge) => `
+<span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white border border-neutral-200 text-xs font-semibold text-black select-none cursor-default">
+<svg class="w-3.5 h-3.5 text-brandActive shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+<path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+</svg>
+<span>${badge}</span>
+</span>
+`).join('');
+
+const itemsHtml = chart.items.map((item) => `
+<li class="flex items-start gap-2.5 text-xs sm:text-sm text-black leading-7">
+<span class="mt-2.5 w-1.5 h-1.5 rounded-full bg-brandActive shrink-0"></span>
+<span>${item}</span>
+</li>
+`).join('');
+
+const forecastHtml = chart.forecastTitle ? `
+<div class="pt-3 space-y-2">
+<h4 class="text-sm sm:text-base font-bold text-forecastBlue">${chart.forecastTitle}</h4>
+<ul class="space-y-1.5">
+${chart.forecastItems.map((fItem) => `
+<li class="flex items-start gap-2.5 text-xs sm:text-sm text-black leading-7">
+<span class="mt-2.5 w-1.5 h-1.5 rounded-full bg-brandActive shrink-0"></span>
+<span>${fItem}</span>
+</li>
+`).join('')}
+</ul>
+</div>
+` : '';
+
+const noteHtml = chart.note ? `
+<p class="pt-2 text-xs sm:text-sm font-medium text-neutral-700 leading-7">${chart.note}</p>
+` : '';
+
+const pricesHtml = chart.prices.map((price) => {
+const isActive = selectedPriceId === price.id;
+const colorClasses = isActive
+? 'bg-priceText text-white shadow-sm'
+: 'bg-priceBg text-priceText hover:opacity-90';
+const priceLabelText = price.label
+? `${price.label}: ${formatPricePersian(price.amount)} تومان`
+: `${formatPricePersian(price.amount)} تومان`;
+
+return `
+<button
+type="button"
+onclick="selectPriceOption('${chart.id}', '${price.id}')"
+class="w-full py-3.5 px-4 rounded-2xl font-extrabold text-sm sm:text-base transition-all duration-200 cursor-pointer active:scale-[0.99] ${colorClasses}"
+>
+${priceLabelText}
+</button>
+`;
+}).join('');
+
+return `
+<article class="bg-cardBg border border-neutral-200 rounded-3xl p-4 sm:p-6 shadow-xs space-y-5">
+<!-- باکس سفید بالایی شامل نام چارت، مدت انتظار، فرمت دریافت و تگ‌های تیک‌دار -->
+<div class="bg-white border border-neutral-200/90 rounded-2xl p-4 sm:p-5 space-y-3">
+<h3 class="text-lg sm:text-xl font-extrabold text-black">${chart.title}</h3>
+
+<div class="space-y-2">
+<div class="flex items-center justify-between bg-cardBg rounded-full px-4 py-2 text-xs sm:text-sm">
+<span class="text-neutral-500">مدت انتظار:</span>
+<span class="font-bold text-black">${chart.waitTime}</span>
+</div>
+<div class="flex items-center justify-between bg-cardBg rounded-full px-4 py-2 text-xs sm:text-sm">
+<span class="text-neutral-500">فرمت دریافت:</span>
+<span class="font-bold text-black">${chart.format}</span>
+</div>
+</div>
+
+<div class="pt-3 border-t border-neutral-100 flex flex-wrap items-center gap-2">
+${badgesHtml}
+</div>
+</div>
+
+<!-- لیست جزئیات چارت با بولت آبی یکدست -->
+<div class="px-1 sm:px-2 space-y-2">
+<ul class="space-y-1.5">
+${itemsHtml}
+</ul>
+${forecastHtml}
+${noteHtml}
+</div>
+
+<!-- بخش دکمه‌های قیمت و ثبت خرید تمام‌عرض -->
+<div class="pt-4 border-t border-neutral-200/80 flex flex-col gap-3">
+<div class="flex flex-col gap-2.5">
+${pricesHtml}
+</div>
+<button
+type="button"
+onclick="startOrder('${chart.id}')"
+class="w-full py-3.5 px-4 rounded-2xl bg-brandLime text-black hover:bg-brandActive hover:text-white active:bg-brandActive active:text-white font-extrabold text-sm sm:text-base transition-all duration-200 shadow-xs cursor-pointer active:scale-[0.99]"
+>
+ثبت خرید
+</button>
+</div>
+</article>
+`;
+}).join('');
+}
+
+/**
+* انتخاب و فعال‌سازی باکس قیمت هر چارت
+*/
+function selectPriceOption(chartId, priceId) {
+appState.selectedPriceByChart[chartId] = priceId;
+renderCharts();
+}
+
+/**
+* شروع فرآیند خرید چارت انتخابی و انتقال به مرحله ثبت تاریخ تولد
+*/
+function startOrder(chartId) {
+const chart = CHARTS_DATA.find((c) => c.id === chartId);
+if (!chart) return;
+
+let selectedPriceId = appState.selectedPriceByChart[chartId];
+if (!selectedPriceId) {
+selectedPriceId = chart.prices[0].id;
+appState.selectedPriceByChart[chartId] = selectedPriceId;
+renderCharts();
+}
+
+const priceObj = chart.prices.find((p) => p.id === selectedPriceId) || chart.prices[0];
+
+appState.order.chartId = chart.id;
+appState.order.chartTitle = chart.title;
+appState.order.priceId = priceObj.id;
+appState.order.priceLabel = priceObj.label;
+appState.order.priceAmount = priceObj.amount;
+appState.order.waitTime = chart.waitTime;
+appState.order.format = chart.format;
+
+const unknownCheckbox = document.getElementById('bf-unknown-birth');
+appState.order.unknownBirthDate = Boolean(unknownCheckbox && unknownCheckbox.checked);
+
+const bfError = document.getElementById('bf-error');
+if (bfError) bfError.classList.add('hidden');
+
+renderBirthFormSummary();
+navigateTo('birth-form');
+}
+
+/**
+* رندر خلاصه چارت انتخاب‌شده در بالای فرم مرحله ثبت تاریخ تولد
+*/
+function renderBirthFormSummary() {
+const summaryBox = document.getElementById('birth-form-summary');
+if (!summaryBox) return;
+
+const planText = appState.order.priceLabel ? ` (${appState.order.priceLabel})` : '';
+const waitExtra = appState.order.unknownBirthDate ? ' + ۲ روز بابت پرسشنامه' : '';
+
+summaryBox.innerHTML = `
+<div class="space-y-1">
+<span class="text-xs text-neutral-500 block">چارت انتخاب‌شده:</span>
+<strong class="text-base sm:text-lg font-extrabold text-black">${appState.order.chartTitle}${planText}</strong>
+<p class="text-xs text-neutral-600">فرمت دریافت: ${appState.order.format} | مدت انتظار: ${appState.order.waitTime}${waitExtra}</p>
+</div>
+<div class="px-4 py-2 rounded-2xl bg-priceText text-white font-extrabold text-sm sm:text-base">
+${formatPricePersian(appState.order.priceAmount)} تومان
+</div>
+`;
+}
+
+/**
+* ثبت وضعیت گزینه «ساعت تولد اصلا نمی‌دانم» بدون غیرفعال کردن هیچ فیلد یا دکمه‌ای
+*/
+function toggleUnknownBirthDate(isChecked) {
+appState.order.unknownBirthDate = Boolean(isChecked);
+
+if (appState.order.chartId) {
+renderBirthFormSummary();
+}
+}
+
+/**
+* اعتبارسنجی و ثبت فرم مرحله ثبت تاریخ تولد (شامل تایید قوانین) و انتقال به صفحه سبد خرید
+*/
+function handleBirthFormSubmit(event) {
+event.preventDefault();
+
+const fullName = document.getElementById('bf-fullname').value.trim();
+const birthDate = document.getElementById('bf-birthdate').value.trim();
+const birthPlace = document.getElementById('bf-birthplace').value.trim();
+const birthTime = document.getElementById('bf-birthtime').value.trim();
+const email = document.getElementById('bf-email').value.trim();
+const phone = document.getElementById('bf-phone').value.trim();
+const unknownBirth = document.getElementById('bf-unknown-birth').checked;
+const termsChecked = document.getElementById('birth-terms-checkbox').checked;
+const errorBox = document.getElementById('bf-error');
+
+if (!fullName || !birthDate || !birthPlace || !email || !phone) {
+errorBox.textContent = 'لطفاً نام کامل، تاریخ تولد (میلادی)، مکان تولد، ایمیل و شماره تماس را تکمیل نمایید.';
+errorBox.classList.remove('hidden');
+return;
+}
+
+if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+errorBox.textContent = 'لطفاً یک آدرس ایمیل معتبر وارد نمایید (ارسال فایل‌ها فقط از طریق ایمیل انجام می‌شود).';
+errorBox.classList.remove('hidden');
+return;
+}
+
+if (!termsChecked) {
+errorBox.textContent = 'لطفاً ابتدا چک‌باکس «قوانین و ضوابط تفسیر را می‌پذیرم» را تایید نمایید.';
+errorBox.classList.remove('hidden');
+return;
+}
+
+errorBox.classList.add('hidden');
+
+appState.order.unknownBirthDate = unknownBirth;
+appState.order.customer = {
+fullName,
+birthDate,
+birthPlace,
+birthTime: unknownBirth ? (birthTime || 'نامشخص (استخراج از طریق پرسشنامه)') : (birthTime || 'ثبت نشده'),
+email,
+phone
+};
+
+renderCartPage();
+navigateTo('cart');
+}
+
+/**
+* رندر اطلاعات سفارش در صفحه سبد خرید
+*/
+function renderCartPage() {
+const box = document.getElementById('cart-order-details');
+if (!box) return;
+
+const planText = appState.order.priceLabel ? ` (${appState.order.priceLabel})` : '';
+const waitExtra = appState.order.unknownBirthDate ? ' + ۲ روز بابت پرسشنامه' : '';
+
+box.innerHTML = `
+<div class="flex flex-wrap items-center justify-between gap-2 pb-3 border-b border-neutral-100">
+<div>
+<span class="text-xs text-neutral-500 block">مورد انتخابی شما:</span>
+<strong class="text-base sm:text-lg font-extrabold text-black">${appState.order.chartTitle}${planText}</strong>
+</div>
+<div class="px-4 py-2 rounded-2xl bg-priceText text-white font-extrabold text-sm sm:text-base">
+${formatPricePersian(appState.order.priceAmount)} تومان
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs sm:text-sm text-neutral-700 pt-1">
+<p>نام متقاضی: <strong class="text-black">${appState.order.customer.fullName}</strong></p>
+<p>ایمیل دریافت: <strong class="text-black font-latin">${appState.order.customer.email}</strong></p>
+<p>فرمت دریافت: <strong class="text-black">${appState.order.format}</strong></p>
+<p>مدت انتظار: <strong class="text-black">${appState.order.waitTime}${waitExtra}</strong></p>
+</div>
+`;
+}
+
+/**
+* کپی شماره کارت در کلیپ‌بورد با روش سازگار با تمام مرورگرها و آیفریم‌ها
+*/
+function copyCardNumber() {
+const cardEl = document.getElementById('bank-card-number');
+const labelEl = document.getElementById('copy-card-label');
+if (!cardEl || !labelEl) return;
+
+const cardText = cardEl.textContent.trim();
+
+try {
+const tempInput = document.createElement('textarea');
+tempInput.value = cardText;
+tempInput.setAttribute('readonly', '');
+tempInput.style.position = 'fixed';
+tempInput.style.opacity = '0';
+document.body.appendChild(tempInput);
+tempInput.select();
+document.execCommand('copy');
+document.body.removeChild(tempInput);
+
+labelEl.textContent = 'کپی شد!';
+setTimeout(() => {
+labelEl.textContent = 'کپی شماره کارت';
+}, 2000);
+} catch (err) {
+labelEl.textContent = 'شماره کارت انتخاب شد';
+setTimeout(() => {
+labelEl.textContent = 'کپی شماره کارت';
+}, 2000);
+}
+}
+
+/**
+* باز و بسته کردن باکس منعطف قوانین و ضوابط تفسیر در صفحه سبد خرید
+*/
+function toggleTermsBox() {
+const box = document.getElementById('terms-accordion-box');
+if (!box) return;
+box.classList.toggle('hidden');
+}
+
+/**
+* اعتبارسنجی و ثبت نهایی سفارش در صفحه سبد خرید
+*/
+function handleFinalOrderSubmit(event) {
+event.preventDefault();
+
+const trackingCode = document.getElementById('cart-tracking-code').value.trim();
+const paymentDate = document.getElementById('cart-payment-date').value.trim();
+const errorBox = document.getElementById('cart-error');
+
+if (!trackingCode || !paymentDate) {
+errorBox.textContent = 'لطفاً شماره پیگیری بانکی و تاریخ پرداخت را وارد نمایید.';
+errorBox.classList.remove('hidden');
+return;
+}
+
+errorBox.classList.add('hidden');
+appState.order.trackingCode = trackingCode;
+appState.order.paymentDate = paymentDate;
+
+const summaryEl = document.getElementById('order-success-summary');
+if (summaryEl) {
+const planText = appState.order.priceLabel ? ` (${appState.order.priceLabel})` : '';
+summaryEl.innerHTML = `
+<p>سفارش ثبت‌شده: <strong>${appState.order.chartTitle}${planText}</strong></p>
+<p>مبلغ پرداختی: <strong>${formatPricePersian(appState.order.priceAmount)} تومان</strong></p>
+<p>شماره پیگیری: <strong class="font-latin">${trackingCode}</strong></p>
+<p>تاریخ پرداخت: <strong>${paymentDate}</strong></p>
+<p>ایمیل تایید و ارسال: <strong class="font-latin">${appState.order.customer.email}</strong></p>
+`;
+}
+
+navigateTo('order-success');
+}
+
+/**
+* پاک‌سازی فرم‌ها پس از اتمام سفارش و بازگشت به صفحه اصلی
+*/
+function resetAndGoHome() {
+const birthForm = document.getElementById('birth-details-form');
+const paymentForm = document.getElementById('payment-confirm-form');
+const termsCheckbox = document.getElementById('birth-terms-checkbox');
+const termsBox = document.getElementById('terms-accordion-box');
+
+if (birthForm) birthForm.reset();
+if (paymentForm) paymentForm.reset();
+if (termsCheckbox) termsCheckbox.checked = false;
+if (termsBox) termsBox.classList.add('hidden');
+
+toggleUnknownBirthDate(false);
+
+Object.keys(appState.selectedPriceByChart).forEach((key) => {
+appState.selectedPriceByChart[key] = null;
+});
+
+renderCharts();
+navigateTo('home');
+}
+
+/**
+* محاسبه دقیق نشان تولد بر اساس ماه و روز شمسی طبق بازه‌های تعریف‌شده
+*/
+function getZodiacSignFromJalali(month, day) {
+if ((month === 12 && day >= 29 && day <= 30) || (month === 1 && day >= 1 && day <= 30)) {
+return 'Aries — قوچ';
+}
+if ((month === 1 && day === 31) || (month === 2 && day >= 1 && day <= 30)) {
+return 'Taurus — ثور';
+}
+if ((month === 2 && day === 31) || (month === 3 && day >= 1 && day <= 30)) {
+return 'Gemini — دوقلو';
+}
+if ((month === 3 && day === 31) || (month === 4 && day >= 1 && day <= 30)) {
+return 'Cancer — خرچنگ';
+}
+if ((month === 4 && day === 31) || (month === 5 && day >= 1 && day <= 30)) {
+return 'Leo — اسد';
+}
+if ((month === 5 && day === 31) || (month === 6 && day >= 1 && day <= 30)) {
+return 'Virgo — خوشه';
+}
+if ((month === 6 && day === 31) || (month === 7 && day >= 1 && day <= 30)) {
+return 'Libra — ترازو';
+}
+if (month === 8 && day >= 1 && day <= 30) {
+return 'Scorpio — عقرب';
+}
+if (month === 9 && day >= 1 && day <= 30) {
+return 'Sagittarius — کماندار';
+}
+if (month === 10 && day >= 1 && day <= 30) {
+return 'Capricorn — جدی';
+}
+if (month === 11 && day >= 1 && day <= 30) {
+return 'Aquarius — دلو';
+}
+if (month === 12 && day >= 1 && day <= 28) {
+return 'Pisces — ماهی';
+}
+return null;
+}
+
+/**
+* نام ماه‌های شمسی برای نمایش خوانا در نتیجه
+*/
+const JALALI_MONTH_NAMES = [
+'', 'فروردین', 'اردیبهشت', 'خرداد', 'تیر', 'مرداد', 'شهریور',
+'مهر', 'آبان', 'آذر', 'دی', 'بهمن', 'اسفند'
+];
+
+/**
+* پر کردن لیست‌های کشویی سال و روز شمسی در صفحه «تشخیص نشان تولد»
+*/
+function initJalaliDropdowns() {
+const yearSelect = document.getElementById('z-jalali-year');
+if (yearSelect && yearSelect.options.length <= 1) {
+for (let y = 1405; y >= 1310; y--) {
+const opt = document.createElement('option');
+opt.value = String(y);
+opt.textContent = toPersianDigits(y);
+yearSelect.appendChild(opt);
+}
+}
+updateJalaliDayOptions();
+}
+
+/**
+* بروزرسانی تعداد روزهای مجاز ماه انتخاب‌شده (۳۱ روز برای نیمه اول سال و ۳۰ روز برای نیمه دوم)
+*/
+function updateJalaliDayOptions() {
+const monthSelect = document.getElementById('z-jalali-month');
+const daySelect = document.getElementById('z-jalali-day');
+if (!daySelect) return;
+
+const selectedMonth = monthSelect ? parseInt(monthSelect.value, 10) : 0;
+const previousDay = daySelect.value;
+const maxDays = (!selectedMonth || selectedMonth <= 6) ? 31 : 30;
+
+daySelect.innerHTML = '<option value="">روز</option>';
+for (let d = 1; d <= maxDays; d++) {
+const opt = document.createElement('option');
+opt.value = String(d);
+opt.textContent = toPersianDigits(d);
+daySelect.appendChild(opt);
+}
+
+if (previousDay && parseInt(previousDay, 10) <= maxDays) {
+daySelect.value = previousDay;
+}
+}
+
+/**
+* پردازش فرم «تشخیص نشان تولد» با تقویم کشویی شمسی و نمایش نتیجه
+*/
+function handleZodiacSubmit(event) {
+event.preventDefault();
+
+const name = document.getElementById('z-name').value.trim();
+const contact = document.getElementById('z-contact').value.trim();
+const dayVal = document.getElementById('z-jalali-day').value;
+const monthVal = document.getElementById('z-jalali-month').value;
+const yearVal = document.getElementById('z-jalali-year').value;
+const errorBox = document.getElementById('zodiac-error');
+
+if (!name || !contact || !dayVal || !monthVal || !yearVal) {
+errorBox.textContent = 'لطفاً تمام فیلدهای ستاره‌دار (نام، ایمیل یا شماره تلفن و روز، ماه و سال تولد شمسی) را تکمیل نمایید.';
+errorBox.classList.remove('hidden');
+return;
+}
+
+const day = parseInt(dayVal, 10);
+const month = parseInt(monthVal, 10);
+const year = parseInt(yearVal, 10);
+
+const sign = getZodiacSignFromJalali(month, day);
+if (!sign) {
+errorBox.textContent = 'تاریخ انتخاب‌شده خارج از بازه معتبر تقویم شمسی است.';
+errorBox.classList.remove('hidden');
+return;
+}
+
+errorBox.classList.add('hidden');
+
+const formattedDay = toPersianDigits(String(day).padStart(2, '0'));
+const monthName = JALALI_MONTH_NAMES[month] || toPersianDigits(String(month).padStart(2, '0'));
+const formattedYear = toPersianDigits(String(year));
+
+document.getElementById('zr-greeting').textContent = `${name} عزیز، نتیجه محاسبه نشان تولد شما آماده است:`;
+document.getElementById('zr-date-display').textContent = `تاریخ تولد شمسی ثبت‌شده: ${formattedDay} ${monthName} ${formattedYear}`;
+document.getElementById('zr-sign-name').textContent = sign;
+
+document.getElementById('zodiac-form-card').classList.add('hidden');
+document.getElementById('zodiac-result-card').classList.remove('hidden');
+}
+
+/**
+* بازگشت به فرم تشخیص نشان تولد برای بررسی تاریخ جدید
+*/
+function resetZodiacForm() {
+const form = document.getElementById('zodiac-form');
+if (form) form.reset();
+updateJalaliDayOptions();
+
+document.getElementById('zodiac-result-card').classList.add('hidden');
+document.getElementById('zodiac-form-card').classList.remove('hidden');
+}
+
+/**
+* راه‌اندازی اولیه برنامه پس از بارگذاری کامل صفحه
+*/
+window.addEventListener('DOMContentLoaded', () => {
+renderCharts();
+initJalaliDropdowns();
+navigateTo('home');
+});
+</script>
 </body>
 </html>
